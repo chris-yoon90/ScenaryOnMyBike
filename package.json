@@ -1,4 +1,12 @@
 {
   "name": "Chris Yoon",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chris-yoon90/ScenaryOnMyBike.git"
+  },
+  "devDependencies": {
+  	"grunt": "0.4.5",
+  	"grunt-sass": "1.0.0"
+  }
 }
