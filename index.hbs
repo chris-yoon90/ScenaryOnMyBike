@@ -1,7 +1,9 @@
 {{!< default}}
 
 <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    Index page header
+    {{navigation}}
+    <h1 class="header-title">Journal</h1>
+    
 </header>
 
 {{! The main content area on the homepage }}

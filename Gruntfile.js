@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'assets/css/scenary_on_my_bike.css' : 'assets/scss/scenary_on_my_bike.scss'
+                    'assets/css/<%= pkg.name %>.css' : 'assets/scss/<%= pkg.name %>.scss'
                 }
             }
         },
@@ -14,6 +14,9 @@ module.exports = function(grunt) {
                 tasks: ['sass']
             }
         }
+
+        //TODO: specify uglify task for production builds
+
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');

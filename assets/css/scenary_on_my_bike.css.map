@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": ";;;;;AAAA,YAAa;EACZ,MAAM,EAAE,KAAK;EAEb,0BAAc;IACb,MAAM,EAAE,CAAC;IACT,UAAU,EAAE,MAAM;IAClB,KAAK,EAAE,IAAI;IACX,QAAQ,EAAE,KAAK;IACf,GAAG,EAAE,IAAI;EAGV,qBAAW;IACV,gBAAgB,EAAE,4CAA4C;IAC9D,eAAe,EAAE,IAAI;IACrB,mBAAmB,EAAE,OAAO;;ACb7B,iBAAG;EACF,MAAM,EAAE,CAAC",
+"sources": ["../scss/partials/_header.scss","../scss/partials/_navigation.scss"],
 "names": [],
 "file": "scenary_on_my_bike.css"
 }
