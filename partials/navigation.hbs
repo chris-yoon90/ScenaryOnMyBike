@@ -1,7 +1,12 @@
-<nav class="nav-container">
-    <ul class="nav">
-        {{#foreach navigation}}
-        <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-    </ul>
+<nav role="navigation" class="nav-container">
+	<input type="checkbox" id="navbar-toggle">
+	<div class="nav-header">
+		<label for="navbar-toggle" onclick></label>
+	</div>
+
+	<ul class="nav">
+		{{#foreach navigation}}
+		<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+	</ul>
 </nav>
