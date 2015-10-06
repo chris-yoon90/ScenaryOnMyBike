@@ -9,7 +9,7 @@ Screen Size variables
     margin: 0;
     text-align: center;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 95px; }
   .main-header.no-cover {
     background-image: url("/assets/images/default_blog_cover.png");
@@ -20,21 +20,20 @@ Screen Size variables
   position: fixed;
   width: 100%;
   background-color: transparent;
-  z-index: 10;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  z-index: 10; }
   @media (min-width: 992px) {
-    .nav-container:hover {
-      background-color: #FFF; } }
+    .nav-container {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .nav-container:hover {
+        background-color: #FFF; } }
   .nav-container .nav-header {
     height: 50px;
     z-index: 20; }
-  .nav-container .nav {
+  .nav-container .navbar {
     padding: 100px 0 10px 0;
-    margin: 0;
-    list-style: none;
     background-color: rgba(73, 71, 71, 0.9);
     visibility: hidden;
     opacity: 0;
@@ -47,15 +46,19 @@ Screen Size variables
     -moz-transition: 200ms ease-in-out;
     -o-transition: 200ms ease-in-out;
     transition: 200ms ease-in-out; }
-    .nav-container .nav > li {
-      width: 100%;
-      text-align: center; }
-      .nav-container .nav > li > a {
-        color: #F2F2F2;
-        text-decoration: none;
-        line-height: 20px;
-        padding: 15px 15px;
-        display: block; }
+    .nav-container .navbar .nav {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .nav-container .navbar .nav > li {
+        width: 100%;
+        text-align: center; }
+        .nav-container .navbar .nav > li > a {
+          color: #F2F2F2;
+          text-decoration: none;
+          line-height: 20px;
+          padding: 15px 15px;
+          display: block; }
   .nav-container #navbar-toggle {
     position: absolute;
     top: -9999px;
@@ -66,7 +69,7 @@ Screen Size variables
       font-size: 1em;
       top: 14px;
       right: 0.72em; }
-    .nav-container #navbar-toggle:checked ~ .nav {
+    .nav-container #navbar-toggle:checked ~ .navbar {
       visibility: visible;
       opacity: 1;
       filter: alpha(opacity=100); }
