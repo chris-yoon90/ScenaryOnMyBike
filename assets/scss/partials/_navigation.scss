@@ -63,8 +63,8 @@ $navbar-color : rgba(73, 71, 71, 0.9);
 				color: $light-gray;
 				content: "\2715";
 				font-size: 1em;
-				top: 10px;
-				right: 0.6em;
+			    top: 14px;
+			    right: 0.72em;
 			}
 
 			& ~ .nav {
@@ -77,15 +77,15 @@ $navbar-color : rgba(73, 71, 71, 0.9);
 	}
 
 	label[for="navbar-toggle"] {
-		position:relative;
-		display: inline-block;
-		float:right;
-		width: 35px;
-		min-height:2.25em;
-		padding:.45em;
-		font-size:1.1em;
-		margin:0;
-		z-index: 20;
+	    position: relative;
+	    display: inline-block;
+	    float: right;
+	    width: 46px;
+	    min-height: 2.25em;
+	    padding: .45em;
+	    font-size: 1.3em;
+	    margin: 0;
+	    z-index: 20;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
@@ -94,10 +94,10 @@ $navbar-color : rgba(73, 71, 71, 0.9);
 
 		&:after {
 			position: absolute;
-			right: .25em;  
-			top: 0; 
-			content:"\2261";
-			font-size:1.8em;
+		    right: 0.21em;
+		    top: -5px;
+		    content: "\2261";
+		    font-size: 2.2em;
 		}
 
 	}

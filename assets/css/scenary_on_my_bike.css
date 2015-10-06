@@ -64,8 +64,8 @@ Screen Size variables
       color: #F2F2F2;
       content: "\2715";
       font-size: 1em;
-      top: 10px;
-      right: 0.6em; }
+      top: 14px;
+      right: 0.72em; }
     .nav-container #navbar-toggle:checked ~ .nav {
       visibility: visible;
       opacity: 1;
@@ -74,10 +74,10 @@ Screen Size variables
     position: relative;
     display: inline-block;
     float: right;
-    width: 35px;
+    width: 46px;
     min-height: 2.25em;
     padding: .45em;
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin: 0;
     z-index: 20;
     -webkit-user-select: none;
@@ -87,9 +87,9 @@ Screen Size variables
     cursor: pointer; }
     .nav-container label[for="navbar-toggle"]:after {
       position: absolute;
-      right: .25em;
-      top: 0;
+      right: 0.21em;
+      top: -5px;
       content: "\2261";
-      font-size: 1.8em; }
+      font-size: 2.2em; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */
