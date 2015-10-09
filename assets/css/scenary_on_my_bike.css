@@ -3,8 +3,31 @@
 Screen Size variables
 ------------------------------------------------------
 */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Droid+Sans:400,700);
 html, body, .site-wrapper {
   height: 100%; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: url("/assets/images/marble_tile.png") repeat; }
+
+main.content {
+  width: 88%; }
+
+.home-template main.content, .archive-template main.content {
+  margin: 40px auto; }
+.home-template article.post, .archive-template article.post {
+  margin: 20px 0 80px 0; }
+  .home-template article.post .post-image, .archive-template article.post .post-image {
+    width: 100%; }
+  .home-template article.post .post-header, .archive-template article.post .post-header {
+    margin: 0 0 10px 0; }
+    .home-template article.post .post-header .post-title, .archive-template article.post .post-header .post-title {
+      margin: 0; }
+      .home-template article.post .post-header .post-title a, .home-template article.post .post-header .post-title a:visited, .home-template article.post .post-header .post-title a:active, .home-template article.post .post-header .post-title a:focus, .archive-template article.post .post-header .post-title a, .archive-template article.post .post-header .post-title a:visited, .archive-template article.post .post-header .post-title a:active, .archive-template article.post .post-header .post-title a:focus {
+        color: #000;
+        text-decoration: none;
+        font-weight: 400; }
 
 .main-header {
   height: 50%; }
@@ -82,7 +105,9 @@ html, body, .site-wrapper {
           float: right; } }
       .nav-container .navbar .nav > li {
         width: 100%;
-        text-align: center; }
+        text-align: center;
+        font-family: "Droid Sans", sans-serif;
+        text-transform: uppercase; }
         @media (min-width: 992px) {
           .nav-container .navbar .nav > li {
             display: inline-block;
@@ -123,7 +148,7 @@ html, body, .site-wrapper {
       color: #F2F2F2;
       content: "\2715";
       font-size: 1em;
-      top: 14px;
+      top: 9px;
       right: 0.72em; }
     .nav-container #navbar-toggle:checked ~ .navbar {
       visibility: visible;
@@ -150,7 +175,7 @@ html, body, .site-wrapper {
     .nav-container label[for="navbar-toggle"]:after {
       position: absolute;
       right: 0.21em;
-      top: -5px;
+      top: -14px;
       content: "\2261";
       font-size: 2.2em; }
 

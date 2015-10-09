@@ -3,3 +3,41 @@
 html, body, .site-wrapper {
 	height: 100%;
 }
+
+body {
+	font-family: $open-sans;
+	background: url("/assets/images/marble_tile.png") repeat;
+}
+
+main.content {
+	width: 88%;
+}
+
+.home-template, .archive-template {
+	main.content {
+		margin: 40px auto;
+	}
+
+	article.post {
+		margin: 20px 0 80px 0;
+
+		.post-image {
+			width: 100%;
+		}
+
+		.post-header {
+			margin: 0 0 10px 0;
+			.post-title {
+				margin: 0;
+
+				a, a:visited, a:active, a:focus {
+					color: $black;
+					text-decoration: none;
+					font-weight: 400;
+				}
+			}
+		}
+
+	}
+
+}
