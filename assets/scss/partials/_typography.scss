@@ -1,0 +1,149 @@
+/*
+Phone sm:
+	$fontbase = 16
+	$line-height-base = 23
+
+Tablets:
+	$fontbase = 16
+	$line-height-base = 27
+
+Desktop:
+	$fontbase = 18
+	$line-height-base = 30
+ */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: $font-black;
+	font-size: 1.6rem;
+	font-family: $open-sans;
+	font-weight: 400;
+	line-height: 1.438; /* $line-height-base/$fontbase */
+
+	@include tablet {
+		line-height: 1.687;
+	}
+
+	@include desktop {
+		font-size: 1.8rem;
+		line-height: 1.667;
+	}
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 { font-family: $playfaire-display; font-weight: 400; }
+.h1 { font-size: 4.2rem; @include desktop { font-size: 4.7rem; } }
+.h2 { font-size: 2.6rem; @include desktop { font-size: 2.9rem; } }
+.h3 { font-size: 2.4rem; @include desktop { font-size: 2.3rem; } }
+.h4, .h5 { font-size: 2.0rem; }
+
+.italic { font-style: italic; }
+.bold { font-weight: 700; }
+.indent { margin: 0 0 0 3.5rem; }
+.monospace { font-family: monospace; }
+
+.unordered-list { list-style-type: disc; * { @extend .indent; } }
+.ordered-list { list-style: decimal; * { @extend .indent; } }
+
+.sub { vertical-align: sub; font-size: smaller; }
+.sup { vertical-align: super; font-size: smaller; }
+.code-block { 
+	padding: 0.2rem 0.3rem; 
+	border: $gray 1px solid;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: $light-gray;
+	font-family: monospace;
+	color: $font-red;
+	vertical-align: middle;
+	white-space: pre-wrap;
+}
+
+.pre { 
+	display: block;
+	width: 100%;
+	margin: 1rem 0;
+	padding: 1rem;
+	border: $gray 1px solid;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: $light-gray;
+	white-space: pre;
+
+	* { color: inherit; border: none; background-color: transparent; padding: 0; }
+}
+
+.blockquote {
+	margin: 2rem 0;
+	padding: 0.5rem 0 0.5rem 2rem;
+	border-left: $light-gray 0.75rem solid;
+
+	* { font-weight: 300; @extend .italic; }
+}
+
+.link {
+	text-decoration: none;
+
+	&:hover, &:active, &:focus, &:visited {
+		text-decoration: none;
+	}
+}
+
+.hr { 
+	width: 85%; 
+	margin: 3rem auto; 
+	border: 0 none; 
+	height: 1px;
+	background-color: $font-dark-gray;
+}
+
+.table {
+	margin: 2rem 0;
+	border: none;
+	th, .th { @extend .bold; border-bottom: $font-dark-gray 1px solid; text-align: center; }
+	th, .th, td, .td { padding: 1.0rem 0.5rem; }
+	td, .td { text-align: left; }
+}
+
+
+h1 { @extend .h1; }
+h2 { @extend .h2; }
+
+
+a { color: $font-light-gray; @extend .link }
+
+.post-content {
+	h1 { @extend .h2; margin: 0 0 1rem 0; }
+	h2 { @extend .h3; margin: 0 0 1rem 0; }
+	h3 { @extend .h4; margin: 0 0 1rem 0; }
+	h4 { @extend .h5; margin: 0 0 1rem 0; }
+	a { 
+		@extend .link; 
+		color: $font-turquoise;
+		&:hover {
+			color: $font-light-turquoise;
+		}
+	}
+	i, em, cite, dfn, var, address { @extend .italic }
+	b, strong { @extend .bold }
+	kbd, samp { @extend .monospace; font-size: 1.2em; }
+	sub { @extend .sub }
+	sup { @extend .sup }
+	hr { @extend .hr }
+
+	ul { @extend .unordered-list; margin: 0 0 1rem 0; }
+	ol { @extend .ordered-list; margin: 0 0 1rem 0; }
+
+	code { @extend .code-block; }
+	pre { @extend .pre; }
+	blockquote { @extend .blockquote; }
+
+	table { @extend .table; }
+
+}
+
+

@@ -1,8 +1,12 @@
 <nav role="navigation" class="nav-container">
 	<input type="checkbox" id="navbar-toggle">
 	<div class="nav-header">
-		<img id="navbar-logo" src="{{asset "images/logo.png"}}">
-		<label for="navbar-toggle" onclick></label>
+		<a href="/" id="navbar-logo"><img src="{{asset "images/logo.png"}}"></a>
+		<label for="navbar-toggle" onclick>
+			<div class="icon-bar-top"></div>
+			<div class="icon-bar-middle"></div>
+			<div class="icon-bar-bottom"></div>
+		</label>
 	</div>
 
 	<div class="navbar">
