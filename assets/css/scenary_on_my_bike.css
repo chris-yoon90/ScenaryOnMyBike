@@ -63,10 +63,6 @@ html, body, .site-wrapper {
 body {
   background-color: #1f1f1f; }
 
-main.content {
-  background-color: #FFF;
-  padding: 5%; }
-
 /*
 Phone sm:
 	$fontbase = 16
@@ -98,7 +94,7 @@ body {
       font-size: 1.8rem;
       line-height: 1.667; } }
 
-.h1, h1, .h2, h2, .post-content h1, .h3, .post-content h2, .h4, .post-content h3, .h5, .post-content h4, .h6 {
+.h1, h1, .h2, h2, .post-content h1, .post-header h1, .h3, .post-content h2, .h4, .post-content h3, .h5, .post-content h4, .h6 {
   font-family: "Playfair Display", serif;
   font-weight: 400; }
 
@@ -108,10 +104,10 @@ body {
     .h1, h1 {
       font-size: 4.7rem; } }
 
-.h2, h2, .post-content h1 {
+.h2, h2, .post-content h1, .post-header h1 {
   font-size: 2.6rem; }
   @media (min-width: 992px) {
-    .h2, h2, .post-content h1 {
+    .h2, h2, .post-content h1, .post-header h1 {
       font-size: 2.9rem; } }
 
 .h3, .post-content h2 {
@@ -208,6 +204,9 @@ body {
   .table td, .post-content table td, .table .td, .post-content table .td {
     text-align: left; }
 
+time {
+  color: rgba(26, 26, 26, 0.4); }
+
 a {
   color: rgba(26, 26, 26, 0.4); }
 
@@ -225,9 +224,14 @@ a {
     color: #67B4AE; }
 .post-content kbd, .post-content samp {
   font-size: 1.2em; }
+.post-content img {
+  width: 100%; }
 .post-content ul {
   margin: 0 0 1rem 0; }
 .post-content ol {
+  margin: 0 0 1rem 0; }
+
+.post-header h1 {
   margin: 0 0 1rem 0; }
 
 .icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
@@ -260,6 +264,7 @@ a {
 
 .nav-container {
   position: fixed;
+  top: 0;
   width: 100%;
   background-color: transparent;
   z-index: 1000; }
@@ -332,5 +337,54 @@ a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; }
+
+.main-header {
+  width: 100%;
+  height: 300px; }
+  .main-header.no-cover {
+    background-image: url("/assets/images/default_blog_cover_phone.png");
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 49% 0; }
+  .main-header .header-title {
+    position: absolute;
+    width: 100%;
+    top: 150px;
+    text-transform: uppercase;
+    text-align: center; }
+
+.archive-template main.content {
+  margin: 70px 0 0 0; }
+
+main.content {
+  background-color: #FFF;
+  padding: 5%; }
+  main.content .pagination {
+    margin: 20px 0 0 0; }
+  main.content .post {
+    margin: 80px 0 0 0; }
+    main.content .post:last-of-type {
+      margin-top: 80px;
+      margin-bottom: 40px; }
+    main.content .post:first-of-type {
+      margin-top: 20px; }
+  main.content .post-header {
+    margin: 0 0 3rem 0; }
+    main.content .post-header .post-title a {
+      color: rgba(26, 26, 26, 0.9); }
+      main.content .post-header .post-title a:hover, main.content .post-header .post-title a:active, main.content .post-header .post-title a:focus, main.content .post-header .post-title a:visited {
+        color: rgba(26, 26, 26, 0.9);
+        text-decoration: none; }
+  main.content .post-image {
+    width: 100%; }
+  main.content .post-excerpt {
+    color: rgba(26, 26, 26, 0.7);
+    margin: 0 0 2rem 0; }
+    main.content .post-excerpt p {
+      margin: 20px 0; }
+    main.content .post-excerpt a.read-more {
+      color: #3d9991; }
+      main.content .post-excerpt a.read-more:hover {
+        color: #67B4AE; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */
