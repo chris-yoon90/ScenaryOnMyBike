@@ -47,8 +47,9 @@ body {
 .unordered-list { list-style-type: disc; * { @extend .indent; } }
 .ordered-list { list-style: decimal; * { @extend .indent; } }
 
-.sub { vertical-align: sub; font-size: smaller; }
-.sup { vertical-align: super; font-size: smaller; }
+.small { font-size: smaller; }
+.sub { vertical-align: sub; @extend .small; }
+.sup { vertical-align: super; @extend .small; }
 .code-block { 
 	padding: 0.2rem 0.3rem; 
 	border: $gray 1px solid;
@@ -109,6 +110,22 @@ body {
 	td, .td { text-align: left; }
 }
 
+.tag {
+	padding: 0.2rem 0.3rem; 
+	border: $gray 1px solid;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: $light-gray;
+	font-family: monospace;
+	vertical-align: middle;
+	color: $font-turquoise;
+
+	a {
+		color: $font-turquoise;
+		text-transform: uppercase; 
+	}
+}
 
 h1 { @extend .h1; }
 h2 { @extend .h2; }
