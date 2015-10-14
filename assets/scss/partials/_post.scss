@@ -2,11 +2,11 @@
 	width: 100%;
 	height: 300px;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: 50% -25px;
+	background-position: center;
+	background-size: cover;
 
 	@include tablet {
-		background-position: center -75px;
+		background-position: center;
 		height: 400px;
 	}
 
@@ -18,37 +18,45 @@
 		}
 	}
 
-	.header-title {
+	.header-title, .header-description {
 		position: absolute;
 		width: 100%;
-		top: 150px;
-		text-transform: uppercase;
 		text-align: center;
+	}
+
+	.header-title {
+		top: 115px;
+		@include tablet {
+			top: 150px;
+		}
+	}
+
+	.header-description {
+		top: 170px;
 
 		@include tablet {
-			top: 190px;
+			top: 210px;
 		}
 	}
 
 }
 
 .archive-template {
-	.main-header {
-		height: 150px;
-		background-position: 50% -100px;
-
-		@include tablet {
-			background-position: 50% -200px;
-		}
-
-		.header-title {
-			top: 70px;
-		}
-	}
-
 	main.content {
 		.pagination-top {
 			display: block;
+		}
+	}
+
+	.main-header {
+		height: 200px;
+
+		.header-title {
+			top: 80px;
+		}
+
+		.header-description {
+			display: none;
 		}
 	}
 }
