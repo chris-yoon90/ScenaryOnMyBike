@@ -1,8 +1,15 @@
 {{!< default}}
 
-<main class="content" role="main">
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <h1 class="header-title">Blog</h1>    
+</header>
 
-    {{pagination}}
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+    
+    <aside class="pagination-top">
+        {{pagination}}
+    </aside>
 
     {{#foreach posts}}
     <article class="{{post_class}}">
@@ -16,7 +23,7 @@
         {{/if}}
         <section class="post-excerpt">
             <p>{{excerpt words="26"}}...</p>
-            <p><small><a class="read-more" href="{{url}}">READ POST</a></small></p>
+            <p><small><a class="read-more" href="{{url}}">CLICK TO READ POST</a></small></p>
         </section>
         <footer class="post-meta">
             {{#if tags}}

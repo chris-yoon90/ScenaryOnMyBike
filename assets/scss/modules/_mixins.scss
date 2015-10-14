@@ -1,18 +1,24 @@
+@mixin desktop-lg {
+	@media (min-width: $screen-desktop-md) {
+		@content;
+	}
+}
+
 @mixin desktop {
-	@media(min-width: $screen-desktop-md) {
+	@media (min-width: $screen-mobile-lg) and (max-width: $screen-desktop-md - 1) {
 		@content;
 	}
 }
 
 @mixin tablet {
-	@media(min-width: $screen-mobile-lg) {
+	@media (min-width: $screen-mobile-sm) and (max-width: $screen-mobile-lg - 1) {
 		@content;
 	}
 }
 
 
 @mixin phone {
-	@media(min-width: $screen-mobile-sm) {
+	@media (min-width: $screen-mobile-xsm) and (max-width: $screen-mobile-sm - 1) {
 		@content;
 	}
 }
