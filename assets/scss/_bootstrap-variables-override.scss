@@ -1,0 +1,52 @@
+
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+$brand-primary:         #129793;
+$brand-info:            #9BD7D5; 
+$brand-warning:         #FFF5C3;
+$brand-danger:          #FF7260;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               #fff; //#505050;
+//** Global text color on `<body>`.
+$text-color:            #505050;
+
+//** Global textual link color.
+$link-color:            $brand-primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 10%);
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  $open-sans;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    $playfaire-display;
+$headings-font-weight:    400;
+$headings-color: #505050;
+
+//== Code
+//
+//##
+$code-color:                  #FF7260;
+
+
+//== Type
+//
+//##
+
+//** Blockquote border color
+$blockquote-border-color:     #FFF5C3;

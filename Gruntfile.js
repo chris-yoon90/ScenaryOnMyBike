@@ -2,6 +2,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
+            options: {
+                loadPath: [
+                "lib/bower_components/bootstrap-sass/assets/stylesheets"
+                ],
+            },
             dist: {
                 files: {
                     'assets/css/<%= pkg.name %>.css' : 'assets/scss/<%= pkg.name %>.scss'
