@@ -1,0 +1,135 @@
+$icon-bar-width: 22px;
+$icon-bar-height: 3px;
+$navbar-width: 200px;
+
+#navbar-toggle {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.site-wrapper {
+	margin: 0;
+
+	-webkit-transition: margin 200ms ease-in-out;
+	-moz-transition: margin 200ms ease-in-out;
+	-o-transition: margin 200ms ease-in-out;
+	transition: margin 200ms ease-in-out;
+}
+
+#navbar-toggle:checked {
+	& ~ label[for="navbar-toggle"] {
+		right: $navbar-width + 5;
+
+		.icon-bar-top {
+			top: $icon-bar-height * 2;
+			transform: rotate(45deg);
+			-webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			-moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			-o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+		}
+
+		.icon-bar-middle {
+			opacity: 0;
+		}
+
+		.icon-bar-bottom {
+			top: $icon-bar-height * 2;
+			transform: rotate(-45deg);
+			-webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			-moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			-o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+		}
+	}
+
+	& ~ .navbar-container {
+		opacity: 1;
+		right: 0;
+	}
+
+	& ~ .site-wrapper {
+		margin-right: $navbar-width;
+		margin-left: -$navbar-width;
+	}
+}
+
+.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
+	width: $icon-bar-width;
+	height: $icon-bar-height;
+	background-color: $black;
+	position: absolute;
+}
+
+.icon-bar-top {
+	top: 0;
+	-webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	-moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	-o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+}
+
+.icon-bar-middle {
+	top: $icon-bar-height * 2;
+	-webkit-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+	-moz-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+	-o-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+	transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+}
+
+.icon-bar-bottom {
+	top: $icon-bar-height * 4;
+	-webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	-moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	-o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+}
+
+label[for="navbar-toggle"] {
+	position: fixed;
+	top: 25px;
+	right: 20px;
+	display: inline-block;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	border: 1px solid $black;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	z-index: 1000;
+
+	-webkit-transition: right 200ms ease-in-out;
+	-moz-transition: right 200ms ease-in-out;
+	-o-transition: right 200ms ease-in-out;
+	transition: right 200ms ease-in-out;
+
+	.navbar-toggle-label {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	.navbar-toggle-collapse {
+		position: relative;
+		height: 12px;
+		width: $icon-bar-width;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.navbar-container {
+	position: absolute;
+	right: -$navbar-width;
+	width: $navbar-width;
+	height: 100%;
+	opacity: 0;
+	background-color: $dark-gray;
+	z-index: 100;
+
+	-webkit-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+	-moz-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+	-o-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+	transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+}

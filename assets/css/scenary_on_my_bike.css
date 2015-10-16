@@ -202,7 +202,7 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  line-height: 1.42857;
+  line-height: 1.643;
   color: #505050;
   background-color: #fff; }
 
@@ -241,7 +241,7 @@ img {
 
 .img-thumbnail {
   padding: 4px;
-  line-height: 1.42857;
+  line-height: 1.643;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -256,8 +256,8 @@ img {
   border-radius: 50%; }
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 23px;
+  margin-bottom: 23px;
   border: 0;
   border-top: 1px solid #eeeeee; }
 
@@ -309,8 +309,8 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px; }
+  margin-top: 23px;
+  margin-bottom: 11.5px; }
   h1 small,
   h1 .small, .h1 small,
   .h1 .small,
@@ -325,8 +325,8 @@ h3, .h3 {
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-top: 11.5px;
+  margin-bottom: 11.5px; }
   h4 small,
   h4 .small, .h4 small,
   .h4 .small,
@@ -357,10 +357,10 @@ h6, .h6 {
   font-size: 12px; }
 
 p {
-  margin: 0 0 10px; }
+  margin: 0 0 11.5px; }
 
 .lead {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4; }
@@ -478,14 +478,14 @@ a.bg-danger:focus {
   background-color: #e4b9b9; }
 
 .page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
+  padding-bottom: 10.5px;
+  margin: 46px 0 23px;
   border-bottom: 1px solid #eeeeee; }
 
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 10px; }
+  margin-bottom: 11.5px; }
   ul ul,
   ul ol,
   ol ul,
@@ -507,11 +507,11 @@ ol {
 
 dl {
   margin-top: 0;
-  margin-bottom: 20px; }
+  margin-bottom: 23px; }
 
 dt,
 dd {
-  line-height: 1.42857; }
+  line-height: 1.643; }
 
 dt {
   font-weight: bold; }
@@ -545,8 +545,8 @@ abbr[data-original-title] {
   font-size: 90%; }
 
 blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
+  padding: 11.5px 23px;
+  margin: 0 0 23px;
   font-size: 17.5px;
   border-left: 5px solid #FFF5C3; }
   blockquote p:last-child,
@@ -558,7 +558,7 @@ blockquote {
   blockquote .small {
     display: block;
     font-size: 80%;
-    line-height: 1.42857;
+    line-height: 1.643;
     color: #777777; }
     blockquote footer:before,
     blockquote small:before,
@@ -588,9 +588,9 @@ blockquote.pull-right {
     content: '\00A0 \2014'; }
 
 address {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
   font-style: normal;
-  line-height: 1.42857; }
+  line-height: 1.643; }
 
 code,
 kbd,
@@ -601,7 +601,7 @@ samp {
 code {
   padding: 2px 4px;
   font-size: 90%;
-  color: #FF7260;
+  color: #e01900;
   background-color: #f9f2f4;
   border-radius: 4px; }
 
@@ -620,10 +620,10 @@ kbd {
 
 pre {
   display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
+  padding: 11px;
+  margin: 0 0 11.5px;
   font-size: 13px;
-  line-height: 1.42857;
+  line-height: 1.643;
   word-break: break-all;
   word-wrap: break-word;
   color: #333333;
@@ -1327,7 +1327,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px; }
+  margin-bottom: 23px; }
   .table > thead > tr > th,
   .table > thead > tr > td,
   .table > tbody > tr > th,
@@ -1335,7 +1335,7 @@ th {
   .table > tfoot > tr > th,
   .table > tfoot > tr > td {
     padding: 8px;
-    line-height: 1.42857;
+    line-height: 1.643;
     vertical-align: top;
     border-top: 1px solid #ddd; }
   .table > thead > tr > th {
@@ -1477,7 +1477,7 @@ table th[class*="col-"] {
   @media screen and (max-width: 767px) {
     .table-responsive {
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 17.25px;
       overflow-y: hidden;
       -ms-overflow-style: -ms-autohiding-scrollbar;
       border: 1px solid #ddd; }
@@ -1757,5 +1757,145 @@ table th[class*="col-"] {
     display: none !important; } }
 html, body, .site-wrapper {
   height: 100%; }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6; } }
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+    line-height: 1.647; } }
+
+.title {
+  font-size: 37px; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .title {
+      font-size: 39px; } }
+  @media (min-width: 768px) {
+    .title {
+      font-size: 45px; } }
+
+.headline {
+  font-size: 23px; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .headline {
+      font-size: 24px; } }
+  @media (min-width: 768px) {
+    .headline {
+      font-size: 28px; } }
+
+.sub-headline {
+  font-size: 18px; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .sub-headline {
+      font-size: 19px; } }
+  @media (min-width: 768px) {
+    .sub-headline {
+      font-size: 22px; } }
+
+#navbar-toggle {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+.site-wrapper {
+  margin: 0;
+  -webkit-transition: margin 200ms ease-in-out;
+  -moz-transition: margin 200ms ease-in-out;
+  -o-transition: margin 200ms ease-in-out;
+  transition: margin 200ms ease-in-out; }
+
+#navbar-toggle:checked ~ label[for="navbar-toggle"] {
+  right: 205px; }
+  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-top {
+    top: 6px;
+    transform: rotate(45deg);
+    -webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+    transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-middle {
+    opacity: 0; }
+  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-bottom {
+    top: 6px;
+    transform: rotate(-45deg);
+    -webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+    transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+#navbar-toggle:checked ~ .navbar-container {
+  opacity: 1;
+  right: 0; }
+#navbar-toggle:checked ~ .site-wrapper {
+  margin-right: 200px;
+  margin-left: -200px; }
+
+.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
+  width: 22px;
+  height: 3px;
+  background-color: #000;
+  position: absolute; }
+
+.icon-bar-top {
+  top: 0;
+  -webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+  -moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+  -o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+  transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+
+.icon-bar-middle {
+  top: 6px;
+  -webkit-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+  transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out; }
+
+.icon-bar-bottom {
+  top: 12px;
+  -webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+  -moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+  -o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+  transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+
+label[for="navbar-toggle"] {
+  position: fixed;
+  top: 25px;
+  right: 20px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  z-index: 1000;
+  -webkit-transition: right 200ms ease-in-out;
+  -moz-transition: right 200ms ease-in-out;
+  -o-transition: right 200ms ease-in-out;
+  transition: right 200ms ease-in-out; }
+  label[for="navbar-toggle"] .navbar-toggle-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; }
+  label[for="navbar-toggle"] .navbar-toggle-collapse {
+    position: relative;
+    height: 12px;
+    width: 22px;
+    display: inline-block;
+    vertical-align: middle; }
+
+.navbar-container {
+  position: absolute;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  opacity: 0;
+  background-color: #505050;
+  z-index: 100;
+  -webkit-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+  -moz-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+  -o-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+  transition: right 200ms ease-in-out, opacity 200ms ease-in-out; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

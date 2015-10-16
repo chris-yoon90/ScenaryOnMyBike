@@ -1,0 +1,47 @@
+body {
+	@include tablet-only {
+		font-size: 15px;
+		line-height: 1.6;
+	}
+
+	@include desktop-sm-up {
+		font-size: 17px;
+		line-height: 1.647;
+	}
+}
+
+.title { 
+	font-size: 37px;
+
+	@include tablet-only {
+		font-size: 39px;
+	} 
+
+	@include desktop-sm-up {
+		font-size: 45px;
+	}
+}
+
+.headline { 
+	font-size: 23px;
+
+	@include tablet-only {
+		font-size: 24px;
+	} 
+
+	@include desktop-sm-up {
+		font-size: 28px;
+	}
+}
+
+.sub-headline { 
+	font-size: 18px;
+
+	@include tablet-only {
+		font-size: 19px;
+	} 
+
+	@include desktop-sm-up {
+		font-size: 22px;
+	}
+}
