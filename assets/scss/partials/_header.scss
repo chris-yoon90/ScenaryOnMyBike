@@ -1,0 +1,60 @@
+.main-header {
+	width: 100%;
+	
+	.header-title {
+		@extend .title;
+		text-align: center;
+	}
+
+	.header-description {
+		@extend .sub-headline;
+		text-align: center;
+	}
+}
+
+.home-template, .archive-template {
+	.main-header {
+		height: 300px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		&.no-cover {
+			background-image: url('/assets/images/default_blog_cover_phone.png');
+
+			@include tablet-only {
+				background-image: url('/assets/images/default_blog_cover_tablet.png');
+			}
+
+			@include desktop-sm-up {
+				background-image: url('/assets/images/default_blog_cover.png');
+			}
+		}
+	}
+}
+
+.home-template {
+	.main-header {
+		padding: 100px 5% 45px 5%;
+	}
+
+	.pagination-top {
+		display: none;
+	}
+}
+
+.archive-template {
+	.main-header {
+		height: 150px;
+		padding: 55px 5% 21px 5%;
+
+		.header-title {
+			@extend .headline;
+		}
+
+		.header-description {
+			display: none;
+		}
+
+	}
+}

@@ -1,0 +1,13 @@
+.site-footer {
+	padding: 10px 5%;
+	color: $gray-lighter;
+
+	.copyright, .poweredby {
+
+		text-align: center;
+		a {
+			color: $brand-info;
+		}
+	}
+
+}

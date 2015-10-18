@@ -1758,6 +1758,13 @@ table th[class*="col-"] {
 html, body, .site-wrapper {
   height: 100%; }
 
+body {
+  background-color: #505050; }
+
+.content {
+  background-color: #fff;
+  padding: 30px 0 50px 0; }
+
 @media (min-width: 480px) and (max-width: 767px) {
   body {
     font-size: 15px;
@@ -1767,31 +1774,31 @@ html, body, .site-wrapper {
     font-size: 17px;
     line-height: 1.647; } }
 
-.title {
+.title, .main-header .header-title {
   font-size: 37px; }
   @media (min-width: 480px) and (max-width: 767px) {
-    .title {
+    .title, .main-header .header-title {
       font-size: 39px; } }
   @media (min-width: 768px) {
-    .title {
+    .title, .main-header .header-title {
       font-size: 45px; } }
 
-.headline {
+.headline, .archive-template .main-header .header-title {
   font-size: 23px; }
   @media (min-width: 480px) and (max-width: 767px) {
-    .headline {
+    .headline, .archive-template .main-header .header-title {
       font-size: 24px; } }
   @media (min-width: 768px) {
-    .headline {
+    .headline, .archive-template .main-header .header-title {
       font-size: 28px; } }
 
-.sub-headline {
+.sub-headline, .main-header .header-description {
   font-size: 18px; }
   @media (min-width: 480px) and (max-width: 767px) {
-    .sub-headline {
+    .sub-headline, .main-header .header-description {
       font-size: 19px; } }
   @media (min-width: 768px) {
-    .sub-headline {
+    .sub-headline, .main-header .header-description {
       font-size: 22px; } }
 
 #navbar-toggle {
@@ -1801,62 +1808,73 @@ html, body, .site-wrapper {
 
 .site-wrapper {
   margin: 0;
-  -webkit-transition: margin 200ms ease-in-out;
-  -moz-transition: margin 200ms ease-in-out;
-  -o-transition: margin 200ms ease-in-out;
-  transition: margin 200ms ease-in-out; }
+  -webkit-transition: margin 300ms ease-in-out;
+  -moz-transition: margin 300ms ease-in-out;
+  -o-transition: margin 300ms ease-in-out;
+  transition: margin 300ms ease-in-out; }
 
 #navbar-toggle:checked ~ label[for="navbar-toggle"] {
-  right: 205px; }
+  right: 205px;
+  background-color: #505050;
+  color: #fff; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    #navbar-toggle:checked ~ label[for="navbar-toggle"] {
+      right: 305px; } }
+  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-top, #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-middle, #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-bottom {
+    background-color: #fff; }
   #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-top {
     top: 6px;
     transform: rotate(45deg);
-    -webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-    -moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-    -o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-    transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+    -webkit-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -moz-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -o-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
+    transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out; }
   #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-middle {
     opacity: 0; }
   #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-bottom {
     top: 6px;
     transform: rotate(-45deg);
-    -webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-    -moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-    -o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-    transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+    -webkit-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -moz-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
+    -o-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
+    transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out; }
 #navbar-toggle:checked ~ .navbar-container {
   opacity: 1;
   right: 0; }
 #navbar-toggle:checked ~ .site-wrapper {
   margin-right: 200px;
   margin-left: -200px; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    #navbar-toggle:checked ~ .site-wrapper {
+      margin-right: 300px;
+      margin-left: -300px; } }
 
 .icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
   width: 22px;
   height: 3px;
-  background-color: #000;
+  background-color: #777777;
   position: absolute; }
 
 .icon-bar-top {
   top: 0;
-  -webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-  -moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-  -o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-  transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+  -webkit-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
+  -moz-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
+  -o-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
+  transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out; }
 
 .icon-bar-middle {
   top: 6px;
-  -webkit-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
-  -moz-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
-  -o-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
-  transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out; }
+  -webkit-transition: opacity 300ms ease-in-out, background-color 300ms ease-in-out;
+  -moz-transition: opacity 300ms ease-in-out, background-color 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out, background-color 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out, background-color 300ms ease-in-out; }
 
 .icon-bar-bottom {
   top: 12px;
-  -webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-  -moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-  -o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-  transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out; }
+  -webkit-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
+  -moz-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
+  -o-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
+  transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out; }
 
 label[for="navbar-toggle"] {
   position: fixed;
@@ -1865,15 +1883,16 @@ label[for="navbar-toggle"] {
   display: inline-block;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  border: 1px solid #000;
+  border: 1px solid #777777;
+  color: #777777;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
   z-index: 1000;
-  -webkit-transition: right 200ms ease-in-out;
-  -moz-transition: right 200ms ease-in-out;
-  -o-transition: right 200ms ease-in-out;
-  transition: right 200ms ease-in-out; }
+  -webkit-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
+  -moz-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
+  -o-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
+  transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out; }
   label[for="navbar-toggle"] .navbar-toggle-label {
     display: inline-block;
     vertical-align: middle;
@@ -1893,9 +1912,98 @@ label[for="navbar-toggle"] {
   opacity: 0;
   background-color: #505050;
   z-index: 100;
-  -webkit-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
-  -moz-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
-  -o-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
-  transition: right 200ms ease-in-out, opacity 200ms ease-in-out; }
+  padding: 10px 0 100px 0;
+  -webkit-transition: right 300ms ease-in-out, opacity 300ms ease-in-out;
+  -moz-transition: right 300ms ease-in-out, opacity 300ms ease-in-out;
+  -o-transition: right 300ms ease-in-out, opacity 300ms ease-in-out;
+  transition: right 300ms ease-in-out, opacity 300ms ease-in-out; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .navbar-container {
+      right: -300px;
+      width: 300px; } }
+  .navbar-container .navbar-header {
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase; }
+  .navbar-container .navbar-logo img {
+    width: 55px;
+    height: auto; }
+  .navbar-container .navbar {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none; }
+    .navbar-container .navbar a {
+      line-height: 20px;
+      padding: 15px 15px;
+      display: block; }
+      .navbar-container .navbar a:after {
+        background: rgba(111, 148, 182, 0.3);
+        content: '';
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        margin: -35px 0 0 -35px;
+        width: 100%;
+        height: 50px;
+        opacity: 0;
+        pointer-events: none; }
+      .navbar-container .navbar a:focus {
+        color: #fff; }
+        .navbar-container .navbar a:focus:after {
+          animation: anim-effect-boris 0.2s forwards; }
+  .navbar-container .navbar-footer {
+    margin: 10px 0 0 0;
+    padding: 10px; }
+  .navbar-container a {
+    color: #cccccc;
+    position: relative; }
+
+@keyframes anim-effect-boris {
+  0% {
+    transform: scale3d(0.3, 0.3, 1); }
+  25%, 50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1); } }
+.main-header {
+  width: 100%; }
+  .main-header .header-title {
+    text-align: center; }
+  .main-header .header-description {
+    text-align: center; }
+
+.home-template .main-header, .archive-template .main-header {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .home-template .main-header.no-cover, .archive-template .main-header.no-cover {
+    background-image: url("/assets/images/default_blog_cover_phone.png"); }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .home-template .main-header.no-cover, .archive-template .main-header.no-cover {
+        background-image: url("/assets/images/default_blog_cover_tablet.png"); } }
+    @media (min-width: 768px) {
+      .home-template .main-header.no-cover, .archive-template .main-header.no-cover {
+        background-image: url("/assets/images/default_blog_cover.png"); } }
+
+.home-template .main-header {
+  padding: 100px 5% 45px 5%; }
+.home-template .pagination-top {
+  display: none; }
+
+.archive-template .main-header {
+  height: 150px;
+  padding: 55px 5% 21px 5%; }
+  .archive-template .main-header .header-description {
+    display: none; }
+
+.site-footer {
+  padding: 10px 5%;
+  color: #eeeeee; }
+  .site-footer .copyright, .site-footer .poweredby {
+    text-align: center; }
+    .site-footer .copyright a, .site-footer .poweredby a {
+      color: #9BD7D5; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

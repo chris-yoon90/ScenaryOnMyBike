@@ -1,6 +1,10 @@
 $icon-bar-width: 22px;
 $icon-bar-height: 3px;
 $navbar-width: 200px;
+$navbar-width-tablet: 300px;
+$navbar-link-colour: darken($white, 20%);
+$navbar-link-colour-on-hover: $white;
+$menu-label-animation-duration: 300ms;
 
 #navbar-toggle {
 	position: absolute;
@@ -11,23 +15,33 @@ $navbar-width: 200px;
 .site-wrapper {
 	margin: 0;
 
-	-webkit-transition: margin 200ms ease-in-out;
-	-moz-transition: margin 200ms ease-in-out;
-	-o-transition: margin 200ms ease-in-out;
-	transition: margin 200ms ease-in-out;
+	-webkit-transition: margin $menu-label-animation-duration ease-in-out;
+	-moz-transition: margin $menu-label-animation-duration ease-in-out;
+	-o-transition: margin $menu-label-animation-duration ease-in-out;
+	transition: margin $menu-label-animation-duration ease-in-out;
 }
 
 #navbar-toggle:checked {
 	& ~ label[for="navbar-toggle"] {
 		right: $navbar-width + 5;
+		background-color:  $dark-gray;
+		color: $white;
+
+		@include tablet-only {
+			right: $navbar-width-tablet + 5;
+		}
+
+		.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
+			background-color: $white;
+		}
 
 		.icon-bar-top {
 			top: $icon-bar-height * 2;
 			transform: rotate(45deg);
-			-webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-			-moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-			-o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-			transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			-webkit-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-moz-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-o-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
 		}
 
 		.icon-bar-middle {
@@ -37,10 +51,10 @@ $navbar-width: 200px;
 		.icon-bar-bottom {
 			top: $icon-bar-height * 2;
 			transform: rotate(-45deg);
-			-webkit-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-			-moz-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-			-o-transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-			transition: transform 200ms ease-in-out 200ms, top 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+			-webkit-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-moz-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-o-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
 		}
 	}
 
@@ -52,38 +66,43 @@ $navbar-width: 200px;
 	& ~ .site-wrapper {
 		margin-right: $navbar-width;
 		margin-left: -$navbar-width;
+
+		@include tablet-only {
+			margin-right: $navbar-width-tablet;
+			margin-left: -$navbar-width-tablet;
+		}
 	}
 }
 
 .icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
 	width: $icon-bar-width;
 	height: $icon-bar-height;
-	background-color: $black;
+	background-color: $gray-light;
 	position: absolute;
 }
 
 .icon-bar-top {
 	top: 0;
-	-webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-	-moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-	-o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-	transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	-webkit-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration, transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-moz-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-o-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
 }
 
 .icon-bar-middle {
 	top: $icon-bar-height * 2;
-	-webkit-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
-	-moz-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
-	-o-transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
-	transition: opacity 200ms ease-in-out, background-color 400ms ease-in-out;
+	-webkit-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+	-moz-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+	-o-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+	transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
 }
 
 .icon-bar-bottom {
 	top: $icon-bar-height * 4;
-	-webkit-transition: top 200ms ease-in-out 200ms, transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-	-moz-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-	-o-transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
-	transition: top 200ms ease-in-out 200ms,transform 200ms ease-in-out 0s, background-color 400ms ease-in-out;
+	-webkit-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration, transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-moz-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-o-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
 }
 
 label[for="navbar-toggle"] {
@@ -93,16 +112,17 @@ label[for="navbar-toggle"] {
 	display: inline-block;
 	cursor: pointer;
 	padding: 0.5rem 1rem;
-	border: 1px solid $black;
+	border: 1px solid $gray-light;
+	color: $gray-light;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	z-index: 1000;
 
-	-webkit-transition: right 200ms ease-in-out;
-	-moz-transition: right 200ms ease-in-out;
-	-o-transition: right 200ms ease-in-out;
-	transition: right 200ms ease-in-out;
+	-webkit-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-moz-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-o-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
 
 	.navbar-toggle-label {
 		display: inline-block;
@@ -127,9 +147,86 @@ label[for="navbar-toggle"] {
 	opacity: 0;
 	background-color: $dark-gray;
 	z-index: 100;
+	padding: 10px 0 100px 0;
 
-	-webkit-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
-	-moz-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
-	-o-transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
-	transition: right 200ms ease-in-out, opacity 200ms ease-in-out;
+	-webkit-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-moz-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-o-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+
+	@include tablet-only {
+		right: -$navbar-width-tablet;
+		width: $navbar-width-tablet;
+	}
+
+	.navbar-header {
+		padding: 10px 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.navbar-logo {
+		img {
+			width: 55px;
+			height: auto;
+		}
+	}
+
+	.navbar {
+		margin: 10px 0 0 0;
+		padding: 0;
+		list-style: none;
+
+		a {
+			line-height: 20px;
+			padding: 15px 15px;
+			display: block;
+
+			&:after {
+				background: rgba(111, 148, 182, 0.3);
+				content: '';
+				position: absolute;
+				top: 70%;
+				left: 20%;
+				margin: -35px 0 0 -35px;
+				width: 100%;
+				height: 50px;
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			&:focus {
+				color: $navbar-link-colour-on-hover;
+				&:after {
+					animation: anim-effect-boris 0.2s forwards;
+				}
+			}
+		}
+	}
+
+	.navbar-footer {
+		margin: 10px 0 0 0;
+		padding: 10px;
+	}
+
+	a {
+		color: $navbar-link-colour;
+		position: relative;
+
+
+	}
+
+}
+
+@keyframes anim-effect-boris {
+	0% {
+		transform: scale3d(0.3, 0.3, 1);
+	}
+	25%, 50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale3d(1.2, 1.2, 1);
+	}
 }
