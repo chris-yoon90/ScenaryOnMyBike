@@ -12,7 +12,7 @@
 	}
 }
 
-.home-template, .archive-template {
+.home-template, .archive-template, .tag-template {
 	.main-header {
 		background-repeat: no-repeat;
 		background-position: center;
@@ -71,19 +71,12 @@
 
 .tag-template {
 	.main-header {
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
 		height: 200px;
 		padding: 55px 5% 21px 5%;
 
 		@include desktop-sm-up {
 			height: 300px;
 			padding-top: 100px;
-		}
-
-		&.no-cover {
-			background-color: lighten($aqua, 20%);
 		}
 	}
 }
