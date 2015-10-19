@@ -1,0 +1,45 @@
+.post {
+	margin: 20px 0 50px 0;
+}
+
+.home-template {
+	.post:first-of-type {
+		margin-top: 0;
+	}
+}
+
+.post-date, .post-author {
+	color: darken($gray-lighter, 20%);
+}
+
+.post-title {
+	@extend .headline;
+	margin-top: 10px;
+
+	a {
+		color: $dark-gray;
+	}
+}
+
+.post-image {
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto 20px auto;
+	display: block;
+}
+
+.tag {
+	background-color: $red-orange;
+	padding: 0.3rem 1rem;
+	border: 1px solid $red-orange;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: $gray-lighter;
+	vertical-align: middle;
+
+	&:hover {
+		color: $gray-lighter;
+		background-color: darken($red-orange, 10%);
+	}
+}

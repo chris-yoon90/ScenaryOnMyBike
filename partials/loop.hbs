@@ -3,20 +3,19 @@
         <header class="post-header">
             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
             <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
-            <small class="small" >by {{author}}</small>
+            <address class="post-author">by {{author.name}}</address>
         </header>
         {{#if image}}
             <img class="post-image" src="{{image}}" />
         {{/if}}
         <section class="post-excerpt">
             <p>{{excerpt words="26"}}...</p>
-            <p><small><a class="read-more" href="{{url}}">CLICK TO READ POST</a></small></p>
+            <p><a class="read-more" href="{{url}}">CLICK TO READ POST</a></p>
         </section>
         <footer class="post-meta">
             {{#if tags}}
-                Tagged: 
                 {{#foreach tags}}
-                    <a class="tag" href="{{url}}" title="{{name}}">{{name}}</a>
+                    <a class="tag" href="{{url}}" title="{{name}}"><i class="fa fa-tag"></i> {{name}}</a>
                 {{/foreach}}
             {{/if}}
         </footer>

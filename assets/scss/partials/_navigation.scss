@@ -124,6 +124,10 @@ label[for="navbar-toggle"] {
 	-o-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
 	transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
 
+	@include desktop-sm-up {
+		display: none;
+	}
+
 	.navbar-toggle-label {
 		display: inline-block;
 		vertical-align: middle;
@@ -140,6 +144,7 @@ label[for="navbar-toggle"] {
 }
 
 .navbar-container {
+	font-family: $droid-sans;
 	position: absolute;
 	right: -$navbar-width;
 	width: $navbar-width;
@@ -159,16 +164,46 @@ label[for="navbar-toggle"] {
 		width: $navbar-width-tablet;
 	}
 
+	@include desktop-sm-up {
+		position: fixed;
+		top: 0;
+		height: auto;
+		background-color: transparent;
+		width: 100%;
+		left: 0;
+		right: auto;
+		padding: 0;
+		opacity: 1;
+	}
+
 	.navbar-header {
 		padding: 10px 0;
 		text-align: center;
 		text-transform: uppercase;
+
+		@include desktop-sm-up {
+			height: 100%;
+			text-align: initial;
+			float: left;
+		}
 	}
 
 	.navbar-logo {
+		color: $white;
+
 		img {
 			width: 55px;
 			height: auto;
+
+			@include desktop-sm-up {
+				width: 65px;
+			}
+		}
+	}
+
+	.navbar-footer {
+		@include desktop-sm-up {
+			display: none;
 		}
 	}
 
@@ -177,10 +212,49 @@ label[for="navbar-toggle"] {
 		padding: 0;
 		list-style: none;
 
+		@include desktop-sm-up {
+			margin: 0;
+			padding: 10px 0;
+			float: right;
+		}
+
+		li {
+			@include desktop-sm-up {
+				display: inline-block;
+			}
+		}
+
+		.nav-current {
+			background-color: darken($dark-gray, 5%);
+
+			@include desktop-sm-up {
+				color: $white;
+				background-color: transparent;
+			}
+		}
+
+		.nav-home {
+			a:before {
+				font-family: "FontAwesome";
+				content: "\f015 ";
+			}
+		}
+
 		a {
 			line-height: 20px;
 			padding: 15px 15px;
 			display: block;
+			position: relative;
+			color: $navbar-link-colour;
+
+			@include desktop-sm-up {
+				line-height: 25px;
+				color: darken($white, 3%);
+
+				&:hover {
+					color: $white;
+				}
+			}
 
 			&:after {
 				background: rgba(111, 148, 182, 0.3);
@@ -193,6 +267,16 @@ label[for="navbar-toggle"] {
 				height: 50px;
 				opacity: 0;
 				pointer-events: none;
+
+				@include tablet-only {
+					left: 13%;
+				}
+
+				@include desktop-sm-up {
+					top: 63%;
+    				left: 37%;
+    				height: 56px;
+				}
 			}
 
 			&:focus {
@@ -208,14 +292,6 @@ label[for="navbar-toggle"] {
 		margin: 10px 0 0 0;
 		padding: 10px;
 	}
-
-	a {
-		color: $navbar-link-colour;
-		position: relative;
-
-
-	}
-
 }
 
 @keyframes anim-effect-boris {
