@@ -37,6 +37,8 @@
 	border-radius: 5px;
 	color: $gray-lighter;
 	vertical-align: middle;
+	display: inline-block;
+	margin: 0.3rem 0;
 
 	&:hover {
 		color: $gray-lighter;

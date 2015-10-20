@@ -1763,9 +1763,16 @@ body {
   overflow-x: hidden; }
 
 .content {
+  width: 100%;
   background-color: #fff;
   padding-top: 30px;
   padding-bottom: 50px; }
+
+.pagination-top {
+  display: none; }
+
+.pagination {
+  text-align: center; }
 
 @media (min-width: 480px) and (max-width: 767px) {
   body {
@@ -1891,6 +1898,7 @@ label[for="navbar-toggle"] {
   -moz-border-radius: 8px;
   border-radius: 8px;
   z-index: 1000;
+  background-color: #fff;
   -webkit-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   -moz-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   -o-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
@@ -2053,8 +2061,14 @@ label[for="navbar-toggle"] {
     .home-template .main-header {
       height: 450px;
       padding-top: 165px; } }
-.home-template .pagination-top {
-  display: none; }
+
+.tag-template .main-header {
+  height: 200px;
+  padding: 55px 5% 21px 5%; }
+  @media (min-width: 768px) {
+    .tag-template .main-header {
+      height: 300px;
+      padding-top: 100px; } }
 
 .archive-template .main-header {
   height: 150px;
@@ -2065,14 +2079,8 @@ label[for="navbar-toggle"] {
       padding-top: 100px; } }
   .archive-template .main-header .header-description {
     display: none; }
-
-.tag-template .main-header {
-  height: 200px;
-  padding: 55px 5% 21px 5%; }
-  @media (min-width: 768px) {
-    .tag-template .main-header {
-      height: 300px;
-      padding-top: 100px; } }
+.archive-template .pagination-top {
+  display: block; }
 
 .site-footer {
   padding: 10px 5%;
@@ -2110,7 +2118,9 @@ label[for="navbar-toggle"] {
   -moz-border-radius: 5px;
   border-radius: 5px;
   color: #eeeeee;
-  vertical-align: middle; }
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0.3rem 0; }
   .tag:hover {
     color: #eeeeee;
     background-color: #ff452d; }

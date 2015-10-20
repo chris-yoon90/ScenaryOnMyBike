@@ -42,9 +42,17 @@
 			padding-top: 165px;
 		}
 	}
+}
 
-	.pagination-top {
-		display: none;
+.tag-template {
+	.main-header {
+		height: 200px;
+		padding: 55px 5% 21px 5%;
+
+		@include desktop-sm-up {
+			height: 300px;
+			padding-top: 100px;
+		}
 	}
 }
 
@@ -65,18 +73,9 @@
 		.header-description {
 			display: none;
 		}
-
 	}
-}
 
-.tag-template {
-	.main-header {
-		height: 200px;
-		padding: 55px 5% 21px 5%;
-
-		@include desktop-sm-up {
-			height: 300px;
-			padding-top: 100px;
-		}
+	.pagination-top {
+		display: block;
 	}
 }

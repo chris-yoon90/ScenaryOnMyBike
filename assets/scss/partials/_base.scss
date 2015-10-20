@@ -8,7 +8,16 @@ body {
 }
 
 .content {
+	width: 100%;
 	background-color: $white;
 	padding-top: 30px;
 	padding-bottom: 50px;
+}
+
+.pagination-top {
+	display: none;
+}
+
+.pagination {
+	text-align: center;
 }

@@ -118,6 +118,7 @@ label[for="navbar-toggle"] {
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	z-index: 1000;
+	background-color: $white;
 
 	-webkit-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
 	-moz-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
