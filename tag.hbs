@@ -1,20 +1,19 @@
 {{!< default}}
 
 <header class="main-header {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}no-cover{{/if}}">
-    <h1 class="header-title"><i class="fa fa-tag"></i> {{tag.name}}</h1>
-    <h2 class="header-description">{{tag.description}}</h2>
+	<h1 class="header-title"><i class="fa fa-tag"></i> {{tag.name}}</h1>
+	<h2 class="header-description">{{tag.description}}</h2>
 </header>
 
-{{! The main content area on the homepage }}
-<main class="content" role="main">
-	<div class="container">
+<div class="main-content-wrapper">
+	<main class="content container" role="main">
+
 		<aside class="pagination-top">
 			{{pagination}}
 		</aside>
 
 		{{> "loop"}}
 
-		{{! Previous/next page links - displayed on every page }}
 		{{pagination}}
-	</div>
-</main>
+	</main>
+</div>

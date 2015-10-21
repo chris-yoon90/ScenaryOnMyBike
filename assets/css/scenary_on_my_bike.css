@@ -1762,11 +1762,17 @@ body {
   background-color: #505050;
   overflow-x: hidden; }
 
-.content {
-  width: 100%;
+.main-content-wrapper {
   background-color: #fff;
-  padding-top: 30px;
-  padding-bottom: 50px; }
+  width: 100%;
+  padding: 30px 0 50px 0; }
+
+.post-template .main-content-wrapper {
+  padding-top: 70px; }
+
+.content {
+  margin: auto;
+  max-width: 900px; }
 
 .pagination-top {
   display: none; }
@@ -1783,13 +1789,13 @@ body {
     font-size: 17px;
     line-height: 1.647; } }
 
-.title, .main-header .header-title {
+.title, .main-header .header-title, .post-template .post-title {
   font-size: 37px; }
   @media (min-width: 480px) and (max-width: 767px) {
-    .title, .main-header .header-title {
+    .title, .main-header .header-title, .post-template .post-title {
       font-size: 39px; } }
   @media (min-width: 768px) {
-    .title, .main-header .header-title {
+    .title, .main-header .header-title, .post-template .post-title {
       font-size: 45px; } }
 
 .headline, .archive-template .main-header .header-title, .post-title {
@@ -1809,6 +1815,10 @@ body {
   @media (min-width: 768px) {
     .sub-headline, .main-header .header-description {
       font-size: 22px; } }
+
+.post-content img, .post-content video, .post-content iframe {
+  width: 100%;
+  height: auto; }
 
 #navbar-toggle {
   position: absolute;
@@ -2093,16 +2103,24 @@ label[for="navbar-toggle"] {
 .post {
   margin: 20px 0 50px 0; }
 
-.home-template .post:first-of-type {
+.post:first-of-type {
   margin-top: 0; }
 
-.post-date, .post-author {
+.post-date, .author-meta {
   color: #bbbbbb; }
 
 .post-title {
   margin-top: 10px; }
   .post-title a {
     color: #505050; }
+
+.post-template .post-title {
+  font-weight: 600; }
+.post-template .post-header {
+  margin-bottom: 20px; }
+
+.post-meta {
+  margin: 10px 0; }
 
 .post-image {
   max-width: 100%;
@@ -2124,5 +2142,13 @@ label[for="navbar-toggle"] {
   .tag:hover {
     color: #eeeeee;
     background-color: #ff452d; }
+
+.post-footer {
+  margin-top: 70px;
+  text-align: center; }
+  .post-footer .bio {
+    color: #505050; }
+  .post-footer .author-location, .post-footer .author-link {
+    font-style: italic; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

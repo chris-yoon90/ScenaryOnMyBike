@@ -5,20 +5,15 @@
     <h2 class="header-description">{{@blog.description}}</h2>
 </header>
 
-{{! The main content area on the homepage }}
-<main class="content" role="main">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-				<aside class="pagination-top">
-					{{pagination}}
-				</aside>
+<div class="main-content-wrapper">
+	<main class="content container" role="main">
+		<aside class="pagination-top">
+			{{pagination}}
+		</aside>
 
-				{{> "loop"}}
+		{{> "loop"}}
 
-				{{! Previous/next page links - displayed on every page }}
-				{{pagination}}
-			</div>
-		</div>
-	</div>
-</main>
+		{{pagination}}
+	</main>
+</div>
+

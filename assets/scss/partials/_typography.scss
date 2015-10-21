@@ -45,3 +45,11 @@ body {
 		font-size: 22px;
 	}
 }
+
+.post-content {
+	img, video, iframe {
+		width: 100%;
+		height: auto;
+	}
+}
+

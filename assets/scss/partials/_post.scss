@@ -2,13 +2,11 @@
 	margin: 20px 0 50px 0;
 }
 
-.home-template {
-	.post:first-of-type {
-		margin-top: 0;
-	}
+.post:first-of-type {
+	margin-top: 0;
 }
 
-.post-date, .post-author {
+.post-date, .author-meta {
 	color: darken($gray-lighter, 20%);
 }
 
@@ -19,6 +17,21 @@
 	a {
 		color: $dark-gray;
 	}
+}
+
+.post-template {
+	.post-title {
+		@extend .title;
+		font-weight: 600;
+	}
+
+	.post-header {
+		margin-bottom: 20px;
+	}
+}
+
+.post-meta {
+	margin: 10px 0;
 }
 
 .post-image {
@@ -44,4 +57,21 @@
 		color: $gray-lighter;
 		background-color: darken($red-orange, 10%);
 	}
+}
+
+.post-footer {
+	margin-top: 70px;
+	text-align: center;
+
+	.bio {
+		color: $dark-gray;
+	}
+
+	.author-location, .author-link {
+		font-style: italic;
+	}
+}
+
+.author-image {
+
 }
