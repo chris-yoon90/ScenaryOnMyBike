@@ -4,7 +4,9 @@ $navbar-width: 200px;
 $navbar-width-tablet: 300px;
 $navbar-link-colour: darken($white, 10%);
 $navbar-link-colour-on-hover: $white;
+$navbar-desktop-colour: rgba($black, 0.675);
 $menu-label-animation-duration: 300ms;
+$navbar-darken-animation-duration: 250ms;
 
 #navbar-toggle {
 	position: absolute;
@@ -175,6 +177,18 @@ label[for="navbar-toggle"] {
 		right: auto;
 		padding: 0;
 		opacity: 1;
+
+		//For .darken class animation
+		-webkit-transition: background-color $navbar-darken-animation-duration ease-in-out;
+		-moz-transition: background-color $navbar-darken-animation-duration ease-in-out;
+		-o-transition: background-color $navbar-darken-animation-duration ease-in-out;
+		transition: background-color $navbar-darken-animation-duration ease-in-out;
+	}
+
+	&.darken {
+		@include desktop-sm-up {
+			background-color: $navbar-desktop-colour;
+		}
 	}
 
 	.navbar-header {
@@ -295,7 +309,7 @@ label[for="navbar-toggle"] {
 .post-template {
 	.navbar-container {
 		@include desktop-sm-up {
-			background-color: rgba($black, 0.675);
+			background-color: $navbar-desktop-colour;
 		}
 	}
 }

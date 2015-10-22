@@ -1972,7 +1972,14 @@ label[for="navbar-toggle"] {
       left: 0;
       right: auto;
       padding: 0;
-      opacity: 1; } }
+      opacity: 1;
+      -webkit-transition: background-color 250ms ease-in-out;
+      -moz-transition: background-color 250ms ease-in-out;
+      -o-transition: background-color 250ms ease-in-out;
+      transition: background-color 250ms ease-in-out; } }
+  @media (min-width: 768px) {
+    .navbar-container.darken {
+      background-color: rgba(0, 0, 0, 0.675); } }
   .navbar-container .navbar-header {
     padding: 10px 0;
     text-align: center;
@@ -2121,15 +2128,13 @@ label[for="navbar-toggle"] {
       text-decoration: underline; }
       .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
         color: #fff; }
-      .site-footer .copyright a:visited, .site-footer .poweredby a:visited {
-        color: inherit; }
 
 .sns-link {
   display: inline-block;
   font-size: 2.0em;
   padding: 0 0.1em;
   color: #d5d5d5; }
-  .sns-link:hover, .sns-link:focus {
+  .sns-link:hover {
     color: #fff; }
 
 .post {

@@ -5,16 +5,13 @@
 	.copyright, .poweredby {
 
 		text-align: center;
+
 		a {
 			color: darken($gray-lighter, 10%);
 			text-decoration: underline;
 
 			&:hover, &:focus {
 				color: $white;
-			}
-
-			&:visited {
-				color: inherit;
 			}
 		}
 	}
@@ -27,7 +24,7 @@
 	padding: 0 0.1em;
 	color: darken($gray-lighter, 10%);
 
-	&:hover, &:focus {
+	&:hover {
 		color: $white;
 	}
 }
