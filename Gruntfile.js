@@ -9,14 +9,26 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'assets/css/<%= pkg.name %>.css' : 'assets/scss/<%= pkg.name %>.scss'
+                    'assets/css/<%= pkg.name %>.css' : 'assets/src/scss/<%= pkg.name %>.scss'
                 }
             }
         },
         watch: {
             css: {
-                files: 'assets/scss/**/*.scss',
+                files: 'assets/src/scss/**/*.scss',
                 tasks: ['sass']
+            }
+        },
+
+        concat: {
+            options: {
+                separator: ';'
+            },
+            dist: {
+                src: [
+                    'assets/src/js/**/*.js'
+                ],
+                dest: 'assets/js/<%= pkg.name %>.js'
             }
         }
 
@@ -25,5 +37,6 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default',['watch']);
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.registerTask('default',['concat', 'watch']);
 }
