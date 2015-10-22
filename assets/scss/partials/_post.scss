@@ -43,7 +43,7 @@
 
 .tag {
 	background-color: $red-orange;
-	padding: 0.3rem 1rem;
+	padding: 0.3em 1em;
 	border: 1px solid $red-orange;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -51,27 +51,72 @@
 	color: $gray-lighter;
 	vertical-align: middle;
 	display: inline-block;
-	margin: 0.3rem 0;
+	margin: 0.3em 0;
+	font-size: 1.125rem;
 
 	&:hover {
 		color: $gray-lighter;
 		background-color: darken($red-orange, 10%);
 	}
 }
+.author-image {
+	width: 90px;
+	height: 90px;
+	border: 1px $aqua solid;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	padding: 5px;
+	display: inline-block;
+
+	@include tablet-up {
+		width: 120px;
+		height: 120px;
+	}
+
+	.img {
+		display: block;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		border-radius: 100%;
+		-moz-border-radius: 100%;
+		-webkit-border-radius: 100%;
+		
+		width: 100%;
+		height: 100%;
+	}
+}
 
 .post-footer {
 	margin-top: 70px;
 	text-align: center;
+	border-top: 1px $gray-lighter solid;
+	padding-top: 50px;
+	position: relative;
+
+	@include tablet-up {
+		padding-top: 80px;
+	}
 
 	.bio {
-		color: $dark-gray;
+		color: lighten($dark-gray, 20%);
 	}
 
 	.author-location, .author-link {
 		font-style: italic;
 	}
+
+	.author-image {
+		position: absolute;
+	    top: -45px;
+	    left: 50%;
+	    margin-left: -45px;
+
+	    @include tablet-up {
+	    	top: -60px;
+	    	margin-left: -60px;
+	    }
+	}
 }
 
-.author-image {
-
-}

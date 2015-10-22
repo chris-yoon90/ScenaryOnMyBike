@@ -24,7 +24,7 @@
 
                 {{#if image}}
                 <figure class="author-image">
-                    <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                    <a class="img" href="/about" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
                 </figure>
                 {{/if}}
 
@@ -53,19 +53,13 @@
 
     <aside class="read-next container">
         {{#next_post}}
-        <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-            <section class="post">
-                <h2>{{title}}</h2>
-                <p>{{excerpt words="19"}}&hellip;</p>
-            </section>
+        <a class="button pull-right" href="{{url}}">
+            Next <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
         </a>
         {{/next_post}}
         {{#prev_post}}
-        <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-            <section class="post">
-                <h2>{{title}}</h2>
-                <p>{{excerpt words="19"}}&hellip;</p>
-            </section>
+        <a class="button pull-left" href="{{url}}">
+            <i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i> Prev
         </a>
         {{/prev_post}}
     </aside>

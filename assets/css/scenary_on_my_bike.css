@@ -1769,6 +1769,9 @@ body {
 
 .post-template .main-content-wrapper {
   padding-top: 70px; }
+  @media (min-width: 768px) {
+    .post-template .main-content-wrapper {
+      padding-top: 100px; } }
 
 .content {
   margin: auto;
@@ -1779,6 +1782,20 @@ body {
 
 .pagination {
   text-align: center; }
+
+.button {
+  border: 1px #505050 solid;
+  background-color: #9BD7D5;
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #fff; }
+  .button:hover, .button:active, .button:focus, .button:visited {
+    color: #fff; }
+  .button:hover {
+    background-color: #77c8c6; }
 
 @media (min-width: 480px) and (max-width: 767px) {
   body {
@@ -1897,8 +1914,8 @@ body {
 
 label[for="navbar-toggle"] {
   position: fixed;
-  top: 25px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   display: inline-block;
   cursor: pointer;
   padding: 0.5rem 1rem;
@@ -1966,7 +1983,8 @@ label[for="navbar-toggle"] {
         text-align: initial;
         float: left; } }
   .navbar-container .navbar-logo {
-    color: #fff; }
+    color: #fff;
+    letter-spacing: 0.095em; }
     .navbar-container .navbar-logo img {
       width: 55px;
       height: auto; }
@@ -1988,12 +2006,9 @@ label[for="navbar-toggle"] {
     @media (min-width: 768px) {
       .navbar-container .navbar li {
         display: inline-block; } }
-    .navbar-container .navbar .nav-current {
-      background-color: #434343; }
-      @media (min-width: 768px) {
-        .navbar-container .navbar .nav-current {
-          color: #fff;
-          background-color: transparent; } }
+    .navbar-container .navbar .nav-current a {
+      color: #fff;
+      font-weight: bold; }
     .navbar-container .navbar .nav-home a:before {
       font-family: "FontAwesome";
       content: "\f015 "; }
@@ -2002,32 +2017,32 @@ label[for="navbar-toggle"] {
       padding: 15px 15px;
       display: block;
       position: relative;
-      color: #cccccc; }
+      color: #e6e6e6;
+      letter-spacing: 0.05em;
+      /*width (includes padding) = 170px for phones: 200 - 30*/
+      /*width (includes padding) = 270px for tablets: 300 - 30*/ }
       @media (min-width: 768px) {
         .navbar-container .navbar a {
-          line-height: 25px;
-          color: #f7f7f7; }
+          line-height: 25px; }
           .navbar-container .navbar a:hover {
             color: #fff; } }
       .navbar-container .navbar a:after {
         background: rgba(111, 148, 182, 0.3);
         content: '';
         position: absolute;
-        top: 70%;
-        left: 20%;
-        margin: -35px 0 0 -35px;
+        top: 0;
+        left: 50%;
+        margin-left: -85px;
         width: 100%;
         height: 50px;
         opacity: 0;
         pointer-events: none; }
         @media (min-width: 480px) and (max-width: 767px) {
           .navbar-container .navbar a:after {
-            left: 13%; } }
+            margin-left: -135px; } }
         @media (min-width: 768px) {
           .navbar-container .navbar a:after {
-            top: 63%;
-            left: 37%;
-            height: 56px; } }
+            display: none; } }
       .navbar-container .navbar a:focus {
         color: #fff; }
         .navbar-container .navbar a:focus:after {
@@ -2035,6 +2050,10 @@ label[for="navbar-toggle"] {
   .navbar-container .navbar-footer {
     margin: 10px 0 0 0;
     padding: 10px; }
+
+@media (min-width: 768px) {
+  .post-template .navbar-container {
+    background-color: rgba(0, 0, 0, 0.675); } }
 
 @keyframes anim-effect-boris {
   0% {
@@ -2094,11 +2113,24 @@ label[for="navbar-toggle"] {
 
 .site-footer {
   padding: 10px 5%;
-  color: #eeeeee; }
+  color: #d5d5d5; }
   .site-footer .copyright, .site-footer .poweredby {
     text-align: center; }
     .site-footer .copyright a, .site-footer .poweredby a {
-      color: #9BD7D5; }
+      color: #d5d5d5;
+      text-decoration: underline; }
+      .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
+        color: #fff; }
+      .site-footer .copyright a:visited, .site-footer .poweredby a:visited {
+        color: inherit; }
+
+.sns-link {
+  display: inline-block;
+  font-size: 2.0em;
+  padding: 0 0.1em;
+  color: #d5d5d5; }
+  .sns-link:hover, .sns-link:focus {
+    color: #fff; }
 
 .post {
   margin: 20px 0 50px 0; }
@@ -2130,7 +2162,7 @@ label[for="navbar-toggle"] {
 
 .tag {
   background-color: #FF7260;
-  padding: 0.3rem 1rem;
+  padding: 0.3em 1em;
   border: 1px solid #FF7260;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -2138,17 +2170,57 @@ label[for="navbar-toggle"] {
   color: #eeeeee;
   vertical-align: middle;
   display: inline-block;
-  margin: 0.3rem 0; }
+  margin: 0.3em 0;
+  font-size: 1.125rem; }
   .tag:hover {
     color: #eeeeee;
     background-color: #ff452d; }
 
+.author-image {
+  width: 90px;
+  height: 90px;
+  border: 1px #9BD7D5 solid;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  padding: 5px;
+  display: inline-block; }
+  @media (min-width: 480px) {
+    .author-image {
+      width: 120px;
+      height: 120px; } }
+  .author-image .img {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    width: 100%;
+    height: 100%; }
+
 .post-footer {
   margin-top: 70px;
-  text-align: center; }
+  text-align: center;
+  border-top: 1px #eeeeee solid;
+  padding-top: 50px;
+  position: relative; }
+  @media (min-width: 480px) {
+    .post-footer {
+      padding-top: 80px; } }
   .post-footer .bio {
-    color: #505050; }
+    color: #838383; }
   .post-footer .author-location, .post-footer .author-link {
     font-style: italic; }
+  .post-footer .author-image {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    margin-left: -45px; }
+    @media (min-width: 480px) {
+      .post-footer .author-image {
+        top: -60px;
+        margin-left: -60px; } }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

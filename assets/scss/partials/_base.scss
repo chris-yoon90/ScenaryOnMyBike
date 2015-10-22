@@ -16,6 +16,10 @@ body {
 .post-template {
 	.main-content-wrapper {
 		padding-top: 70px;
+
+		@include desktop-sm-up {
+			padding-top: 100px;
+		}
 	}
 
 }
@@ -31,4 +35,23 @@ body {
 
 .pagination {
 	text-align: center;
+}
+
+.button {
+	border: 1px $dark-gray solid;
+	background-color: $aqua;
+	display: inline-block;
+	padding: 0.25em 0.75em;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: $white;
+
+	&:hover, &:active, &:focus, &:visited {
+		color: $white;
+	}
+
+	&:hover {
+		background-color: darken($aqua, 10%);
+	}
 }

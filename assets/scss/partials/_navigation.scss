@@ -2,7 +2,7 @@ $icon-bar-width: 22px;
 $icon-bar-height: 3px;
 $navbar-width: 200px;
 $navbar-width-tablet: 300px;
-$navbar-link-colour: darken($white, 20%);
+$navbar-link-colour: darken($white, 10%);
 $navbar-link-colour-on-hover: $white;
 $menu-label-animation-duration: 300ms;
 
@@ -107,8 +107,8 @@ $menu-label-animation-duration: 300ms;
 
 label[for="navbar-toggle"] {
 	position: fixed;
-	top: 25px;
-	right: 20px;
+	top: 15px;
+	right: 15px;
 	display: inline-block;
 	cursor: pointer;
 	padding: 0.5rem 1rem;
@@ -191,6 +191,7 @@ label[for="navbar-toggle"] {
 
 	.navbar-logo {
 		color: $white;
+		letter-spacing: 0.095em;
 
 		img {
 			width: 55px;
@@ -225,13 +226,9 @@ label[for="navbar-toggle"] {
 			}
 		}
 
-		.nav-current {
-			background-color: darken($dark-gray, 5%);
-
-			@include desktop-sm-up {
-				color: $white;
-				background-color: transparent;
-			}
+		.nav-current a{
+			color: $white;
+			font-weight: bold;
 		}
 
 		.nav-home {
@@ -247,10 +244,12 @@ label[for="navbar-toggle"] {
 			display: block;
 			position: relative;
 			color: $navbar-link-colour;
+			letter-spacing: 0.05em;
+			/*width (includes padding) = 170px for phones: 200 - 30*/
+			/*width (includes padding) = 270px for tablets: 300 - 30*/
 
 			@include desktop-sm-up {
 				line-height: 25px;
-				color: darken($white, 3%);
 
 				&:hover {
 					color: $white;
@@ -261,22 +260,20 @@ label[for="navbar-toggle"] {
 				background: rgba(111, 148, 182, 0.3);
 				content: '';
 				position: absolute;
-				top: 70%;
-				left: 20%;
-				margin: -35px 0 0 -35px;
+				top: 0;
+    			left: 50%;
+    			margin-left :-85px;
 				width: 100%;
 				height: 50px;
 				opacity: 0;
 				pointer-events: none;
 
 				@include tablet-only {
-					left: 13%;
+					margin-left: -135px;
 				}
 
 				@include desktop-sm-up {
-					top: 63%;
-    				left: 37%;
-    				height: 56px;
+    				display: none;
 				}
 			}
 
@@ -292,6 +289,14 @@ label[for="navbar-toggle"] {
 	.navbar-footer {
 		margin: 10px 0 0 0;
 		padding: 10px;
+	}
+}
+
+.post-template {
+	.navbar-container {
+		@include desktop-sm-up {
+			background-color: rgba($black, 0.675);
+		}
 	}
 }
 

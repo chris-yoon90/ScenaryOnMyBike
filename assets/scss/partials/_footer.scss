@@ -1,13 +1,33 @@
 .site-footer {
 	padding: 10px 5%;
-	color: $gray-lighter;
+	color: darken($gray-lighter, 10%);
 
 	.copyright, .poweredby {
 
 		text-align: center;
 		a {
-			color: $brand-info;
+			color: darken($gray-lighter, 10%);
+			text-decoration: underline;
+
+			&:hover, &:focus {
+				color: $white;
+			}
+
+			&:visited {
+				color: inherit;
+			}
 		}
 	}
 
+}
+
+.sns-link {
+	display: inline-block;
+	font-size: 2.0em;
+	padding: 0 0.1em;
+	color: darken($gray-lighter, 10%);
+
+	&:hover, &:focus {
+		color: $white;
+	}
 }
