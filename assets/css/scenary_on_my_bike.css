@@ -1762,6 +1762,9 @@ body {
   background-color: #505050;
   overflow-x: hidden; }
 
+.no-overflow {
+  overflow: hidden; }
+
 .main-content-wrapper {
   background-color: #fff;
   width: 100%;
@@ -1837,7 +1840,69 @@ body {
   width: 100%;
   height: auto; }
 
-#navbar-toggle {
+.navbar {
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none; }
+  @media (min-width: 768px) {
+    .navbar {
+      margin: 0;
+      padding: 10px 0;
+      float: right; } }
+  @media (min-width: 768px) {
+    .navbar li {
+      display: inline-block; } }
+  .navbar .nav-current a {
+    color: #fff;
+    font-weight: bold; }
+  .navbar .nav-home a:before {
+    font-family: "FontAwesome";
+    content: "\f015 "; }
+  .navbar a {
+    line-height: 20px;
+    padding: 15px 15px;
+    display: block;
+    position: relative;
+    color: #e6e6e6;
+    letter-spacing: 0.05em;
+    /*width (includes padding) = 170px for phones: 200 - 30*/
+    /*width (includes padding) = 270px for tablets: 300 - 30*/ }
+    @media (min-width: 768px) {
+      .navbar a {
+        line-height: 25px; }
+        .navbar a:hover {
+          color: #fff; } }
+    .navbar a:after {
+      background: rgba(111, 148, 182, 0.3);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -85px;
+      width: 100%;
+      height: 50px;
+      opacity: 0;
+      pointer-events: none; }
+      @media (min-width: 480px) and (max-width: 767px) {
+        .navbar a:after {
+          margin-left: -135px; } }
+      @media (min-width: 768px) {
+        .navbar a:after {
+          display: none; } }
+    .navbar a:focus {
+      color: #fff; }
+      .navbar a:focus:after {
+        animation: anim-effect-boris 0.2s forwards; }
+
+@keyframes anim-effect-boris {
+  0% {
+    transform: scale3d(0.3, 0.3, 1); }
+  25%, 50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1); } }
+#site-header-toggle {
   position: absolute;
   top: -9999px;
   left: -9999px; }
@@ -1849,39 +1914,39 @@ body {
   -o-transition: margin 300ms ease-in-out;
   transition: margin 300ms ease-in-out; }
 
-#navbar-toggle:checked ~ label[for="navbar-toggle"] {
+#site-header-toggle:checked ~ label[for="site-header-toggle"] {
   right: 205px;
   background-color: #505050;
   color: #fff; }
   @media (min-width: 480px) and (max-width: 767px) {
-    #navbar-toggle:checked ~ label[for="navbar-toggle"] {
+    #site-header-toggle:checked ~ label[for="site-header-toggle"] {
       right: 305px; } }
-  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-top, #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-middle, #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-bottom {
+  #site-header-toggle:checked ~ label[for="site-header-toggle"] .icon-bar-top, #site-header-toggle:checked ~ label[for="site-header-toggle"] .icon-bar-middle, #site-header-toggle:checked ~ label[for="site-header-toggle"] .icon-bar-bottom {
     background-color: #fff; }
-  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-top {
+  #site-header-toggle:checked ~ label[for="site-header-toggle"] .icon-bar-top {
     top: 6px;
     transform: rotate(45deg);
     -webkit-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
     -moz-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
     -o-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
     transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out; }
-  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-middle {
+  #site-header-toggle:checked ~ label[for="site-header-toggle"] .icon-bar-middle {
     opacity: 0; }
-  #navbar-toggle:checked ~ label[for="navbar-toggle"] .icon-bar-bottom {
+  #site-header-toggle:checked ~ label[for="site-header-toggle"] .icon-bar-bottom {
     top: 6px;
     transform: rotate(-45deg);
     -webkit-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
     -moz-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
     -o-transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out;
     transition: transform 300ms ease-in-out 300ms, top 300ms ease-in-out 0s, background-color 400ms ease-in-out; }
-#navbar-toggle:checked ~ .navbar-container {
+#site-header-toggle:checked ~ .site-header {
   opacity: 1;
   right: 0; }
-#navbar-toggle:checked ~ .site-wrapper {
+#site-header-toggle:checked ~ .site-wrapper {
   margin-right: 200px;
   margin-left: -200px; }
   @media (min-width: 480px) and (max-width: 767px) {
-    #navbar-toggle:checked ~ .site-wrapper {
+    #site-header-toggle:checked ~ .site-wrapper {
       margin-right: 300px;
       margin-left: -300px; } }
 
@@ -1912,7 +1977,7 @@ body {
   -o-transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out;
   transition: top 300ms ease-in-out 300ms, transform 300ms ease-in-out 0s, background-color 300ms ease-in-out; }
 
-label[for="navbar-toggle"] {
+label[for="site-header-toggle"] {
   position: fixed;
   top: 15px;
   right: 15px;
@@ -1924,27 +1989,27 @@ label[for="navbar-toggle"] {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  z-index: 1000;
+  z-index: 100;
   background-color: #fff;
   -webkit-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   -moz-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   -o-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out; }
   @media (min-width: 768px) {
-    label[for="navbar-toggle"] {
+    label[for="site-header-toggle"] {
       display: none; } }
-  label[for="navbar-toggle"] .navbar-toggle-label {
+  label[for="site-header-toggle"] .label {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px; }
-  label[for="navbar-toggle"] .navbar-toggle-collapse {
+  label[for="site-header-toggle"] .collapse {
     position: relative;
     height: 12px;
     width: 22px;
     display: inline-block;
     vertical-align: middle; }
 
-.navbar-container {
+.site-header {
   font-family: "Droid Sans", sans-serif;
   position: absolute;
   right: -200px;
@@ -1959,11 +2024,11 @@ label[for="navbar-toggle"] {
   -o-transition: right 300ms ease-in-out, opacity 300ms ease-in-out;
   transition: right 300ms ease-in-out, opacity 300ms ease-in-out; }
   @media (min-width: 480px) and (max-width: 767px) {
-    .navbar-container {
+    .site-header {
       right: -300px;
       width: 300px; } }
   @media (min-width: 768px) {
-    .navbar-container {
+    .site-header {
       position: fixed;
       top: 0;
       height: auto;
@@ -1978,98 +2043,62 @@ label[for="navbar-toggle"] {
       -o-transition: background-color 250ms ease-in-out;
       transition: background-color 250ms ease-in-out; } }
   @media (min-width: 768px) {
-    .navbar-container.darken {
+    .site-header.darken {
       background-color: rgba(0, 0, 0, 0.675); } }
-  .navbar-container .navbar-header {
+  .site-header .logo {
+    color: #fff;
+    letter-spacing: 0.095em;
     padding: 10px 0;
     text-align: center;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    display: block; }
     @media (min-width: 768px) {
-      .navbar-container .navbar-header {
+      .site-header .logo {
         height: 100%;
         text-align: initial;
         float: left; } }
-  .navbar-container .navbar-logo {
-    color: #fff;
-    letter-spacing: 0.095em; }
-    .navbar-container .navbar-logo img {
+    .site-header .logo img {
       width: 55px;
       height: auto; }
       @media (min-width: 768px) {
-        .navbar-container .navbar-logo img {
+        .site-header .logo img {
           width: 65px; } }
-  @media (min-width: 768px) {
-    .navbar-container .navbar-footer {
-      display: none; } }
-  .navbar-container .navbar {
+  .site-header .site-header-footer {
     margin: 10px 0 0 0;
-    padding: 0;
-    list-style: none; }
+    padding: 10px;
+    color: #fff; }
     @media (min-width: 768px) {
-      .navbar-container .navbar {
-        margin: 0;
-        padding: 10px 0;
-        float: right; } }
-    @media (min-width: 768px) {
-      .navbar-container .navbar li {
-        display: inline-block; } }
-    .navbar-container .navbar .nav-current a {
-      color: #fff;
-      font-weight: bold; }
-    .navbar-container .navbar .nav-home a:before {
-      font-family: "FontAwesome";
-      content: "\f015 "; }
-    .navbar-container .navbar a {
-      line-height: 20px;
-      padding: 15px 15px;
-      display: block;
-      position: relative;
-      color: #e6e6e6;
-      letter-spacing: 0.05em;
-      /*width (includes padding) = 170px for phones: 200 - 30*/
-      /*width (includes padding) = 270px for tablets: 300 - 30*/ }
-      @media (min-width: 768px) {
-        .navbar-container .navbar a {
-          line-height: 25px; }
-          .navbar-container .navbar a:hover {
-            color: #fff; } }
-      .navbar-container .navbar a:after {
-        background: rgba(111, 148, 182, 0.3);
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        margin-left: -85px;
-        width: 100%;
-        height: 50px;
-        opacity: 0;
-        pointer-events: none; }
-        @media (min-width: 480px) and (max-width: 767px) {
-          .navbar-container .navbar a:after {
-            margin-left: -135px; } }
-        @media (min-width: 768px) {
-          .navbar-container .navbar a:after {
-            display: none; } }
-      .navbar-container .navbar a:focus {
-        color: #fff; }
-        .navbar-container .navbar a:focus:after {
-          animation: anim-effect-boris 0.2s forwards; }
-  .navbar-container .navbar-footer {
-    margin: 10px 0 0 0;
-    padding: 10px; }
+      .site-header .site-header-footer {
+        display: none; } }
 
 @media (min-width: 768px) {
-  .post-template .navbar-container {
+  .post-template .site-header {
     background-color: rgba(0, 0, 0, 0.675); } }
 
-@keyframes anim-effect-boris {
-  0% {
-    transform: scale3d(0.3, 0.3, 1); }
-  25%, 50% {
-    opacity: 1; }
-  100% {
-    opacity: 0;
-    transform: scale3d(1.2, 1.2, 1); } }
+.site-footer {
+  padding: 10px 5%;
+  color: #d5d5d5; }
+  .site-footer .copyright, .site-footer .poweredby {
+    text-align: center; }
+    .site-footer .copyright a, .site-footer .poweredby a {
+      color: #d5d5d5;
+      text-decoration: underline; }
+      .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
+        color: #fff; }
+
+.sns-link {
+  display: inline-block;
+  font-size: 2.0em;
+  padding: 0 0.1em;
+  color: #d5d5d5; }
+  .sns-link:hover {
+    color: #fff; }
+
+/* 
+------------------------------------------------------------------------------
+Post header style
+------------------------------------------------------------------------------
+*/
 .main-header {
   width: 100%; }
   .main-header .header-title {
@@ -2118,25 +2147,11 @@ label[for="navbar-toggle"] {
 .archive-template .pagination-top {
   display: block; }
 
-.site-footer {
-  padding: 10px 5%;
-  color: #d5d5d5; }
-  .site-footer .copyright, .site-footer .poweredby {
-    text-align: center; }
-    .site-footer .copyright a, .site-footer .poweredby a {
-      color: #d5d5d5;
-      text-decoration: underline; }
-      .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
-        color: #fff; }
-
-.sns-link {
-  display: inline-block;
-  font-size: 2.0em;
-  padding: 0 0.1em;
-  color: #d5d5d5; }
-  .sns-link:hover {
-    color: #fff; }
-
+/* 
+------------------------------------------------------------------------------
+Main post content style
+------------------------------------------------------------------------------
+*/
 .post {
   margin: 20px 0 50px 0; }
 
@@ -2227,5 +2242,15 @@ label[for="navbar-toggle"] {
       .post-footer .author-image {
         top: -60px;
         margin-left: -60px; } }
+
+.site-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; }
+  .site-cover .navbar-container {
+    background-color: transparent; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

@@ -1,32 +1,9 @@
-<input type="checkbox" id="navbar-toggle">
-<label for="navbar-toggle" onclick>
-	<div class="navbar-toggle-label">MENU</div>
-	<div class="navbar-toggle-collapse"> 
-		<div class="icon-bar-top"></div>
-		<div class="icon-bar-middle"></div>
-		<div class="icon-bar-bottom"></div>
-	</div>
-</label>
-
 <nav class="navbar-container" role="navigation">
-	<div class="container-fluid"> 
-		<header class="navbar-header">
-			<a href="/" class="navbar-logo">
-				<img src="{{asset "images/logo.png"}}">
-				Chris Yoon
-			</a>
-		</header>
-
-		<ul class="navbar">
-			{{#foreach navigation}}
-			<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-				<a href="{{url absolute="true"}}"> {{label}}</a>
-			</li>
-			{{/foreach}}
-		</ul>
-
-		<footer class="navbar-footer">
-			<p>Something Nice</p>
-		</footer>
-	</div>
+	<ul class="navbar">
+		{{#foreach navigation}}
+		<li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+			<a href="{{url absolute="true"}}"> {{label}}</a>
+		</li>
+		{{/foreach}}
+	</ul>
 </nav>

@@ -1,81 +1,233 @@
-.main-header {
-	width: 100%;
-	
-	.header-title {
-		@extend .title;
-		text-align: center;
+$icon-bar-width: 22px;
+$icon-bar-height: 3px;
+$site-header-width: 200px;
+$site-header-width-tablet: 300px;
+$site-header-desktop-colour: rgba($black, 0.675);
+$menu-label-animation-duration: 300ms;
+$site-header-darken-animation-duration: 250ms;
+
+#site-header-toggle {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.site-wrapper {
+	margin: 0;
+
+	-webkit-transition: margin $menu-label-animation-duration ease-in-out;
+	-moz-transition: margin $menu-label-animation-duration ease-in-out;
+	-o-transition: margin $menu-label-animation-duration ease-in-out;
+	transition: margin $menu-label-animation-duration ease-in-out;
+}
+
+#site-header-toggle:checked {
+	& ~ label[for="site-header-toggle"] {
+		right: $site-header-width + 5;
+		background-color:  $dark-gray;
+		color: $white;
+
+		@include tablet-only {
+			right: $site-header-width-tablet + 5;
+		}
+
+		.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
+			background-color: $white;
+		}
+
+		.icon-bar-top {
+			top: $icon-bar-height * 2;
+			transform: rotate(45deg);
+			-webkit-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-moz-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-o-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+		}
+
+		.icon-bar-middle {
+			opacity: 0;
+		}
+
+		.icon-bar-bottom {
+			top: $icon-bar-height * 2;
+			transform: rotate(-45deg);
+			-webkit-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-moz-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			-o-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+			transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
+		}
 	}
 
-	.header-description {
-		@extend .sub-headline;
-		text-align: center;
+	& ~ .site-header {
+		opacity: 1;
+		right: 0;
+	}
+
+	& ~ .site-wrapper {
+		margin-right: $site-header-width;
+		margin-left: -$site-header-width;
+
+		@include tablet-only {
+			margin-right: $site-header-width-tablet;
+			margin-left: -$site-header-width-tablet;
+		}
 	}
 }
 
-.home-template, .archive-template, .tag-template {
-	.main-header {
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
+	width: $icon-bar-width;
+	height: $icon-bar-height;
+	background-color: $gray-light;
+	position: absolute;
+}
 
-		&.no-cover {
-			background-image: url('/assets/images/default_blog_cover_phone.png');
+.icon-bar-top {
+	top: 0;
+	-webkit-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration, transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-moz-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-o-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+}
 
-			@include tablet-only {
-				background-image: url('/assets/images/default_blog_cover_tablet.png');
-			}
+.icon-bar-middle {
+	top: $icon-bar-height * 2;
+	-webkit-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+	-moz-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+	-o-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+	transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
+}
+
+.icon-bar-bottom {
+	top: $icon-bar-height * 4;
+	-webkit-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration, transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-moz-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	-o-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+	transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
+}
+
+label[for="site-header-toggle"] {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	display: inline-block;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	border: 1px solid $gray-light;
+	color: $gray-light;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	z-index: 100;
+	background-color: $white;
+
+	-webkit-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-moz-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-o-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+
+	@include desktop-sm-up {
+		display: none;
+	}
+
+	.label {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	.collapse {
+		position: relative;
+		height: 12px;
+		width: $icon-bar-width;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.site-header {
+	font-family: $droid-sans;
+	position: absolute;
+	right: -$site-header-width;
+	width: $site-header-width;
+	height: 100%;
+	opacity: 0;
+	background-color: $dark-gray;
+	z-index: 100;
+	padding: 10px 0 100px 0;
+
+	-webkit-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-moz-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-o-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+
+	@include tablet-only {
+		right: -$site-header-width-tablet;
+		width: $site-header-width-tablet;
+	}
+
+	@include desktop-sm-up {
+		position: fixed;
+		top: 0;
+		height: auto;
+		background-color: transparent;
+		width: 100%;
+		left: 0;
+		right: auto;
+		padding: 0;
+		opacity: 1;
+
+		//For .darken class animation
+		-webkit-transition: background-color $site-header-darken-animation-duration ease-in-out;
+		-moz-transition: background-color $site-header-darken-animation-duration ease-in-out;
+		-o-transition: background-color $site-header-darken-animation-duration ease-in-out;
+		transition: background-color $site-header-darken-animation-duration ease-in-out;
+	}
+
+	&.darken {
+		@include desktop-sm-up {
+			background-color: $site-header-desktop-colour;
+		}
+	}
+
+	.logo {
+		color: $white;
+		letter-spacing: 0.095em;
+		padding: 10px 0;
+		text-align: center;
+		text-transform: uppercase;
+		display: block;
+
+		@include desktop-sm-up {
+			height: 100%;
+			text-align: initial;
+			float: left;
+		}
+
+		img {
+			width: 55px;
+			height: auto;
 
 			@include desktop-sm-up {
-				background-image: url('/assets/images/default_blog_cover.png');
+				width: 65px;
 			}
 		}
 	}
-}
 
-.home-template {
-	.main-header {
-		height: 300px;
-		padding: 100px 5% 45px 5%;
-
-		@include desktop-sm-up {
-			height: 450px;
-			padding-top: 165px;
-		}
-	}
-}
-
-.tag-template {
-	.main-header {
-		height: 200px;
-		padding: 55px 5% 21px 5%;
+	.site-header-footer{
+		margin: 10px 0 0 0;
+		padding: 10px;
+		color: $white;
 
 		@include desktop-sm-up {
-			height: 300px;
-			padding-top: 100px;
-		}
-	}
-}
-
-.archive-template {
-	.main-header {
-		height: 150px;
-		padding: 55px 5% 21px 5%;
-
-		@include desktop-sm-up {
-			height: 250px;
-			padding-top: 100px;
-		}
-
-		.header-title {
-			@extend .headline;
-		}
-
-		.header-description {
 			display: none;
 		}
 	}
+}
 
-	.pagination-top {
-		display: block;
+.post-template {
+	.site-header {
+		@include desktop-sm-up {
+			background-color: $site-header-desktop-colour;
+		}
 	}
 }

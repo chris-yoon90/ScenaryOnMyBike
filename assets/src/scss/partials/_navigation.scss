@@ -1,315 +1,79 @@
-$icon-bar-width: 22px;
-$icon-bar-height: 3px;
-$navbar-width: 200px;
-$navbar-width-tablet: 300px;
 $navbar-link-colour: darken($white, 10%);
 $navbar-link-colour-on-hover: $white;
-$navbar-desktop-colour: rgba($black, 0.675);
-$menu-label-animation-duration: 300ms;
-$navbar-darken-animation-duration: 250ms;
 
-#navbar-toggle {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-}
-
-.site-wrapper {
-	margin: 0;
-
-	-webkit-transition: margin $menu-label-animation-duration ease-in-out;
-	-moz-transition: margin $menu-label-animation-duration ease-in-out;
-	-o-transition: margin $menu-label-animation-duration ease-in-out;
-	transition: margin $menu-label-animation-duration ease-in-out;
-}
-
-#navbar-toggle:checked {
-	& ~ label[for="navbar-toggle"] {
-		right: $navbar-width + 5;
-		background-color:  $dark-gray;
-		color: $white;
-
-		@include tablet-only {
-			right: $navbar-width-tablet + 5;
-		}
-
-		.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
-			background-color: $white;
-		}
-
-		.icon-bar-top {
-			top: $icon-bar-height * 2;
-			transform: rotate(45deg);
-			-webkit-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-			-moz-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-			-o-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-			transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-		}
-
-		.icon-bar-middle {
-			opacity: 0;
-		}
-
-		.icon-bar-bottom {
-			top: $icon-bar-height * 2;
-			transform: rotate(-45deg);
-			-webkit-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-			-moz-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-			-o-transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-			transition: transform $menu-label-animation-duration ease-in-out $menu-label-animation-duration, top $menu-label-animation-duration ease-in-out 0s, background-color 400ms ease-in-out;
-		}
-	}
-
-	& ~ .navbar-container {
-		opacity: 1;
-		right: 0;
-	}
-
-	& ~ .site-wrapper {
-		margin-right: $navbar-width;
-		margin-left: -$navbar-width;
-
-		@include tablet-only {
-			margin-right: $navbar-width-tablet;
-			margin-left: -$navbar-width-tablet;
-		}
-	}
-}
-
-.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
-	width: $icon-bar-width;
-	height: $icon-bar-height;
-	background-color: $gray-light;
-	position: absolute;
-}
-
-.icon-bar-top {
-	top: 0;
-	-webkit-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration, transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-	-moz-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-	-o-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-	transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-}
-
-.icon-bar-middle {
-	top: $icon-bar-height * 2;
-	-webkit-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
-	-moz-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
-	-o-transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
-	transition: opacity $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out;
-}
-
-.icon-bar-bottom {
-	top: $icon-bar-height * 4;
-	-webkit-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration, transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-	-moz-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-	-o-transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-	transition: top $menu-label-animation-duration ease-in-out $menu-label-animation-duration,transform $menu-label-animation-duration ease-in-out 0s, background-color $menu-label-animation-duration ease-in-out;
-}
-
-label[for="navbar-toggle"] {
-	position: fixed;
-	top: 15px;
-	right: 15px;
-	display: inline-block;
-	cursor: pointer;
-	padding: 0.5rem 1rem;
-	border: 1px solid $gray-light;
-	color: $gray-light;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	z-index: 1000;
-	background-color: $white;
-
-	-webkit-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
-	-moz-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
-	-o-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
-	transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+.navbar {
+	margin: 10px 0 0 0;
+	padding: 0;
+	list-style: none;
 
 	@include desktop-sm-up {
-		display: none;
-	}
-
-	.navbar-toggle-label {
-		display: inline-block;
-		vertical-align: middle;
-		margin-right: 10px;
-	}
-
-	.navbar-toggle-collapse {
-		position: relative;
-		height: 12px;
-		width: $icon-bar-width;
-		display: inline-block;
-		vertical-align: middle;
-	}
-}
-
-.navbar-container {
-	font-family: $droid-sans;
-	position: absolute;
-	right: -$navbar-width;
-	width: $navbar-width;
-	height: 100%;
-	opacity: 0;
-	background-color: $dark-gray;
-	z-index: 100;
-	padding: 10px 0 100px 0;
-
-	-webkit-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	-moz-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	-o-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-
-	@include tablet-only {
-		right: -$navbar-width-tablet;
-		width: $navbar-width-tablet;
-	}
-
-	@include desktop-sm-up {
-		position: fixed;
-		top: 0;
-		height: auto;
-		background-color: transparent;
-		width: 100%;
-		left: 0;
-		right: auto;
-		padding: 0;
-		opacity: 1;
-
-		//For .darken class animation
-		-webkit-transition: background-color $navbar-darken-animation-duration ease-in-out;
-		-moz-transition: background-color $navbar-darken-animation-duration ease-in-out;
-		-o-transition: background-color $navbar-darken-animation-duration ease-in-out;
-		transition: background-color $navbar-darken-animation-duration ease-in-out;
-	}
-
-	&.darken {
-		@include desktop-sm-up {
-			background-color: $navbar-desktop-colour;
-		}
-	}
-
-	.navbar-header {
+		margin: 0;
 		padding: 10px 0;
-		text-align: center;
-		text-transform: uppercase;
+		float: right;
+	}
 
+	li {
 		@include desktop-sm-up {
-			height: 100%;
-			text-align: initial;
-			float: left;
+			display: inline-block;
 		}
 	}
 
-	.navbar-logo {
+	.nav-current a{
 		color: $white;
-		letter-spacing: 0.095em;
+		font-weight: bold;
+	}
 
-		img {
-			width: 55px;
-			height: auto;
-
-			@include desktop-sm-up {
-				width: 65px;
-			}
+	.nav-home {
+		a:before {
+			font-family: "FontAwesome";
+			content: "\f015 ";
 		}
 	}
 
-	.navbar-footer {
+	a {
+		line-height: 20px;
+		padding: 15px 15px;
+		display: block;
+		position: relative;
+		color: $navbar-link-colour;
+		letter-spacing: 0.05em;
+		/*width (includes padding) = 170px for phones: 200 - 30*/
+		/*width (includes padding) = 270px for tablets: 300 - 30*/
+
 		@include desktop-sm-up {
-			display: none;
-		}
-	}
+			line-height: 25px;
 
-	.navbar {
-		margin: 10px 0 0 0;
-		padding: 0;
-		list-style: none;
-
-		@include desktop-sm-up {
-			margin: 0;
-			padding: 10px 0;
-			float: right;
-		}
-
-		li {
-			@include desktop-sm-up {
-				display: inline-block;
+			&:hover {
+				color: $white;
 			}
 		}
 
-		.nav-current a{
-			color: $white;
-			font-weight: bold;
-		}
+		&:after {
+			background: rgba(111, 148, 182, 0.3);
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left :-85px;
+			width: 100%;
+			height: 50px;
+			opacity: 0;
+			pointer-events: none;
 
-		.nav-home {
-			a:before {
-				font-family: "FontAwesome";
-				content: "\f015 ";
+			@include tablet-only {
+				margin-left: -135px;
 			}
-		}
-
-		a {
-			line-height: 20px;
-			padding: 15px 15px;
-			display: block;
-			position: relative;
-			color: $navbar-link-colour;
-			letter-spacing: 0.05em;
-			/*width (includes padding) = 170px for phones: 200 - 30*/
-			/*width (includes padding) = 270px for tablets: 300 - 30*/
 
 			@include desktop-sm-up {
-				line-height: 25px;
-
-				&:hover {
-					color: $white;
-				}
+				display: none;
 			}
+		}
 
+		&:focus {
+			color: $navbar-link-colour-on-hover;
 			&:after {
-				background: rgba(111, 148, 182, 0.3);
-				content: '';
-				position: absolute;
-				top: 0;
-    			left: 50%;
-    			margin-left :-85px;
-				width: 100%;
-				height: 50px;
-				opacity: 0;
-				pointer-events: none;
-
-				@include tablet-only {
-					margin-left: -135px;
-				}
-
-				@include desktop-sm-up {
-    				display: none;
-				}
+				animation: anim-effect-boris 0.2s forwards;
 			}
-
-			&:focus {
-				color: $navbar-link-colour-on-hover;
-				&:after {
-					animation: anim-effect-boris 0.2s forwards;
-				}
-			}
-		}
-	}
-
-	.navbar-footer {
-		margin: 10px 0 0 0;
-		padding: 10px;
-	}
-}
-
-.post-template {
-	.navbar-container {
-		@include desktop-sm-up {
-			background-color: $navbar-desktop-colour;
 		}
 	}
 }

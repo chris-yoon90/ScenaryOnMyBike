@@ -7,6 +7,10 @@ body {
 	overflow-x: hidden;
 }
 
+.no-overflow {
+	overflow: hidden;
+}
+
 .main-content-wrapper {
 	background-color: $white;
 	width: 100%;

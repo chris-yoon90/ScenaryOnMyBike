@@ -22,21 +22,18 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}} {{#is 'home'}}no-overflow{{/is}}">
 
-    {{navigation}}
+    {{#is 'home'}}
+        {{> 'site-cover'}}
+    {{/is}}
+
+    {{> 'header'}}
    
     <div class="site-wrapper">
         {{{body}}}
 
-        <footer class="site-footer container-fluid">
-            <section class="row sns-meta">
-                <a class="sns-link pull-right" href="https://ca.linkedin.com/pub/chris-yoon/46/425/688" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                <a class="sns-link pull-right" href="https://github.com/chris-yoon90" target="_blank"><i class="fa fa-github-square"></i></a>
-            </section>
-            <section class="copyright row"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby row">Powered by <a href="https://ghost.org" target="_blank">Ghost</a></section>
-        </footer>
+        {{> 'footer'}}
     </div>
 
     {{! Ghost outputs important scripts and data with this tag }}

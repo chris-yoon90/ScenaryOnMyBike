@@ -1,0 +1,25 @@
+<input type="checkbox" id="site-header-toggle">
+<label for="site-header-toggle" onclick>
+	<div class="label">MENU</div>
+	<div class="collapse"> 
+		<div class="icon-bar-top"></div>
+		<div class="icon-bar-middle"></div>
+		<div class="icon-bar-bottom"></div>
+	</div>
+</label>
+
+<header class="site-header">
+	<div class="container-fluid">
+		<a href="/" class="logo">
+			<img src="{{asset "images/logo.png"}}" />
+			Chris Yoon
+		</a>
+
+		{{navigation}}
+
+		<section class="site-header-footer">
+			<p>Something Nice</p>
+		</section>
+	</div>
+	
+</header>
