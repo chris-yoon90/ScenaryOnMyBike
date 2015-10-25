@@ -1,78 +1,102 @@
 $navbar-link-colour: darken($white, 10%);
 $navbar-link-colour-on-hover: $white;
 
-.navbar {
-	margin: 10px 0 0 0;
-	padding: 0;
-	list-style: none;
-
-	@include desktop-sm-up {
-		margin: 0;
-		padding: 10px 0;
-		float: right;
-	}
-
-	li {
-		@include desktop-sm-up {
-			display: inline-block;
-		}
-	}
-
-	.nav-current a{
-		color: $white;
-		font-weight: bold;
-	}
-
-	.nav-home {
-		a:before {
-			font-family: "FontAwesome";
-			content: "\f015 ";
-		}
-	}
-
-	a {
-		line-height: 20px;
-		padding: 15px 15px;
-		display: block;
-		position: relative;
-		color: $navbar-link-colour;
-		letter-spacing: 0.05em;
-		/*width (includes padding) = 170px for phones: 200 - 30*/
-		/*width (includes padding) = 270px for tablets: 300 - 30*/
+.site-header {
+	.navbar {
+		margin: 10px 0 0 0;
+		padding: 0;
+		list-style: none;
 
 		@include desktop-sm-up {
-			line-height: 25px;
+			margin: 0;
+			padding: 10px 0;
+			float: right;
+		}
 
-			&:hover {
-				color: $white;
+		li {
+			@include desktop-sm-up {
+				display: inline-block;
 			}
 		}
 
-		&:after {
-			background: rgba(111, 148, 182, 0.3);
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 50%;
-			margin-left :-85px;
-			width: 100%;
-			height: 50px;
-			opacity: 0;
-			pointer-events: none;
+		.nav-current a{
+			color: $white;
+			font-weight: bold;
+		}
 
-			@include tablet-only {
-				margin-left: -135px;
+		.nav-home {
+			a:before {
+				font-family: "FontAwesome";
+				content: "\f015 ";
 			}
+		}
+
+		a {
+			line-height: 20px;
+			padding: 15px 15px;
+			display: block;
+			position: relative;
+			color: $navbar-link-colour;
+			letter-spacing: 0.05em;
+			/*width (includes padding) = 170px for phones: 200 - 30*/
+			/*width (includes padding) = 270px for tablets: 300 - 30*/
 
 			@include desktop-sm-up {
-				display: none;
+				line-height: 25px;
+
+				&:hover {
+					color: $white;
+				}
+			}
+
+			&:after {
+				background: rgba(111, 148, 182, 0.3);
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left :-85px;
+				width: 100%;
+				height: 50px;
+				opacity: 0;
+				pointer-events: none;
+
+				@include tablet-only {
+					margin-left: -135px;
+				}
+
+				@include desktop-sm-up {
+					display: none;
+				}
+			}
+
+			&:focus {
+				color: $navbar-link-colour-on-hover;
+				&:after {
+					animation: anim-effect-boris 0.2s forwards;
+				}
 			}
 		}
+	}
+}
 
-		&:focus {
-			color: $navbar-link-colour-on-hover;
-			&:after {
-				animation: anim-effect-boris 0.2s forwards;
+.site-cover {
+	.navbar-container {
+		text-align: center;
+
+		.navbar {
+			list-style: none;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin: 0 5px;
+			}
+
+			a {
+				@extend .button;
+				padding-left: 1em;
+				padding-right: 1em;
 			}
 		}
 	}

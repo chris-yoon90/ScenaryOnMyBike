@@ -58,4 +58,10 @@ body {
 	&:hover {
 		background-color: darken($aqua, 10%);
 	}
+
+	&:hover, &:active {
+		-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 1);
+		-moz-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 1);
+		box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 1);
+	}
 }
