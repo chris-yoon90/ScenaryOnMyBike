@@ -83,20 +83,28 @@ $navbar-link-colour-on-hover: $white;
 .site-cover {
 	.navbar-container {
 		text-align: center;
+		opacity: 0;
+		
+		-webkit-transition: opacity 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out;
+		-o-transition: opacity 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
+
+		&.visible {
+			opacity: 1;
+		}
 
 		.navbar {
 			list-style: none;
 			padding: 0;
 
 			li {
-				display: inline-block;
 				margin: 0 5px;
 			}
 
 			a {
 				@extend .button;
-				padding-left: 1em;
-				padding-right: 1em;
+				padding: 0.125em 1em;
 			}
 		}
 	}
