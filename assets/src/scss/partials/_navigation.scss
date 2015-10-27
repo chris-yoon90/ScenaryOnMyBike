@@ -84,14 +84,16 @@ $navbar-link-colour-on-hover: $white;
 	.navbar-container {
 		text-align: center;
 		opacity: 0;
+		margin-top: -20px;
 		
-		-webkit-transition: opacity 1s ease-in-out;
-		-moz-transition: opacity 1s ease-in-out;
-		-o-transition: opacity 1s ease-in-out;
-		transition: opacity 1s ease-in-out;
+		-webkit-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
+		-o-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
+		transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
 
-		&.visible {
+		&.animate {
 			opacity: 1;
+			margin-top: 0;
 		}
 
 		.navbar {
@@ -99,12 +101,22 @@ $navbar-link-colour-on-hover: $white;
 			padding: 0;
 
 			li {
-				margin: 0 5px;
+				margin: 0 1rem;
+				text-align: center;
+				display: inline-block;
 			}
 
 			a {
-				@extend .button;
-				padding: 0.125em 1em;
+				font-family: $droid-sans;
+				text-transform: uppercase;
+				border: 1px solid $white;
+				color: $white;
+				padding: 1rem 1.5rem;
+
+				&:hover {
+					color: $red-orange;
+					border: 1px solid $red-orange;
+				}
 			}
 		}
 	}

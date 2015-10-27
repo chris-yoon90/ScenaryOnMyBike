@@ -114,7 +114,7 @@
 			context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
 			$canvasContainer.append(canvas);
-			$navbar.addClass('visible');
+			$navbar.addClass('animate');
 		});
 
 	function loadImage(src) {

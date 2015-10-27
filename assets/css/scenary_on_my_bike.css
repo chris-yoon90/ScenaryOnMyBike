@@ -1786,7 +1786,7 @@ body {
 .pagination {
   text-align: center; }
 
-.button, .site-cover .navbar-container .navbar a {
+.button {
   border: 1px #505050 solid;
   background-color: #9BD7D5;
   display: inline-block;
@@ -1795,11 +1795,11 @@ body {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   color: #fff; }
-  .button:hover, .site-cover .navbar-container .navbar a:hover, .button:active, .site-cover .navbar-container .navbar a:active, .button:focus, .site-cover .navbar-container .navbar a:focus, .button:visited, .site-cover .navbar-container .navbar a:visited {
+  .button:hover, .button:active, .button:focus, .button:visited {
     color: #fff; }
-  .button:hover, .site-cover .navbar-container .navbar a:hover {
+  .button:hover {
     background-color: #77c8c6; }
-  .button:hover, .site-cover .navbar-container .navbar a:hover, .button:active, .site-cover .navbar-container .navbar a:active {
+  .button:hover, .button:active {
     -webkit-box-shadow: inset 0px 0px 5px 0px #323232;
     -moz-box-shadow: inset 0px 0px 5px 0px #323232;
     box-shadow: inset 0px 0px 5px 0px #323232; }
@@ -1901,19 +1901,30 @@ body {
 .site-cover .navbar-container {
   text-align: center;
   opacity: 0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out; }
-  .site-cover .navbar-container.visible {
-    opacity: 1; }
+  margin-top: -20px;
+  -webkit-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
+  transition: opacity 1s ease-in-out, margin-top 1s ease-in-out; }
+  .site-cover .navbar-container.animate {
+    opacity: 1;
+    margin-top: 0; }
   .site-cover .navbar-container .navbar {
     list-style: none;
     padding: 0; }
     .site-cover .navbar-container .navbar li {
-      margin: 0 5px; }
+      margin: 0 1rem;
+      text-align: center;
+      display: inline-block; }
     .site-cover .navbar-container .navbar a {
-      padding: 0.125em 1em; }
+      font-family: "Droid Sans", sans-serif;
+      text-transform: uppercase;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 1rem 1.5rem; }
+      .site-cover .navbar-container .navbar a:hover {
+        color: #FF7260;
+        border: 1px solid #FF7260; }
 
 @keyframes anim-effect-boris {
   0% {
