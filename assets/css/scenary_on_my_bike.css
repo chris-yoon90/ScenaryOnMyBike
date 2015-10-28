@@ -1762,6 +1762,11 @@ body {
   background-color: #505050;
   overflow-x: hidden; }
 
+.box-shadow, .button, .site-cover .navbar-container .navbar a, label[for="site-header-toggle"], .tag {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+
 .no-overflow {
   overflow: hidden; }
 
@@ -1787,22 +1792,16 @@ body {
   text-align: center; }
 
 .button {
-  border: 1px #505050 solid;
-  background-color: #9BD7D5;
+  background-color: #05a49f;
   display: inline-block;
-  padding: 0.25em 0.75em;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  padding: 0.5rem 2rem;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
   color: #fff; }
   .button:hover, .button:active, .button:focus, .button:visited {
     color: #fff; }
   .button:hover {
-    background-color: #77c8c6; }
-  .button:hover, .button:active {
-    -webkit-box-shadow: inset 0px 0px 5px 0px #323232;
-    -moz-box-shadow: inset 0px 0px 5px 0px #323232;
-    box-shadow: inset 0px 0px 5px 0px #323232; }
+    background-color: #04726f; }
 
 @media (min-width: 480px) and (max-width: 767px) {
   body {
@@ -1902,6 +1901,8 @@ body {
   text-align: center;
   opacity: 0;
   margin-top: -20px;
+  position: relative;
+  z-index: 10;
   -webkit-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
@@ -1921,7 +1922,11 @@ body {
       text-transform: uppercase;
       border: 1px solid #fff;
       color: #fff;
-      padding: 1rem 1.5rem; }
+      padding: 1rem 2.5rem;
+      -webkit-transition: color 300ms linear, border-color 300ms linear;
+      -moz-transition: color 300ms linear, border-color 300ms linear;
+      -o-transition: color 300ms linear, border-color 300ms linear;
+      transition: color 300ms linear, border-color 300ms linear; }
       .site-cover .navbar-container .navbar a:hover {
         color: #FF7260;
         border: 1px solid #FF7260; }
@@ -2018,11 +2023,10 @@ label[for="site-header-toggle"] {
   padding: 0.5rem 1rem;
   border: 1px solid #777777;
   color: #777777;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   z-index: 100;
-  background-color: #fff;
   -webkit-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   -moz-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
   -o-transition: right 300ms ease-in-out, background-color 300ms ease-in-out, color 300ms ease-in-out;
@@ -2213,12 +2217,11 @@ Main post content style
   display: block; }
 
 .tag {
-  background-color: #FF7260;
+  background-color: #ff7260;
   padding: 0.3em 1em;
-  border: 1px solid #FF7260;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   color: #eeeeee;
   vertical-align: middle;
   display: inline-block;

@@ -26,7 +26,7 @@ $(function() {
 	}
 
 	$navbar.find('.navbar .nav-blog').click(function(e) {
-		if(!App.showBlog() && App.isHomeContext()) {
+		if(!App.showBlog && App.isHomeContext()) {
 			App.hideCoverAndShowBlog();
 		} else if(App.showBlog && App.isHomeContext()){
 			e.preventDefault();
@@ -34,7 +34,7 @@ $(function() {
 		}
 	});
 
-	if(App.showBlog() && App.isHomeContext()) {
+	if(App.showBlog && App.isHomeContext()) {
 		App.hideCoverAndShowBlog();
 	}
 	

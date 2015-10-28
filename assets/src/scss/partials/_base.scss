@@ -7,6 +7,12 @@ body {
 	overflow-x: hidden;
 }
 
+.box-shadow {
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	-moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
 .no-overflow {
 	overflow: hidden;
 }
@@ -42,26 +48,25 @@ body {
 }
 
 .button {
-	border: 1px $dark-gray solid;
-	background-color: $aqua;
+	$background-color: saturate($turquoise, 15%);
+
+	background-color: $background-color;
 	display: inline-block;
-	padding: 0.25em 0.75em;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	padding: 0.5rem 2rem;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
 	color: $white;
+	@extend .box-shadow;
 
 	&:hover, &:active, &:focus, &:visited {
 		color: $white;
 	}
 
 	&:hover {
-		background-color: darken($aqua, 10%);
+		background-color: darken($background-color, 10%);
 	}
 
 	&:hover, &:active {
-		-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 1);
-		-moz-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 1);
-		box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 1);
+
 	}
 }

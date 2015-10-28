@@ -79,9 +79,9 @@
 })();;(function() {
 	var app = window.App || {};
 
-	app.showBlog = function() {
+	app.showBlog = (function() {
 		return location.hash.indexOf('#blog') === 0;
-	};
+	})();
 
 	app.isHomeContext = function() {
 		return $('.site-cover').length > 0;
@@ -94,6 +94,15 @@
 		$('body').removeClass('no-overflow');
 	};
 
+	app.device = (function() {
+		var width = window.innerWidth;
+
+		if(width < 480) return 'phone';
+		if(width < 768) return 'tablet';
+
+		return 'desktop';
+	})();
+
 	window.App = app;
 })();;$(window).load(function() {
 	var IMG_PATH = "assets/images/";
@@ -101,13 +110,17 @@
 	var $canvasContainer = $('#canvas-container');
 	var $navbar = $('.site-cover .navbar-container');
 
-	$.when(loadImage(IMG_PATH + 'canvas_test.png'))
+	$.when(loadImage(IMG_PATH + 'wanted_poster_bg.png'))
 		.then(function(image) {
 
 			var canvas = document.createElement('canvas');
 			canvas.className = 'canvas';
-			canvas.width = 300;
-			canvas.height = 350;
+
+
+			var canvasDimension = getCanvasDimension();
+
+			canvas.width = canvasDimension.width;
+			canvas.height = canvasDimension.height;
 
 			context = canvas.getContext('2d');
 
@@ -127,6 +140,25 @@
 
 		image.src = src;
 		return deferred.promise();
+	}
+
+	function getCanvasDimension() {
+		var dimensions = {};
+		switch(App.device) {
+			case 'phone':
+				dimensions.width = 300;
+				dimensions.height = 400;
+				break;
+			case 'tablet':
+				dimensions.width = 300;
+				dimensions.height = 350;
+				break;
+			case 'desktop':
+				dimensions.width = 300;
+				dimensions.height = 350;
+				break;
+		}
+		return dimensions;
 	}
 });;$(function() {
 	var NAV_HEIGHT = 80;
@@ -156,7 +188,7 @@
 	}
 
 	$navbar.find('.navbar .nav-blog').click(function(e) {
-		if(!App.showBlog() && App.isHomeContext()) {
+		if(!App.showBlog && App.isHomeContext()) {
 			App.hideCoverAndShowBlog();
 		} else if(App.showBlog && App.isHomeContext()){
 			e.preventDefault();
@@ -164,7 +196,7 @@
 		}
 	});
 
-	if(App.showBlog() && App.isHomeContext()) {
+	if(App.showBlog && App.isHomeContext()) {
 		App.hideCoverAndShowBlog();
 	}
 	

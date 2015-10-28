@@ -85,6 +85,8 @@ $navbar-link-colour-on-hover: $white;
 		text-align: center;
 		opacity: 0;
 		margin-top: -20px;
+		position: relative;
+		z-index: 10;
 		
 		-webkit-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
 		-moz-transition: opacity 1s ease-in-out, margin-top 1s ease-in-out;
@@ -111,7 +113,14 @@ $navbar-link-colour-on-hover: $white;
 				text-transform: uppercase;
 				border: 1px solid $white;
 				color: $white;
-				padding: 1rem 1.5rem;
+				padding: 1rem 2.5rem;
+
+				-webkit-transition: color 300ms linear, border-color 300ms linear;
+				-moz-transition: color 300ms linear, border-color 300ms linear;
+				-o-transition: color 300ms linear, border-color 300ms linear;
+				transition: color 300ms linear, border-color 300ms linear;
+
+				@extend .box-shadow;
 
 				&:hover {
 					color: $red-orange;

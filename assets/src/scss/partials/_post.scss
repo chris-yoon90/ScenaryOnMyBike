@@ -135,21 +135,23 @@ Main post content style
 }
 
 .tag {
-	background-color: $red-orange;
+	$background-color: saturate($red-orange, 20%);
+
+	background-color: $background-color;
 	padding: 0.3em 1em;
-	border: 1px solid $red-orange;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 	color: $gray-lighter;
 	vertical-align: middle;
 	display: inline-block;
 	margin: 0.3em 0;
 	font-size: 1.125rem;
+	@extend .box-shadow;
 
 	&:hover {
 		color: $gray-lighter;
-		background-color: darken($red-orange, 10%);
+		background-color: darken($background-color, 10%);
 	}
 }
 .author-image {

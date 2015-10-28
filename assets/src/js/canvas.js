@@ -4,13 +4,17 @@ $(window).load(function() {
 	var $canvasContainer = $('#canvas-container');
 	var $navbar = $('.site-cover .navbar-container');
 
-	$.when(loadImage(IMG_PATH + 'canvas_test.png'))
+	$.when(loadImage(IMG_PATH + 'wanted_poster_bg.png'))
 		.then(function(image) {
 
 			var canvas = document.createElement('canvas');
 			canvas.className = 'canvas';
-			canvas.width = 300;
-			canvas.height = 350;
+
+
+			var canvasDimension = getCanvasDimension();
+
+			canvas.width = canvasDimension.width;
+			canvas.height = canvasDimension.height;
 
 			context = canvas.getContext('2d');
 
@@ -30,5 +34,24 @@ $(window).load(function() {
 
 		image.src = src;
 		return deferred.promise();
+	}
+
+	function getCanvasDimension() {
+		var dimensions = {};
+		switch(App.device) {
+			case 'phone':
+				dimensions.width = 300;
+				dimensions.height = 400;
+				break;
+			case 'tablet':
+				dimensions.width = 300;
+				dimensions.height = 350;
+				break;
+			case 'desktop':
+				dimensions.width = 300;
+				dimensions.height = 350;
+				break;
+		}
+		return dimensions;
 	}
 });
