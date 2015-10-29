@@ -16,14 +16,14 @@
 		$('body').removeClass('no-overflow');
 	};
 
-	app.device = (function() {
+	app.device = function () {
 		var width = window.innerWidth;
 
 		if(width < 480) return 'phone';
 		if(width < 768) return 'tablet';
 
 		return 'desktop';
-	})();
+	}
 
 	window.App = app;
 })();

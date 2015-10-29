@@ -20,10 +20,10 @@ $canvas-width: 230px;
 
 .canvas {
 	opacity: 0;
-	-moz-animation: spin 1s linear;
-	-webkit-animation: spin 1s linear;
-	animation: spin 1s linear;
-	animation-fill-mode: forwards;
+	-moz-animation: spin 800ms linear forwards;
+	-webkit-animation: spin 800ms linear forwards;
+	animation: spin 800ms linear forwards;
+	@extend .box-shadow;
 }
 
 @-moz-keyframes spin{

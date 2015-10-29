@@ -1762,7 +1762,7 @@ body {
   background-color: #505050;
   overflow-x: hidden; }
 
-.box-shadow, .button, .site-cover .navbar-container .navbar a, label[for="site-header-toggle"], .tag {
+.box-shadow, .button, .site-cover .navbar-container .navbar a, label[for="site-header-toggle"], .tag, .canvas {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
@@ -2296,10 +2296,9 @@ Main post content style
 
 .canvas {
   opacity: 0;
-  -moz-animation: spin 1s linear;
-  -webkit-animation: spin 1s linear;
-  animation: spin 1s linear;
-  animation-fill-mode: forwards; }
+  -moz-animation: spin 800ms linear forwards;
+  -webkit-animation: spin 800ms linear forwards;
+  animation: spin 800ms linear forwards; }
 
 @-moz-keyframes spin {
   0% {
