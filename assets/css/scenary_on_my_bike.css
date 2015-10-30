@@ -1762,10 +1762,25 @@ body {
   background-color: #505050;
   overflow-x: hidden; }
 
-.box-shadow, .button, .site-cover .navbar-container .navbar a, label[for="site-header-toggle"], .tag, .canvas {
+.box-shadow-1, .button, .site-cover .navbar-container .navbar a, label[for="site-header-toggle"], .tag {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+
+.box-shadow-2 {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.box-shadow-3, .canvas {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.box-shadow-4 {
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
 .no-overflow {
   overflow: hidden; }
@@ -1802,6 +1817,14 @@ body {
     color: #fff; }
   .button:hover {
     background-color: #04726f; }
+
+.sns-link {
+  display: inline-block;
+  font-size: 2.0em;
+  padding: 0 0.1em;
+  color: #d5d5d5; }
+  .sns-link:hover {
+    color: #fff; }
 
 @media (min-width: 480px) and (max-width: 767px) {
   body {
@@ -2122,14 +2145,6 @@ label[for="site-header-toggle"] {
       .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
         color: #fff; }
 
-.sns-link {
-  display: inline-block;
-  font-size: 2.0em;
-  padding: 0 0.1em;
-  color: #d5d5d5; }
-  .sns-link:hover {
-    color: #fff; }
-
 /* 
 ------------------------------------------------------------------------------
 Post header style
@@ -2286,6 +2301,7 @@ Main post content style
   height: 100%;
   z-index: 1000;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center; }

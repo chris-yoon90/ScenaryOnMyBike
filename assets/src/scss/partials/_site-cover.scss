@@ -8,6 +8,7 @@ $canvas-width: 230px;
 	height: 100%;
 	z-index: 1000;
 	overflow-y: auto;
+	overflow-x: hidden;
 	display: flex;
 	align-items: center;
   	justify-content: center;
@@ -23,7 +24,7 @@ $canvas-width: 230px;
 	-moz-animation: spin 800ms linear forwards;
 	-webkit-animation: spin 800ms linear forwards;
 	animation: spin 800ms linear forwards;
-	@extend .box-shadow;
+	@extend .box-shadow-3;
 }
 
 @-moz-keyframes spin{

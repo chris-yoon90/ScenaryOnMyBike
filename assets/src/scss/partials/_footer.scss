@@ -17,14 +17,3 @@
 	}
 
 }
-
-.sns-link {
-	display: inline-block;
-	font-size: 2.0em;
-	padding: 0 0.1em;
-	color: darken($gray-lighter, 10%);
-
-	&:hover {
-		color: $white;
-	}
-}

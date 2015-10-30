@@ -118,7 +118,7 @@ label[for="site-header-toggle"] {
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	z-index: 100;
-	@extend .box-shadow;
+	@extend .box-shadow-1;
 
 	-webkit-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
 	-moz-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;

@@ -147,7 +147,7 @@ Main post content style
 	display: inline-block;
 	margin: 0.3em 0;
 	font-size: 1.125rem;
-	@extend .box-shadow;
+	@extend .box-shadow-1;
 
 	&:hover {
 		color: $gray-lighter;

@@ -2,6 +2,8 @@
 
 $(window).load(function() {
 	var IMG_PATH = "assets/images/";
+	var NAME = "CHRIS YOON";
+	var MESSAGES = ['Welcome to my site!', 'Are you hiring?', 'Let\'s talk'];
 
 	var $canvasContainer = $('#canvas-container');
 	var $navbar = $('.site-cover .navbar-container');
@@ -17,7 +19,7 @@ $(window).load(function() {
 			canvas.width = canvasDimension.width;
 			canvas.height = canvasDimension.height;
 
-			drawWantedPoster(canvas, image, 'CHRIS YOON', 'secret message');
+			drawWantedPoster(canvas, image, NAME, MESSAGES);
 
 			$canvasContainer.append(canvas);
 			$navbar.addClass('animate');
@@ -27,7 +29,7 @@ $(window).load(function() {
 				canvas.width = dimensions.width;
 				canvas.height = dimensions.height;
 
-				drawWantedPoster(canvas, image, 'CHRIS YOON', 'secret message');
+				drawWantedPoster(canvas, image, NAME, MESSAGES);
 			}, 250));
 
 		});
@@ -52,25 +54,27 @@ $(window).load(function() {
 		var windowHeight = window.innerHeight;
 		dimensions.height = windowHeight * 0.85;
 
-		if(dimensions.height < MIN_HEIGHT) dimensions.Height = MIN_HEIGHT;
+		if(dimensions.height < MIN_HEIGHT) dimensions.height = MIN_HEIGHT;
 
 		dimensions.width = dimensions.height / ASPECT_RATIO;
 		return dimensions;
 	}
 
-	function drawWantedPoster(canvas, image, name, encodedMessage) {
+	function drawWantedPoster(canvas, image, name, messages) {
 		var context = canvas.getContext('2d');
 
 		context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-		drawText(context, '3.7rem', 'WANTED', canvas.width / 2, canvas.height * 0.15);
-		drawText(context, '1.6rem', 'O N L Y  A L I V E', canvas.width / 2, canvas.height * 0.69);
-		drawText(context, '2.3rem', name, canvas.width / 2, canvas.height * 0.81);
-		drawText(context, '1rem', encodedMessage, canvas.width * 0.3, canvas.height * 0.9);
+		drawText(context, 0.147 * canvas.height, 'WANTED', canvas.width / 2, canvas.height * 0.16);
+		drawText(context, 0.063 * canvas.height, 'O N L Y  A L I V E', canvas.width / 2, canvas.height * 0.69);
+		drawText(context, 0.09 * canvas.height, name, canvas.width / 2, canvas.height * 0.81);
+		drawText(context, 0.023 * canvas.height, base64Encode(messages), canvas.width * 0.1, canvas.height * 0.895, {textAlign: 'left'});
+		drawText(context, 0.055 * canvas.height, 'MARINE', canvas.width * 0.93, canvas.height * 0.94, {textAlign: 'right'});
 	}
 
-	function drawText(canvasContext, fontSize, text, x, y, options) {
+	function drawText(canvasContext, fontSizeInPixel, texts, x, y, options) {
 		var fontFamily = 'Playfiar Display';
+		var lineHeight = fontSizeInPixel * 1.1;
 		var DEFAULT_OPTIONS = {
 			"fillStyle": '#3A302C',
 			"textAlign": 'center'
@@ -93,9 +97,24 @@ $(window).load(function() {
 			}
 		}
 
-		canvasContext.font = fontSize + ' ' + fontFamily;
-		// canvasContext.fillStyle = text_color;
-		// canvasContext.textAlign = text_align;
-		canvasContext.fillText(text, x, y);
+		canvasContext.font = fontSizeInPixel + 'px ' + fontFamily;
+
+		if(Array.isArray(texts)) {
+			texts.forEach(function(text, index, array) {
+				var yPosition = y + (lineHeight * index);
+				canvasContext.fillText(text, x, y + (lineHeight * index));
+			});
+			return;
+		}
+
+		canvasContext.fillText(texts, x, y);
+	}
+
+	function base64Encode(messages) {
+		if(Array.isArray(messages)) {
+			return messages.map(btoa);
+		}
+
+		return btoa(messages);
 	}
 });
