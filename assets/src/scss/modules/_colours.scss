@@ -4,11 +4,30 @@ http://s3.amazonaws.com/colorcombos-images/users/1/color-schemes/color-scheme-28
 
 */
 
- $turquoise : #129793;
- $dark-gray : #505050;
- $light-yellow: #FFF5C3;
- $aqua : #9BD7D5;
- $red-orange: #FF7260;
+$turquoise : #129793;
+$dark-gray : #505050;
+$light-yellow: #FFF5C3;
+$aqua : #9BD7D5;
+$red-orange: #FF7260;
 
- $white: #fff;
- $black: #000;
+$white: #fff;
+$black: #000;
+
+
+$dark-primary-color: #303F9F;
+$primary-color: #3F51B5;
+$light-primary-color: #C5CAE9;
+$light-accent-color: #B2EBF2;
+$accent-color: #00E5FF;
+$dark-accent-color: #00B8D4;
+$secondary-accent-color: #FF4081;
+$dark-secondary-accent-color: #F50057;
+$light-secondary-accent-color: #FF80AB;
+
+$primary-dark-text: rgba($black, 0.87);
+$secondary-dark-text: rgba($black, 0.54);
+$disabled-dark-text: rgba($black, 0.38);
+
+$primary-light-text: rgba($white, 1);
+$secondary-light-text: rgba($white, 0.7);
+$disabled-light-text: rgba($white, 0.3);

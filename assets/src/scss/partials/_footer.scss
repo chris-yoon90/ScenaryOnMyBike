@@ -1,17 +1,18 @@
 .site-footer {
 	padding: 10px 5%;
-	color: darken($gray-lighter, 10%);
+	color: $light-primary-color;
+	background-color: $primary-color;
 
 	.copyright, .poweredby {
 
 		text-align: center;
 
 		a {
-			color: darken($gray-lighter, 10%);
+			color: $light-primary-color;
 			text-decoration: underline;
 
 			&:hover, &:focus {
-				color: $white;
+				color: $primary-light-text;
 			}
 		}
 	}

@@ -1,5 +1,5 @@
-$navbar-link-colour: darken($white, 10%);
-$navbar-link-colour-on-hover: $white;
+$navbar-link-colour: $disabled-light-text;
+$navbar-link-colour-on-hover: $primary-light-text;
 
 .site-header {
 	.navbar {
@@ -20,8 +20,12 @@ $navbar-link-colour-on-hover: $white;
 		}
 
 		.nav-current a{
-			color: $white;
+			color: $dark-accent-color;
 			font-weight: bold;
+			@include desktop-sm-up {
+				color: $primary-light-text;
+				border-bottom: 1px solid $secondary-accent-color;
+			}
 		}
 
 		.nav-home {
@@ -36,16 +40,17 @@ $navbar-link-colour-on-hover: $white;
 			padding: 15px 15px;
 			display: block;
 			position: relative;
-			color: $navbar-link-colour;
+			color: $secondary-dark-text;
 			letter-spacing: 0.05em;
 			/*width (includes padding) = 170px for phones: 200 - 30*/
 			/*width (includes padding) = 270px for tablets: 300 - 30*/
 
 			@include desktop-sm-up {
 				line-height: 25px;
+				color: $secondary-light-text;
 
 				&:hover {
-					color: $white;
+					color: $primary-light-text;
 				}
 			}
 
@@ -71,7 +76,7 @@ $navbar-link-colour-on-hover: $white;
 			}
 
 			&:focus {
-				color: $navbar-link-colour-on-hover;
+				color: $dark-accent-color;
 				&:after {
 					animation: anim-effect-boris 0.2s forwards;
 				}
@@ -111,8 +116,8 @@ $navbar-link-colour-on-hover: $white;
 			a {
 				font-family: $droid-sans;
 				text-transform: uppercase;
-				border: 1px solid $white;
-				color: $white;
+				border: 1px solid $primary-light-text;
+				color: $primary-light-text;
 				padding: 1rem 2.5rem;
 
 				-webkit-transition: color 300ms linear, border-color 300ms linear;
@@ -123,8 +128,8 @@ $navbar-link-colour-on-hover: $white;
 				@extend .box-shadow-1;
 
 				&:hover {
-					color: $red-orange;
-					border: 1px solid $red-orange;
+					color: $secondary-accent-color;
+					border: 1px solid $secondary-accent-color;
 				}
 			}
 		}

@@ -2,7 +2,7 @@ $icon-bar-width: 22px;
 $icon-bar-height: 3px;
 $site-header-width: 200px;
 $site-header-width-tablet: 300px;
-$site-header-desktop-colour: rgba($black, 0.675);
+$site-header-desktop-colour: $primary-color;
 $menu-label-animation-duration: 300ms;
 $site-header-darken-animation-duration: 250ms;
 
@@ -24,15 +24,16 @@ $site-header-darken-animation-duration: 250ms;
 #site-header-toggle:checked {
 	& ~ label[for="site-header-toggle"] {
 		right: $site-header-width + 5;
-		background-color:  $dark-gray;
-		color: $white;
+		background-color:  $primary-color;
+		border-color: $primary-color;
+		color: $primary-light-text;
 
 		@include tablet-only {
 			right: $site-header-width-tablet + 5;
 		}
 
 		.icon-bar-top, .icon-bar-middle, .icon-bar-bottom {
-			background-color: $white;
+			background-color: $primary-light-text;
 		}
 
 		.icon-bar-top {
@@ -112,8 +113,8 @@ label[for="site-header-toggle"] {
 	display: inline-block;
 	cursor: pointer;
 	padding: 0.5rem 1rem;
-	border: 1px solid $gray-light;
-	color: $gray-light;
+	color: $secondary-dark-text;
+	border: 1px solid $secondary-dark-text;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
@@ -151,9 +152,10 @@ label[for="site-header-toggle"] {
 	width: $site-header-width;
 	height: 100%;
 	opacity: 0;
-	background-color: $dark-gray;
+	background-color: $white;
 	z-index: 100;
-	padding: 10px 0 100px 0;
+	padding: 0 0 100px 0;
+	@extend .box-shadow-2;
 
 	-webkit-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 	-moz-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
@@ -175,6 +177,9 @@ label[for="site-header-toggle"] {
 		right: auto;
 		padding: 0;
 		opacity: 1;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
 
 		//For .darken class animation
 		-webkit-transition: background-color $site-header-darken-animation-duration ease-in-out;
@@ -190,17 +195,15 @@ label[for="site-header-toggle"] {
 	}
 
 	.logo {
-		color: $white;
+		color: $primary-light-text;
 		letter-spacing: 0.095em;
 		padding: 10px 0;
 		text-align: center;
 		text-transform: uppercase;
-		display: block;
+		align-self: flex-end;
 
 		@include desktop-sm-up {
 			height: 100%;
-			text-align: initial;
-			float: left;
 		}
 
 		img {
@@ -213,10 +216,24 @@ label[for="site-header-toggle"] {
 		}
 	}
 
+	.site-header-header {
+		height: 100px;
+		background-color: $primary-color;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include desktop-sm-up {
+			float: left;
+			background-color: transparent;
+			height: auto;
+		}
+	}
+
 	.site-header-footer{
 		margin: 10px 0 0 0;
 		padding: 10px;
-		color: $white;
+		color: $secondary-light-text;
 
 		@include desktop-sm-up {
 			display: none;

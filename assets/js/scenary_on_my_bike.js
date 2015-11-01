@@ -79,9 +79,9 @@
 })();;(function() {
 	var app = window.App || {};
 
-	app.showBlog = (function() {
+	app.showBlog = function() {
 		return location.hash.indexOf('#blog') === 0;
-	})();
+	};
 
 	app.isHomeContext = function() {
 		return $('.site-cover').length > 0;
@@ -251,15 +251,15 @@ $(window).load(function() {
 	}
 
 	$navbar.find('.navbar .nav-blog').click(function(e) {
-		if(!App.showBlog && App.isHomeContext()) {
+		if(!App.showBlog() && App.isHomeContext()) {
 			App.hideCoverAndShowBlog();
-		} else if(App.showBlog && App.isHomeContext()){
+		} else if(App.showBlog() && App.isHomeContext()){
 			e.preventDefault();
 			$('#site-header-toggle').trigger('click');
 		}
 	});
 
-	if(App.showBlog && App.isHomeContext()) {
+	if(App.showBlog() && App.isHomeContext()) {
 		App.hideCoverAndShowBlog();
 	}
 	

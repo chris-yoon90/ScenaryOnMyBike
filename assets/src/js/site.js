@@ -26,15 +26,15 @@ $(function() {
 	}
 
 	$navbar.find('.navbar .nav-blog').click(function(e) {
-		if(!App.showBlog && App.isHomeContext()) {
+		if(!App.showBlog() && App.isHomeContext()) {
 			App.hideCoverAndShowBlog();
-		} else if(App.showBlog && App.isHomeContext()){
+		} else if(App.showBlog() && App.isHomeContext()){
 			e.preventDefault();
 			$('#site-header-toggle').trigger('click');
 		}
 	});
 
-	if(App.showBlog && App.isHomeContext()) {
+	if(App.showBlog() && App.isHomeContext()) {
 		App.hideCoverAndShowBlog();
 	}
 	

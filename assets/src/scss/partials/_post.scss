@@ -100,7 +100,7 @@ Main post content style
 }
 
 .post-date, .author-meta {
-	color: darken($gray-lighter, 20%);
+	color: $disabled-dark-text;
 }
 
 .post-title {
@@ -108,7 +108,7 @@ Main post content style
 	margin-top: 10px;
 
 	a {
-		color: $dark-gray;
+		color: $primary-dark-text;
 	}
 }
 
@@ -135,14 +135,14 @@ Main post content style
 }
 
 .tag {
-	$background-color: saturate($red-orange, 20%);
+	$background-color: $secondary-accent-color;
 
 	background-color: $background-color;
 	padding: 0.3em 1em;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-	color: $gray-lighter;
+	color: $secondary-light-text;
 	vertical-align: middle;
 	display: inline-block;
 	margin: 0.3em 0;
@@ -150,14 +150,15 @@ Main post content style
 	@extend .box-shadow-1;
 
 	&:hover {
-		color: $gray-lighter;
-		background-color: darken($background-color, 10%);
+		color: $primary-light-text;
+		background-color: $dark-secondary-accent-color;
+		text-decoration: none;
 	}
 }
 .author-image {
 	width: 90px;
 	height: 90px;
-	border: 1px $aqua solid;
+	border: 1px $light-accent-color solid;
 	border-radius: 100%;
 	-moz-border-radius: 100%;
 	-webkit-border-radius: 100%;
