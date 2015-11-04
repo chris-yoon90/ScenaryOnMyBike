@@ -45,7 +45,7 @@ $font-size-h6:            ceil(($font-size-base * 0.85));
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    $playfaire-display;
 $headings-font-weight:    400;
-$headings-color: #505050;
+$headings-color: $primary-dark-text;
 
 //== Code
 //

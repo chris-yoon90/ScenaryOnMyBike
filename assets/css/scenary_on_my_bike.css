@@ -1,8 +1,3 @@
-/* Aqua colortheme 
-
-http://s3.amazonaws.com/colorcombos-images/users/1/color-schemes/color-scheme-285-main.png?v=20111020201003 
-
-*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic,600italic,700italic|Droid+Sans:400,700|Playfair+Display:400,400italic,700,700italic);
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -287,7 +282,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: "Playfair Display", serif;
   font-weight: 400;
   line-height: 1.1;
-  color: #505050; }
+  color: rgba(0, 0, 0, 0.87); }
   h1 small,
   h1 .small, h2 small,
   h2 .small, h3 small,
@@ -1867,13 +1862,13 @@ body {
     .title, .main-header .header-title, .post-template .post-title {
       font-size: 45px; } }
 
-.headline, .archive-template .main-header .header-title, .post-title {
+.headline, .post-title {
   font-size: 23px; }
   @media (min-width: 480px) and (max-width: 767px) {
-    .headline, .archive-template .main-header .header-title, .post-title {
+    .headline, .post-title {
       font-size: 24px; } }
   @media (min-width: 768px) {
-    .headline, .archive-template .main-header .header-title, .post-title {
+    .headline, .post-title {
       font-size: 28px; } }
 
 .sub-headline, .main-header .header-description {
@@ -1889,29 +1884,30 @@ body {
   width: 100%;
   height: auto; }
 
-.site-header .navbar {
-  margin: 10px 0 0 0;
+@media (min-width: 768px) {
+  .site-header .navbar-container {
+    float: right; } }
+.site-header .navbar-container .navbar {
+  margin: 11.5px 0 0 0;
   padding: 0;
   list-style: none; }
   @media (min-width: 768px) {
-    .site-header .navbar {
-      margin: 0;
-      padding: 10px 0;
-      float: right; } }
+    .site-header .navbar-container .navbar {
+      margin: 0; } }
   @media (min-width: 768px) {
-    .site-header .navbar li {
+    .site-header .navbar-container .navbar li {
       display: inline-block; } }
-  .site-header .navbar .nav-current a {
+  .site-header .navbar-container .navbar .nav-current a {
     color: #00B8D4;
     font-weight: bold; }
     @media (min-width: 768px) {
-      .site-header .navbar .nav-current a {
+      .site-header .navbar-container .navbar .nav-current a {
         color: white;
         border-bottom: 1px solid #FF4081; } }
-  .site-header .navbar .nav-home a:before {
+  .site-header .navbar-container .navbar .nav-home a:before {
     font-family: "FontAwesome";
     content: "\f015 "; }
-  .site-header .navbar a {
+  .site-header .navbar-container .navbar a {
     line-height: 20px;
     padding: 15px 15px;
     display: block;
@@ -1921,12 +1917,12 @@ body {
     /*width (includes padding) = 170px for phones: 200 - 30*/
     /*width (includes padding) = 270px for tablets: 300 - 30*/ }
     @media (min-width: 768px) {
-      .site-header .navbar a {
+      .site-header .navbar-container .navbar a {
         line-height: 25px;
         color: rgba(255, 255, 255, 0.7); }
-        .site-header .navbar a:hover {
+        .site-header .navbar-container .navbar a:hover {
           color: white; } }
-    .site-header .navbar a:after {
+    .site-header .navbar-container .navbar a:after {
       background: rgba(111, 148, 182, 0.3);
       content: '';
       position: absolute;
@@ -1938,14 +1934,14 @@ body {
       opacity: 0;
       pointer-events: none; }
       @media (min-width: 480px) and (max-width: 767px) {
-        .site-header .navbar a:after {
+        .site-header .navbar-container .navbar a:after {
           margin-left: -135px; } }
       @media (min-width: 768px) {
-        .site-header .navbar a:after {
+        .site-header .navbar-container .navbar a:after {
           display: none; } }
-    .site-header .navbar a:focus {
+    .site-header .navbar-container .navbar a:focus {
       color: #00B8D4; }
-      .site-header .navbar a:focus:after {
+      .site-header .navbar-container .navbar a:focus:after {
         animation: anim-effect-boris 0.2s forwards; }
 
 .site-cover .navbar-container {
@@ -2120,11 +2116,11 @@ label[for="site-header-toggle"] {
       position: fixed;
       top: 0;
       height: auto;
-      background-color: transparent;
+      background-color: #3F51B5;
       width: 100%;
       left: 0;
       right: auto;
-      padding: 0;
+      padding: 10px 0;
       opacity: 1;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
@@ -2135,11 +2131,13 @@ label[for="site-header-toggle"] {
       transition: background-color 250ms ease-in-out; } }
   @media (min-width: 768px) {
     .site-header.darken {
-      background-color: #3F51B5; } }
+      background-color: #3F51B5;
+      -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); } }
   .site-header .logo {
     color: white;
     letter-spacing: 0.095em;
-    padding: 10px 0;
     text-align: center;
     text-transform: uppercase;
     align-self: flex-end; }
@@ -2157,12 +2155,14 @@ label[for="site-header-toggle"] {
     background-color: #3F51B5;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    padding: 10px 0; }
     @media (min-width: 768px) {
       .site-header .site-header-header {
         float: left;
         background-color: transparent;
-        height: auto; } }
+        height: auto;
+        padding: 0; } }
   .site-header .site-header-footer {
     margin: 10px 0 0 0;
     padding: 10px;
@@ -2170,10 +2170,6 @@ label[for="site-header-toggle"] {
     @media (min-width: 768px) {
       .site-header .site-header-footer {
         display: none; } }
-
-@media (min-width: 768px) {
-  .post-template .site-header {
-    background-color: #3F51B5; } }
 
 .site-footer {
   padding: 10px 5%;
@@ -2193,52 +2189,22 @@ Post header style
 ------------------------------------------------------------------------------
 */
 .main-header {
-  width: 100%; }
+  width: 100%;
+  background-color: #3F51B5; }
   .main-header .header-title {
-    text-align: center; }
+    text-align: center;
+    color: white; }
   .main-header .header-description {
-    text-align: center; }
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3); }
 
-.home-template .main-header, .archive-template .main-header, .tag-template .main-header {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
-  .home-template .main-header.no-cover, .archive-template .main-header.no-cover, .tag-template .main-header.no-cover {
-    background-image: url("/assets/images/default_blog_cover_phone.png"); }
-    @media (min-width: 480px) and (max-width: 767px) {
-      .home-template .main-header.no-cover, .archive-template .main-header.no-cover, .tag-template .main-header.no-cover {
-        background-image: url("/assets/images/default_blog_cover_tablet.png"); } }
-    @media (min-width: 768px) {
-      .home-template .main-header.no-cover, .archive-template .main-header.no-cover, .tag-template .main-header.no-cover {
-        background-image: url("/assets/images/default_blog_cover.png"); } }
-
-.home-template .main-header {
-  height: 300px;
-  padding: 100px 5% 45px 5%; }
-  @media (min-width: 768px) {
-    .home-template .main-header {
-      height: 450px;
-      padding-top: 165px; } }
-
-.tag-template .main-header {
+.main-header {
   height: 200px;
-  padding: 55px 5% 21px 5%; }
+  padding: 65px 5% 0px 5%; }
   @media (min-width: 768px) {
-    .tag-template .main-header {
-      height: 300px;
-      padding-top: 100px; } }
-
-.archive-template .main-header {
-  height: 150px;
-  padding: 55px 5% 21px 5%; }
-  @media (min-width: 768px) {
-    .archive-template .main-header {
+    .main-header {
       height: 250px;
-      padding-top: 100px; } }
-  .archive-template .main-header .header-description {
-    display: none; }
-.archive-template .pagination-top {
-  display: block; }
+      padding-top: 90px; } }
 
 /* 
 ------------------------------------------------------------------------------
@@ -2323,7 +2289,7 @@ Main post content style
     .post-footer {
       padding-top: 80px; } }
   .post-footer .bio {
-    color: #838383; }
+    color: rgba(51, 51, 51, 0.54); }
   .post-footer .author-location, .post-footer .author-link {
     font-style: italic; }
   .post-footer .author-image {

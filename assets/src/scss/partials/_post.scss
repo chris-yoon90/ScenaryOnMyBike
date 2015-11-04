@@ -5,83 +5,29 @@ Post header style
 */
 .main-header {
 	width: 100%;
+	background-color: $primary-color;
 	
 	.header-title {
 		@extend .title;
 		text-align: center;
+		color: $primary-light-text;
 	}
 
 	.header-description {
 		@extend .sub-headline;
 		text-align: center;
+		color: $disabled-light-text;
+
 	}
 }
 
-.home-template, .archive-template, .tag-template {
-	.main-header {
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+.main-header {
+	height: 200px;
+	padding: 65px 5% 0px 5%;
 
-		&.no-cover {
-			background-image: url('/assets/images/default_blog_cover_phone.png');
-
-			@include tablet-only {
-				background-image: url('/assets/images/default_blog_cover_tablet.png');
-			}
-
-			@include desktop-sm-up {
-				background-image: url('/assets/images/default_blog_cover.png');
-			}
-		}
-	}
-}
-
-.home-template {
-	.main-header {
-		height: 300px;
-		padding: 100px 5% 45px 5%;
-
-		@include desktop-sm-up {
-			height: 450px;
-			padding-top: 165px;
-		}
-	}
-}
-
-.tag-template {
-	.main-header {
-		height: 200px;
-		padding: 55px 5% 21px 5%;
-
-		@include desktop-sm-up {
-			height: 300px;
-			padding-top: 100px;
-		}
-	}
-}
-
-.archive-template {
-	.main-header {
-		height: 150px;
-		padding: 55px 5% 21px 5%;
-
-		@include desktop-sm-up {
-			height: 250px;
-			padding-top: 100px;
-		}
-
-		.header-title {
-			@extend .headline;
-		}
-
-		.header-description {
-			display: none;
-		}
-	}
-
-	.pagination-top {
-		display: block;
+	@include desktop-sm-up {
+		height: 250px;
+		padding-top: 90px;
 	}
 }
 
@@ -196,7 +142,7 @@ Main post content style
 	}
 
 	.bio {
-		color: lighten($dark-gray, 20%);
+		color: lighten($secondary-dark-text, 20%);
 	}
 
 	.author-location, .author-link {
