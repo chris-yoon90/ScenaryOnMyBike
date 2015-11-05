@@ -1,0 +1,73 @@
+.sns-link {
+	display: inline-block;
+	font-size: 3.5rem;
+    padding: 0 0.5rem;
+	color: $secondary-light-text;
+
+	&:hover {
+		color: $primary-light-text;
+	}
+}
+
+.nav-toggle-btn {
+	padding: 12px;
+	border: none;
+	background-color: transparent;
+	margin: 6px 0;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+
+	&:hover, &:focus {
+		@extend .box-shadow-1;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	.icon-bar {
+		$icon-bar-width: 22px;
+		$icon-bar-height: 3px;
+
+		width: $icon-bar-width;
+		height: $icon-bar-height;
+		background-color: $light-primary-color;
+		margin-top: $icon-bar-height;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&.close {
+		width: 50px;
+    	height: 50px;
+    	padding: 0;
+    	position: absolute;
+    	right: 0;
+    	top: 0;
+    	margin: 0;
+
+    	.icon-bar {
+    		$icon-bar-width: 30px;
+			$icon-bar-height: 3px;
+
+    		position: absolute;
+    		width: $icon-bar-width;
+    		height:$icon-bar-height;
+			margin-top: -($icon-bar-height/2);
+			margin-left: -($icon-bar-width/2);
+			left: 50%;
+			top: 50%;
+
+			&:first-child {
+				transform: rotate(45deg);
+			}
+
+			&:last-child {
+				transform: rotate(-45deg);
+			}
+    	}
+	}
+}

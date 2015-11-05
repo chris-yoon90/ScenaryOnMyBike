@@ -1,0 +1,52 @@
+.side-nav {
+	$side-nav-width: 200px;
+	$menu-label-animation-duration: 300ms;
+
+	font-family: $droid-sans;
+	position: absolute;
+	width: $side-nav-width;
+	top: 0;
+	left: -$side-nav-width;
+	height: 100%;
+	background-color: $white;
+	z-index: 100;
+	opacity: 0;
+	@extend .box-shadow-2;
+
+	&.active {
+		left: 0;
+		opacity: 1;
+	}
+
+	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-o-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+}
+
+.side-nav-header {
+	height: 130px;
+	width: 100%;
+	background-color: $primary-color;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 10px;
+
+	.logo {
+		align-self: flex-end;
+		color: $primary-light-text;
+		@extend .sub-headline;
+		text-transform: uppercase;
+		letter-spacing: 0.05rem;
+
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+		
+		img {
+			width: 55px;
+			height: auto;
+		}
+	}
+}

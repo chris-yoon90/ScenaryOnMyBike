@@ -1,5 +1,6 @@
 html, body, .site-wrapper {
 	height: 100%;
+	width: 100%;
 }
 
 body {
@@ -29,81 +30,9 @@ body {
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
-.no-overflow {
-	overflow: hidden;
-}
-
-.main-content-wrapper {
-	background-color: $white;
-	width: 100%;
-	padding: 30px 0 50px 0;
-}
-
-.post-template {
-	.main-content-wrapper {
-		padding-top: 70px;
-
-		@include desktop-sm-up {
-			padding-top: 100px;
-		}
-	}
-
-}
-
-.content {
-	margin: auto;
-	max-width: 900px;
-}
-
-.pagination-top {
-	display: none;
-}
-
-.pagination {
-	text-align: center;
-}
-
-.button {
-	$background-color: $dark-accent-color;
-
-	background-color: $background-color;
-	display: inline-block;
-	padding: 0.5rem 2rem;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	color: $secondary-light-text;
-	@extend .box-shadow-1;
-
-	&:hover, &:active, &:focus, &:visited {
-		color: $primary-light-text;
-	}
-}
-
-.sns-link {
-	display: inline-block;
-	font-size: 2.0em;
-	padding: 0 0.1em;
-	color: $secondary-light-text;
-
-	&:hover {
-		color: $primary-light-text;
-	}
-}
-
-.site-header-footer {
-	border-top: 1px solid $disabled-dark-text;
-	padding-top: 10px;
-
-	.sns-link {
-		color: $secondary-dark-text;
-
-		&:hover {
-			color: $primary-dark-text;
-		}
-	}
-}
-
 .mask-modal {
+	$menu-label-animation-duration: 300ms;
+
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -113,13 +42,22 @@ body {
 	background-color: rgba($black, 0.5);
 	width: 100%;
 	height: 100%;
+
+	-webkit-transition: opacity $menu-label-animation-duration ease-in-out;
+	-moz-transition: opacity $menu-label-animation-duration ease-in-out;
+	-o-transition: opacity $menu-label-animation-duration ease-in-out;
+	transition: opacity $menu-label-animation-duration ease-in-out;
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
-#site-header-toggle:checked ~ .site-wrapper {
+.noscroll {
 	overflow-y: hidden;
 }
 
-#site-header-toggle:checked ~ .mask-modal {
-	visibility: visible;
-	opacity: 1;
+.site-wrapper {
+	padding: 50px 0 0 0;
 }
