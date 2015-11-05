@@ -9,13 +9,11 @@ Post header style
 	
 	.header-title {
 		@extend .title;
-		text-align: center;
 		color: $primary-light-text;
 	}
 
 	.header-description {
 		@extend .sub-headline;
-		text-align: center;
 		color: $disabled-light-text;
 
 	}
@@ -23,10 +21,11 @@ Post header style
 
 .main-header {
 	height: 200px;
-	padding: 65px 5% 0px 5%;
+	display: flex;
+	align-items: flex-end;
 
 	@include desktop-sm-up {
-		height: 250px;
+		height: 400px;
 		padding-top: 90px;
 	}
 }

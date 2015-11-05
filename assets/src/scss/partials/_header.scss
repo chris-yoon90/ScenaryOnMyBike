@@ -23,7 +23,7 @@ $site-header-darken-animation-duration: 250ms;
 
 #site-header-toggle:checked {
 	& ~ label[for="site-header-toggle"] {
-		right: $site-header-width + 5;
+		left: $site-header-width + 5;
 		background-color:  $primary-color;
 		border-color: $primary-color;
 		color: $primary-light-text;
@@ -61,16 +61,16 @@ $site-header-darken-animation-duration: 250ms;
 
 	& ~ .site-header {
 		opacity: 1;
-		right: 0;
+		left: 0;
 	}
 
 	& ~ .site-wrapper {
-		margin-right: $site-header-width;
-		margin-left: -$site-header-width;
+		margin-right: -$site-header-width;
+		margin-left: $site-header-width;
 
 		@include tablet-only {
-			margin-right: $site-header-width-tablet;
-			margin-left: -$site-header-width-tablet;
+			margin-right: -$site-header-width-tablet;
+			margin-left: $site-header-width-tablet;
 		}
 	}
 }
@@ -109,7 +109,7 @@ $site-header-darken-animation-duration: 250ms;
 label[for="site-header-toggle"] {
 	position: fixed;
 	top: 15px;
-	right: 15px;
+	left: 15px;
 	display: inline-block;
 	cursor: pointer;
 	padding: 0.5rem 1rem;
@@ -121,10 +121,10 @@ label[for="site-header-toggle"] {
 	z-index: 100;
 	@extend .box-shadow-1;
 
-	-webkit-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
-	-moz-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
-	-o-transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
-	transition: right $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-webkit-transition: left $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-moz-transition: left $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	-o-transition: left $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
+	transition: left $menu-label-animation-duration ease-in-out, background-color $menu-label-animation-duration ease-in-out, color $menu-label-animation-duration ease-in-out;
 
 	@include desktop-sm-up {
 		display: none;
@@ -148,7 +148,7 @@ label[for="site-header-toggle"] {
 .site-header {
 	font-family: $droid-sans;
 	position: absolute;
-	right: -$site-header-width;
+	left: -$site-header-width;
 	width: $site-header-width;
 	height: 100%;
 	opacity: 0;
@@ -157,13 +157,13 @@ label[for="site-header-toggle"] {
 	padding: 0 0 100px 0;
 	@extend .box-shadow-2;
 
-	-webkit-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	-moz-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	-o-transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	transition: right $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-o-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 
 	@include tablet-only {
-		right: -$site-header-width-tablet;
+		left: -$site-header-width-tablet;
 		width: $site-header-width-tablet;
 	}
 
@@ -191,9 +191,9 @@ label[for="site-header-toggle"] {
 	&.darken {
 		@include desktop-sm-up {
 			background-color: $site-header-desktop-colour;
-			-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-			-moz-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+			-moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 		}
 	}
 
@@ -231,11 +231,12 @@ label[for="site-header-toggle"] {
 			background-color: transparent;
 			height: auto;
 			padding: 0;
+			margin-left: 20px;
 		}
 	}
 
 	.site-header-footer{
-		margin: 10px 0 0 0;
+		margin: 10px 5% 0 5%;
 		padding: 10px;
 		color: $secondary-light-text;
 

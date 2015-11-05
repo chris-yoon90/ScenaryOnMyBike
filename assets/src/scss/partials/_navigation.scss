@@ -3,6 +3,8 @@ $navbar-link-colour-on-hover: $primary-light-text;
 
 .site-header {
 	.navbar-container {
+		margin: 0 5%;
+
 		@include desktop-sm-up {
 			float: right;
 		}
