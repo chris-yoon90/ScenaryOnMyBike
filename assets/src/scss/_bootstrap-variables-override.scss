@@ -24,7 +24,7 @@ $text-color:            $primary-dark-text;
 //** Link hover color set via `darken()` function.
 // $link-hover-color:      $dark-accent-color;
 //** Link hover decoration.
-// $link-hover-decoration: none;
+$link-hover-decoration: none;
 
 
 //== Typography
@@ -57,4 +57,4 @@ $code-color:                  $dark-secondary-accent-color;
 //##
 
 //** Blockquote border color
-$blockquote-border-color:     #FFF5C3;
+$blockquote-border-color:     $accent-color;

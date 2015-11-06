@@ -30,6 +30,40 @@ body {
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
+.card {
+	background: $white;
+	border-radius: 2px;
+	display: block;
+	height: 300px;
+	position: relative;
+	width: 100%;
+}
+
+.card-1 {
+	@extend .box-shadow-1;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+
+	&.hover-effect {
+		&:hover {
+			@extend .box-shadow-2;
+		}
+	}
+}
+
+.card-2 {
+	@extend .box-shadow-2;
+}
+
+.card-3 {
+	@extend .box-shadow-3;
+}
+
+.card-4 {
+	@extend .box-shadow-4;
+}
+
 .mask-modal {
 	$menu-label-animation-duration: 300ms;
 

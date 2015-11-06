@@ -16,6 +16,10 @@
 	&.active {
 		left: 0;
 		opacity: 1;
+
+		.side-nav-header .nav-toggle-btn{
+			visibility: visible;
+		}
 	}
 
 	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
@@ -28,25 +32,68 @@
 	height: 130px;
 	width: 100%;
 	background-color: $primary-color;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 20px 10px;
+	padding: 5px 13px 5px 13px;
 
 	.logo {
-		align-self: flex-end;
 		color: $primary-light-text;
+		display: block;
 		@extend .sub-headline;
 		text-transform: uppercase;
 		letter-spacing: 0.05rem;
+		font-size: 1.7rem;
 
 		&:hover, &:focus {
 			text-decoration: none;
 		}
 		
 		img {
-			width: 55px;
+			margin: 0 0 7px -5px;
+			display: block;
+			width: 40px;
 			height: auto;
 		}
 	}
+
+	.administrator-meta {
+		color: $secondary-light-text;
+		font-family: $playfaire-display;
+		font-style: italic;
+		margin: 0;
+
+		.job-title {
+			font-style: normal;
+		}
+	}
+
+	.nav-toggle-btn {
+		position: absolute;
+		right: -45px;
+		top: 0;
+		visibility: hidden;
+		background-color: $primary-color;
+
+		@include desktop-sm-up {
+			display: none;
+		}
+	}
 }
+
+.site-nav-footer {
+	padding: 0 13px;
+
+	&:before {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 80%;
+		background-color: $disabled-dark-text;
+		margin: 0 auto 12px auto;
+	}
+
+	.footer-quote {
+		color: $disabled-dark-text;
+		font-size: 1.3rem;
+	}
+}
+
+

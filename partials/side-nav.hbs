@@ -2,8 +2,13 @@
 	<header class="side-nav-header">
 		<a href="/" class="logo">
 			<img src="{{@blog.logo}}" />
-			Chris Yoon
+			{{@blog.title}}
 		</a>
+
+		<address class="administrator-meta">
+			<span class="job-title">Software Developer</span> <br/>
+			chris.yoon90@gmail.com
+		</address>
 
 		<button class="nav-toggle-btn close" type="button">
 			<div class="icon-bar"></div>
@@ -14,6 +19,6 @@
 	{{navigation}}
 
 	<footer class="site-nav-footer">
-		
+		<blockquote class="footer-quote">{{@blog.description}}</blockquote>
 	</footer>
 </aside>

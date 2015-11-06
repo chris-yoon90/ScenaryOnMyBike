@@ -1,20 +1,27 @@
-#side-nav-toggle {
-	@include desktop-sm-up {
-		display: none;
-	}
-}
-
 .site-header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 50px;
+	opacity: 1;
 	background-color: $primary-color;
+	z-index: 10;
 	@extend .box-shadow-1;
 
+	@include desktop-sm-up {
+		opacity: 0;
+		visibility: hidden;
+	}
+
 	.sns-meta {
-		margin-top: -4px;
+		margin-top: 1px;
+	}
+
+	.nav-toggle-btn {
+		@include desktop-sm-up {
+			display: none;
+		}
 	}
 }
 

@@ -1,2 +1,43 @@
 {{!< default}}
-<h1>This is index</h1>
+
+<header class="post-index-banner">
+	{{#is "tag"}}
+	{{#tag}}
+	<h1 class="page-title"><i class="fa fa-tag"></i> {{tag.name}}</h1>
+	<h2 class="page-description">{{tag.description}}</h2>
+	{{/tag}}
+	{{/is}}
+	{{#is "home"}}
+	<h1 class="page-title">Blog</h1>
+	{{/is}}
+</header>
+
+<main class="post-index" role="main">
+	<div class="container-fluid">
+		{{pagination}}
+		<div class="row">
+			{{#foreach posts}}
+			<div class="col-sm-6 col-md-4">
+				<article class="{{post_class}} card card-1 hover-effect">
+					<header class="post-header">
+						<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+						<h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+						<address class="author-meta">by {{author.name}}</address>
+					</header>
+					{{#if image}}
+					<img class="post-image" src="{{image}}" />
+					{{/if}}
+					<section class="post-excerpt">
+						<p>{{excerpt words="26"}}...</p>
+						<p><a class="read-more" href="{{url}}">CLICK TO READ POST</a></p>
+					</section>
+					<footer class="post-meta">
+						{{> "tag-partial"}}
+					</footer>
+				</article>
+			</div>
+			{{/foreach}}
+		</div>
+		{{pagination}}
+	</div>
+</main>

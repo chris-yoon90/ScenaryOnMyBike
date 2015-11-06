@@ -1,43 +1,15 @@
-/* 
-------------------------------------------------------------------------------
-Post header style
-------------------------------------------------------------------------------
-*/
-.main-header {
-	width: 100%;
-	background-color: $primary-color;
-	
-	.header-title {
-		@extend .title;
-		color: $primary-light-text;
-	}
-
-	.header-description {
-		@extend .sub-headline;
-		color: $disabled-light-text;
-
-	}
-}
-
-.main-header {
-	height: 200px;
-	display: flex;
-	align-items: flex-end;
+.post-index-banner {
+	display: none;
 
 	@include desktop-sm-up {
-		height: 400px;
-		padding-top: 90px;
+		display: block;
 	}
 }
-
-/* 
-------------------------------------------------------------------------------
-Main post content style
-------------------------------------------------------------------------------
-*/
 
 .post {
 	margin: 20px 0 50px 0;
+	padding: 20px;
+	overflow: hidden;
 }
 
 .post:first-of-type {
@@ -57,17 +29,6 @@ Main post content style
 	}
 }
 
-.post-template {
-	.post-title {
-		@extend .title;
-		font-weight: 600;
-	}
-
-	.post-header {
-		margin-bottom: 20px;
-	}
-}
-
 .post-meta {
 	margin: 10px 0;
 }
@@ -78,6 +39,7 @@ Main post content style
 	margin: 0 auto 20px auto;
 	display: block;
 }
+
 
 .tag {
 	$background-color: $secondary-accent-color;
@@ -100,6 +62,7 @@ Main post content style
 		text-decoration: none;
 	}
 }
+
 .author-image {
 	width: 90px;
 	height: 90px;

@@ -3,8 +3,52 @@ $navbar-link-colour-on-hover: $primary-light-text;
 
 .side-nav {
 	.navbar-container {
-		padding: 20px 5%;
+		padding: 10px 13px;
 		background-color: $white;
+	}
+
+	.navbar {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			text-align: center;
+
+			a {
+				display: block;
+				padding: 10px 10px;
+				width: 60%;
+				margin: auto;
+				color: $secondary-dark-text;
+
+				&:hover, &:focus {
+					text-decoration: none;
+					outline: none;
+					@extend .box-shadow-1;
+				}
+			}
+		}
+
+		.nav-blog a:before {
+			display: block;
+			font-family: 'FontAwesome';
+			font-size: 2.5rem;
+			content: '\f086';
+
+		}
+
+		.nav-about a:before {
+			display: block;
+			font-size: 2.5rem;
+			font-family: 'FontAwesome';
+			content: '\f007';
+		}
+
+		.nav-current a{
+			font-weight: 700;
+			color: $primary-dark-text;
+		}
 		
 	}
 }
