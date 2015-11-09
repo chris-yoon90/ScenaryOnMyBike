@@ -1,5 +1,4 @@
 html, body, .site-wrapper {
-	height: 100%;
 	width: 100%;
 }
 
@@ -34,22 +33,21 @@ body {
 	background: $white;
 	border-radius: 2px;
 	display: block;
-	height: 300px;
 	position: relative;
-	width: 100%;
-}
-
-.card-1 {
-	@extend .box-shadow-1;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
 
 	&.hover-effect {
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+
 		&:hover {
 			@extend .box-shadow-2;
 		}
 	}
+}
+
+.card-1 {
+	@extend .box-shadow-1;
 }
 
 .card-2 {
@@ -62,6 +60,40 @@ body {
 
 .card-4 {
 	@extend .box-shadow-4;
+}
+
+.speech-bubble {
+	position: relative;
+    padding: 5% 10%;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid $disabled-dark-text;
+
+    &:before {
+    	content: "";
+	    position: absolute;
+	    bottom: -20px;
+	    left: 50px;
+	    border-width: 20px 0 0 20px;
+	    border-style: solid;
+	    border-color: $disabled-dark-text transparent;
+	    display: block;
+	    width: 0;
+    }
+
+    &:after {
+    	content: "";
+	    position: absolute;
+	    bottom: -18px;
+	    left: 50px;
+	    border-width: 19px 0px 0 19px;
+	    border-style: solid;
+	    border-color: $white transparent;
+	    display: block;
+	    width: 0;
+    }
 }
 
 .mask-modal {
@@ -88,7 +120,7 @@ body {
 	}
 }
 
-.noscroll {
+.no-overflow {
 	overflow-y: hidden;
 }
 

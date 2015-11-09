@@ -6,23 +6,50 @@
 	}
 }
 
-.post {
-	margin: 20px 0 50px 0;
-	padding: 20px;
-	overflow: hidden;
+.grid-sizer {
+	width: 100%;
+
+	@include tablet-only {
+		width: 50%;
+	}
+
+	@include desktop-sm-up {
+		width: 33.33333333333%;
+	}
 }
 
-.post:first-of-type {
-	margin-top: 0;
+.post {
+	padding: 10px 0;
+
+	@include tablet-only {
+		padding: 10px 7.5px;
+	}
+
+	@include desktop-sm-up {
+		padding: 10px;
+	}
+}
+
+.post-header {
+	border: none;
+	border-bottom: 1px solid $disabled-dark-text;
+	border-radius: 0;
+	padding: 10px 5%;
+}
+
+.post-excerpt {
+	padding: 30px 5%;
 }
 
 .post-date, .author-meta {
 	color: $disabled-dark-text;
+	font-size: 1.3rem;
+	margin: 0;
 }
 
 .post-title {
 	@extend .headline;
-	margin-top: 10px;
+	margin-top: 0;
 
 	a {
 		color: $primary-dark-text;
@@ -30,7 +57,7 @@
 }
 
 .post-meta {
-	margin: 10px 0;
+	padding: 10px 0;
 }
 
 .post-image {
@@ -123,4 +150,3 @@
 	    }
 	}
 }
-

@@ -242,6 +242,14 @@ $(window).load(function() {
 
 	$('.nav-toggle-btn').click(toggleSideNav);
 
+	$('#posts').imagesLoaded( function(){
+		$('#posts').masonry({
+			itemSelector : '.post',
+			percentPosition: true,
+			columnWidth: '.grid-sizer'
+		});
+	});
+
 	function toggleSideNav(e) {
 		$('.side-nav').toggleClass('active');
 		$('.mask-modal').toggleClass('active');
