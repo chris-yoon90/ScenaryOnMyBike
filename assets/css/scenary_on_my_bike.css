@@ -42,6 +42,22 @@
       .nav-toggle-btn.close .icon-bar:last-child {
         transform: rotate(-45deg); }
 
+.tag {
+  background-color: #FF4081;
+  padding: 0.3rem 1rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0.3rem 0;
+  font-size: 1.125rem; }
+  .tag:hover {
+    color: white;
+    background-color: #F50057;
+    text-decoration: none; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -1805,7 +1821,7 @@ body {
 .site-wrapper {
   padding: 50px 0 0 0; }
 
-.box-shadow-1, .nav-toggle-btn:hover, .nav-toggle-btn:focus, .card-1, .side-nav .navbar li a:hover, .side-nav .navbar li a:focus, .site-cover .navbar-container .navbar a, .site-header, .tag {
+.box-shadow-1, .nav-toggle-btn:hover, .nav-toggle-btn:focus, .tag, .card-1, .side-nav .navbar li a:hover, .side-nav .navbar li a:focus, .site-cover .navbar-container .navbar a, .site-header {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
@@ -1830,6 +1846,8 @@ body {
   border-radius: 2px;
   display: block;
   position: relative; }
+  .card.accent {
+    border-top: 3px solid #FF4081; }
   .card.hover-effect {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -1998,7 +2016,7 @@ body {
   height: 50px;
   opacity: 1;
   background-color: #B2EBF2;
-  z-index: 10; }
+  z-index: 50; }
   @media (min-width: 768px) {
     .site-header {
       opacity: 0;
@@ -2031,32 +2049,26 @@ body {
   margin: 0 auto;
   max-width: 92%;
   width: 1440px; }
-  @media (min-width: 480px) and (max-width: 767px) {
+  @media (min-width: 480px) {
     .post-index {
       max-width: 97%; } }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .post-index {
       max-width: 92.6%; } }
 
 .masonry-grid-item {
   float: left;
-  width: 100%; }
-  @media (min-width: 480px) and (max-width: 767px) {
-    .masonry-grid-item {
-      width: 49.9%; } }
-  @media (min-width: 768px) {
-    .masonry-grid-item {
-      width: 33.3%; } }
-
-.masonry-grid-item {
+  width: 100%;
   margin-top: 25px;
   padding: 0; }
-  @media (min-width: 480px) and (max-width: 767px) {
+  @media (min-width: 480px) {
     .masonry-grid-item {
+      width: 49.9%;
       margin: 0;
       padding: 0 2% 5% 2%; } }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .masonry-grid-item {
+      width: 33.3%;
       margin: 0;
       padding: 0 1.5% 4.5% 1.5%; } }
 
@@ -2064,7 +2076,23 @@ body {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.38);
   border-radius: 0;
-  padding: 10px 5%; }
+  padding: 20px 5%; }
+
+.post-date {
+  color: rgba(0, 0, 0, 0.38);
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  display: block; }
+
+.post-title {
+  margin: 0; }
+  .post-title a {
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out; }
+    .post-title a:hover, .post-title a:focus {
+      color: #00B8D4; }
 
 .post-media a {
   overflow: hidden;
@@ -2086,41 +2114,29 @@ body {
 
 .post-excerpt {
   padding: 30px 5%; }
-
-.post-date, .author-meta {
-  color: rgba(0, 0, 0, 0.38);
-  font-size: 1.3rem;
-  margin: 0; }
-
-.post-title {
-  margin-top: 0; }
-  .post-title a {
-    color: rgba(0, 0, 0, 0.87); }
+  .post-excerpt p {
+    margin-bottom: 15px; }
+    .post-excerpt p:last-child {
+      margin-bottom: 0; }
 
 .post-meta {
-  padding: 10px 0; }
+  padding: 0 5% 15px 5%;
+  color: rgba(0, 0, 0, 0.54); }
+  .post-meta:before {
+    content: '';
+    display: block;
+    width: 95%;
+    margin: 0 auto 15px auto;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.38); }
+  .post-meta span {
+    margin-right: 2%; }
 
 .post-image {
   max-width: 100%;
   height: auto;
   margin: 0 auto 20px auto;
   display: block; }
-
-.tag {
-  background-color: #FF4081;
-  padding: 0.3em 1em;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  color: rgba(255, 255, 255, 0.7);
-  vertical-align: middle;
-  display: inline-block;
-  margin: 0.3em 0;
-  font-size: 1.125rem; }
-  .tag:hover {
-    color: white;
-    background-color: #F50057;
-    text-decoration: none; }
 
 .author-image {
   width: 90px;
@@ -2273,5 +2289,8 @@ body {
   .site-nav-footer .footer-quote {
     color: rgba(0, 0, 0, 0.38);
     font-size: 1.3rem; }
+
+.pagination {
+  padding: 15px 0; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

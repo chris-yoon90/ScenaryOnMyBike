@@ -11,11 +11,11 @@
 	max-width: 92%;
 	width: 1440px;
 
-	@include tablet-only {
+	@include tablet-up {
 		max-width: 97%;
 	}
 
-	@include desktop-sm-up {
+	@include desktop-md-up {
 		max-width: 92.6%;
 	}
 }
@@ -23,26 +23,17 @@
 .masonry-grid-item {
 	float: left;
 	width: 100%;
-
-	@include tablet-only {
-		width: 49.9%;
-	}
-
-	@include desktop-sm-up {
-		width: 33.3%;
-	}
-}
-
-.masonry-grid-item {
 	margin-top: 25px;
 	padding: 0;
 
-	@include tablet-only {
+	@include tablet-up {
+		width: 49.9%;
 		margin: 0;
 		padding: 0 2% 5% 2%;
 	}
 
-	@include desktop-sm-up {
+	@include desktop-md-up {
+		width: 33.3%;
 		margin: 0;
 		padding: 0 1.5% 4.5% 1.5%;
 	}
@@ -52,7 +43,30 @@
 	border: none;
 	border-bottom: 1px solid $disabled-dark-text;
 	border-radius: 0;
-	padding: 10px 5%;
+	padding: 20px 5%;
+}
+
+.post-date {
+	color: $disabled-dark-text;
+	font-size: 1.3rem;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.post-title {
+	@extend .headline;
+	margin: 0;
+
+	a {
+		color: $primary-dark-text;
+		-webkit-transition: color 0.2s ease-in-out;
+		-moz-transition: color 0.2s ease-in-out;
+		transition: color 0.2s ease-in-out;
+
+		&:hover, &:focus {
+			color: $dark-accent-color;
+		}
+	}
 }
 
 .post-media {
@@ -84,25 +98,32 @@
 
 .post-excerpt {
 	padding: 30px 5%;
-}
 
-.post-date, .author-meta {
-	color: $disabled-dark-text;
-	font-size: 1.3rem;
-	margin: 0;
-}
+	p {
+		margin-bottom: 15px;
 
-.post-title {
-	@extend .headline;
-	margin-top: 0;
-
-	a {
-		color: $primary-dark-text;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
 .post-meta {
-	padding: 10px 0;
+	padding: 0 5% 15px 5%;
+	color: $secondary-dark-text;
+
+	&:before {
+		content: '';
+		display: block;
+		width: 95%;
+		margin: 0 auto 15px auto;
+		height: 1px;
+		background-color: $disabled-dark-text;
+	}
+
+	span {
+		margin-right: 2%;
+	}
 }
 
 .post-image {
@@ -110,29 +131,6 @@
 	height: auto;
 	margin: 0 auto 20px auto;
 	display: block;
-}
-
-
-.tag {
-	$background-color: $secondary-accent-color;
-
-	background-color: $background-color;
-	padding: 0.3em 1em;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	color: $secondary-light-text;
-	vertical-align: middle;
-	display: inline-block;
-	margin: 0.3em 0;
-	font-size: 1.125rem;
-	@extend .box-shadow-1;
-
-	&:hover {
-		color: $primary-light-text;
-		background-color: $dark-secondary-accent-color;
-		text-decoration: none;
-	}
 }
 
 .author-image {

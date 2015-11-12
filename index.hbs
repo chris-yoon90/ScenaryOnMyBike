@@ -17,11 +17,10 @@
 	<div id="masonry-grid">
 		{{#foreach posts}}
 		<div class="masonry-grid-item">
-			<article class="{{post_class}} card card-1">
+			<article class="{{post_class}} card accent card-1">
 				<header class="post-header speech-bubble">
-					<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+					<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
 					<h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
-					<address class="author-meta">by {{author.name}}</address>
 				</header>
 				{{#if image}}
 				<section class="post-media">
@@ -36,6 +35,7 @@
 				</section>
 				{{#if tags}}
 				<footer class="post-meta">
+					<span><i class="fa fa-tags"></i> Tags:</span>
 					{{> "tag-partial"}}
 				</footer>
 				{{/if}}

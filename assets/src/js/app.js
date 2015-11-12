@@ -33,7 +33,7 @@
 		},
 		columnWidth: '.masonry-grid-item',
 		percentPosition: true,
-		transitionDuration: '0.4s'
+		transitionDuration: 0
 	};
 
 	app.initMasonry = function() {

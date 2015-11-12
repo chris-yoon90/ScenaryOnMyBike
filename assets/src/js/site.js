@@ -22,6 +22,10 @@
 		}
 	});
 
+	// To prevent grids from overlapping. For some reason grids keep overlapping on masonry init. 
+	// Need to find out why in the future.
+	$(window).load(App.reLayoutMasonry);
+
 	function toggleSideNav(e) {
 		$('.side-nav').toggleClass('active');
 		$('.mask-modal').toggleClass('active');

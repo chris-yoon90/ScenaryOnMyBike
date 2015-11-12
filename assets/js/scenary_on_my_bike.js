@@ -111,7 +111,7 @@
 		},
 		columnWidth: '.masonry-grid-item',
 		percentPosition: true,
-		transitionDuration: '0.4s'
+		transitionDuration: 0
 	};
 
 	app.initMasonry = function() {
@@ -267,6 +267,10 @@ $(document).ready(function() {
 			App.initMasonry();
 		}
 	});
+
+	// To prevent grids from overlapping. For some reason grids keep overlapping on masonry init. 
+	// Need to find out why in the future.
+	$(window).load(App.reLayoutMasonry);
 
 	function toggleSideNav(e) {
 		$('.side-nav').toggleClass('active');

@@ -43,6 +43,10 @@ body {
 	display: block;
 	position: relative;
 
+	&.accent {
+		border-top: 3px solid $secondary-accent-color;
+	}
+
 	&.hover-effect {
 		-webkit-transition: all 0.2s ease-in-out;
 		-moz-transition: all 0.2s ease-in-out;
