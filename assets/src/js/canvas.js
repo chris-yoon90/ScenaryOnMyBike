@@ -1,6 +1,6 @@
 "use strict";
 
-$(window).load(function() {
+$(document).ready(function() {
 	var IMG_PATH = "assets/images/";
 	var NAME = "CHRIS YOON";
 	var MESSAGES = ['Welcome to my site!', 'Are you hiring?', 'Let\'s talk'];

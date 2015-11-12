@@ -25,5 +25,26 @@
 		return 'desktop';
 	}
 
+	app.masonry_config = {
+		itemSelector : '.masonry-grid-item',
+		containerStyle: {
+			position: 'relative',
+			overflow: 'visible'
+		},
+		columnWidth: '.masonry-grid-item',
+		percentPosition: true,
+		transitionDuration: '0.4s'
+	};
+
+	app.initMasonry = function() {
+		$('#masonry-grid').imagesLoaded( function(){
+			$('#masonry-grid').masonry(app.masonry_config);
+		});
+	};
+
+	app.reLayoutMasonry = function() {
+		$('#masonry-grid').masonry();
+	}
+
 	window.App = app;
 })();

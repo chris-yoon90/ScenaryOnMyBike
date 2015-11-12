@@ -103,10 +103,31 @@
 		return 'desktop';
 	}
 
+	app.masonry_config = {
+		itemSelector : '.masonry-grid-item',
+		containerStyle: {
+			position: 'relative',
+			overflow: 'visible'
+		},
+		columnWidth: '.masonry-grid-item',
+		percentPosition: true,
+		transitionDuration: '0.4s'
+	};
+
+	app.initMasonry = function() {
+		$('#masonry-grid').imagesLoaded( function(){
+			$('#masonry-grid').masonry(app.masonry_config);
+		});
+	};
+
+	app.reLayoutMasonry = function() {
+		$('#masonry-grid').masonry();
+	}
+
 	window.App = app;
 })();;"use strict";
 
-$(window).load(function() {
+$(document).ready(function() {
 	var IMG_PATH = "assets/images/";
 	var NAME = "CHRIS YOON";
 	var MESSAGES = ['Welcome to my site!', 'Are you hiring?', 'Let\'s talk'];
@@ -223,32 +244,33 @@ $(window).load(function() {
 
 		return btoa(messages);
 	}
-});;$(function() {
-	scrollHandler();
-	$(window).scroll(_util.throttle(scrollHandler, 100))
+});;"use strict";
+(function() {
+	$(document).ready(function() {
+		
 
-	$('.navbar-container').find('.navbar .nav-blog').click(function(e) {
-		if(!App.showBlog() && App.isHomeContext()) {
-			App.hideCoverAndShowBlog();
-		} else if(App.showBlog() && App.isHomeContext()){
-			e.preventDefault();
-			toggleSideNav();
-		}
-	});
+		scrollHandler();
+		$(window).scroll(_util.throttle(scrollHandler, 100))
 
-	if(App.showBlog() && App.isHomeContext()) {
-		App.hideCoverAndShowBlog();
-	}
-
-	$('.nav-toggle-btn').click(toggleSideNav);
-
-	$('#posts').imagesLoaded( function(){
-		$('#posts').masonry({
-			itemSelector : '.post',
-			percentPosition: true,
-			columnWidth: '.grid-sizer'
+		$('.navbar-container').find('.navbar .nav-blog').click(function(e) {
+			if(!App.showBlog() && App.isHomeContext()) {
+				App.hideCoverAndShowBlog();
+			} else if(App.showBlog() && App.isHomeContext()){
+				e.preventDefault();
+				toggleSideNav();
+			}
 		});
+
+		if(App.showBlog() && App.isHomeContext()) {
+			App.hideCoverAndShowBlog();
+		}
+	
+		$('.nav-toggle-btn').click(toggleSideNav);
+
+		App.initMasonry();
 	});
+
+	// $(window).load(App.reLayoutMasonry);
 
 	function toggleSideNav(e) {
 		$('.side-nav').toggleClass('active');
@@ -279,4 +301,7 @@ $(window).load(function() {
 
 		$('.site-header').removeClass('box-shadow-1');
 	}
-});
+})();
+
+
+

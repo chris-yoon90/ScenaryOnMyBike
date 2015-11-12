@@ -6,27 +6,45 @@
 	}
 }
 
-.grid-sizer {
-	width: 100%;
+.post-index {
+	margin: 0 auto;
+	max-width: 92%;
+	width: 1440px;
 
 	@include tablet-only {
-		width: 50%;
+		max-width: 97%;
 	}
 
 	@include desktop-sm-up {
-		width: 33.33333333333%;
+		max-width: 92.6%;
 	}
 }
 
-.post {
-	padding: 10px 0;
+.masonry-grid-item {
+	float: left;
+	width: 100%;
 
 	@include tablet-only {
-		padding: 10px 7.5px;
+		width: 49.9%;
 	}
 
 	@include desktop-sm-up {
-		padding: 10px;
+		width: 33.3%;
+	}
+}
+
+.masonry-grid-item {
+	margin-top: 25px;
+	padding: 0;
+
+	@include tablet-only {
+		margin: 0;
+		padding: 0 2% 5% 2%;
+	}
+
+	@include desktop-sm-up {
+		margin: 0;
+		padding: 0 1.5% 4.5% 1.5%;
 	}
 }
 
