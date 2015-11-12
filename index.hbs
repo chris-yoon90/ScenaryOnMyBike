@@ -23,13 +23,22 @@
 					<h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
 					<address class="author-meta">by {{author.name}}</address>
 				</header>
+				{{#if image}}
+				<section class="post-media">
+					<a href="{{url}}" rel="bookmark" title="{{title}}">
+						<img src="{{image}}" alt="{{title}}" />
+					</a>
+				</section>
+				{{/if}}
 				<section class="post-excerpt">
 					<p>{{excerpt words="26"}}...</p>
-					<p><a class="read-more" href="{{url}}">CLICK TO READ POST</a></p>
+					<p><a class="read-more" href="{{url}}">CLICK TO READ POST <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a></p>
 				</section>
+				{{#if tags}}
 				<footer class="post-meta">
 					{{> "tag-partial"}}
 				</footer>
+				{{/if}}
 			</article>
 		</div>
 		{{/foreach}}

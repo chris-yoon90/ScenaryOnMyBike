@@ -55,6 +55,33 @@
 	padding: 10px 5%;
 }
 
+.post-media {
+	a {
+		overflow: hidden;
+		display: block;
+
+		&:hover, &:focus {
+			img {
+				opacity: 0.8;
+				-webkit-transform: scale(1.1);
+    			-moz-transform: scale(1.1);
+    			-o-transform: scale(1.1);
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	img {
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+		display: block;
+		opacity: 1;
+		width: 100%;
+		height: auto;
+	}
+}
+
 .post-excerpt {
 	padding: 30px 5%;
 }

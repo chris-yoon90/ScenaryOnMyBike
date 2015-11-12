@@ -89,6 +89,7 @@ body {
 	    border-color: $disabled-dark-text transparent;
 	    display: block;
 	    width: 0;
+	    z-index: 10;
     }
 
     &:after {
@@ -101,13 +102,14 @@ body {
 	    border-color: $white transparent;
 	    display: block;
 	    width: 0;
+	    z-index: 11;
     }
 }
 
 .mask-modal {
 	$menu-label-animation-duration: 300ms;
 
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 50;
