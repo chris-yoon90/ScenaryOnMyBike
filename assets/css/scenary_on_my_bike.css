@@ -2061,6 +2061,8 @@ body {
   width: 100%;
   margin-top: 25px;
   padding: 0; }
+  .masonry-grid-item:first-child {
+    margin-top: 0; }
   @media (min-width: 480px) {
     .masonry-grid-item {
       width: 49.9%;
@@ -2072,10 +2074,12 @@ body {
       margin: 0;
       padding: 0 1.5% 4.5% 1.5%; } }
 
+.home-template .masonry-grid-item:first-of-type {
+  margin-top: 50px; }
+
 .post-header {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.38);
-  border-radius: 0;
   padding: 20px 5%; }
 
 .post-date {
@@ -2290,7 +2294,79 @@ body {
     color: rgba(0, 0, 0, 0.38);
     font-size: 1.3rem; }
 
+.home-template .pagination:first-of-type {
+  display: none; }
+
 .pagination {
-  padding: 15px 0; }
+  width: 100%;
+  text-align: center;
+  margin: 30px 0; }
+
+.page-number {
+  position: relative;
+  vertical-align: middle;
+  padding: 10px; }
+
+.ribbon-right-arrow,
+.ribbon-left-arrow {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #00E5FF;
+  font-size: 1.5rem;
+  line-height: 2em;
+  position: relative;
+  padding: 0 3%;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; }
+  .ribbon-right-arrow:before, .ribbon-right-arrow:after,
+  .ribbon-left-arrow:before,
+  .ribbon-left-arrow:after {
+    content: "";
+    border-style: solid;
+    border-width: 0;
+    height: 0;
+    position: absolute;
+    width: 0; }
+  .ribbon-right-arrow:hover, .ribbon-right-arrow:focus,
+  .ribbon-left-arrow:hover,
+  .ribbon-left-arrow:focus {
+    color: white; }
+
+.ribbon-right-arrow:after, .ribbon-right-arrow:before {
+  border-width: 1em 0 1em 1em;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -moz-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out; }
+.ribbon-right-arrow:before {
+  border-color: #00E5FF transparent;
+  left: -1em; }
+.ribbon-right-arrow:after {
+  border-color: transparent #00E5FF;
+  right: -1em; }
+.ribbon-right-arrow:hover, .ribbon-right-arrow:focus {
+  background-color: #00B8D4; }
+  .ribbon-right-arrow:hover:before, .ribbon-right-arrow:focus:before {
+    border-color: #00B8D4 transparent; }
+  .ribbon-right-arrow:hover:after, .ribbon-right-arrow:focus:after {
+    border-color: transparent #00B8D4; }
+
+.ribbon-left-arrow:after, .ribbon-left-arrow:before {
+  border-width: 1em 1em 1em 0;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -moz-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out; }
+.ribbon-left-arrow:before {
+  border-color: transparent #00E5FF;
+  left: -1em; }
+.ribbon-left-arrow:after {
+  border-color: #00E5FF transparent;
+  right: -1em; }
+.ribbon-left-arrow:hover, .ribbon-left-arrow:focus {
+  background-color: #00B8D4; }
+  .ribbon-left-arrow:hover:before, .ribbon-left-arrow:focus:before {
+    border-color: transparent #00B8D4; }
+  .ribbon-left-arrow:hover:after, .ribbon-left-arrow:focus:after {
+    border-color: #00B8D4 transparent; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

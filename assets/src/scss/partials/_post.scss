@@ -26,6 +26,10 @@
 	margin-top: 25px;
 	padding: 0;
 
+	&:first-child {
+		margin-top: 0;
+	}
+
 	@include tablet-up {
 		width: 49.9%;
 		margin: 0;
@@ -39,10 +43,15 @@
 	}
 }
 
+.home-template {
+	.masonry-grid-item:first-of-type {
+		margin-top: 50px;
+	}
+}
+
 .post-header {
 	border: none;
 	border-bottom: 1px solid $disabled-dark-text;
-	border-radius: 0;
 	padding: 20px 5%;
 }
 
