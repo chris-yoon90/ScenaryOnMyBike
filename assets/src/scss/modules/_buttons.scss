@@ -91,3 +91,135 @@
 		text-decoration: none;
 	}
 }
+
+@mixin ribbon-right-arrow($color, $background-color, $font-size) {
+	$ribbon-border-widths: 1em;
+	$transition-duration: 0.2s;
+
+	display: inline-block;
+	color: $color;
+	background-color: $background-color;
+	font-size: $font-size;
+	line-height: 2em;
+	position: relative;
+	padding: 0 3%;
+
+	-webkit-transition: color $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+	-moz-transition: color $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+	transition: color $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+
+	&:hover, &:focus {
+		color: $primary-light-text;
+		background-color: $dark-accent-color;
+
+		&:before {
+			border-color: $dark-accent-color transparent;
+		}
+
+		&:after {
+			border-color: transparent $dark-accent-color;
+		}
+	}
+
+	&:before, &:after {
+		content: "";
+		border-style: solid;
+		position: absolute;
+		top: 0;
+		border-width: $ribbon-border-widths 0 $ribbon-border-widths $ribbon-border-widths;
+		-webkit-transition: border-color $transition-duration ease-in-out;
+		-moz-transition: border-color $transition-duration ease-in-out;
+		transition: border-color $transition-duration ease-in-out;
+	}
+
+	&:before {
+		border-color: $accent-color transparent;
+		left: -$ribbon-border-widths;
+	}
+
+	&:after {
+		border-color: transparent $accent-color;
+		right: -$ribbon-border-widths;
+	}
+}
+
+@mixin ribbon-left-arrow($color, $background-color, $font-size) {
+	$ribbon-border-widths: 1em;
+	$transition-duration: 0.2s;
+
+	display: inline-block;
+	color: $color;
+	background-color: $background-color;
+	font-size: $font-size;
+	line-height: 2em;
+	position: relative;
+	padding: 0 3%;
+
+	-webkit-transition: color $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+	-moz-transition: color $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+	transition: color $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
+
+	&:hover, &:focus {
+		color: $primary-light-text;
+		background-color: $dark-accent-color;
+
+		&:before {
+			border-color: transparent $dark-accent-color;
+		}
+
+		&:after {
+			border-color: $dark-accent-color transparent;
+		}
+	}
+
+	&:before, &:after {
+		content: "";
+		border-style: solid;
+		position: absolute;
+		top:0;
+		border-width: $ribbon-border-widths $ribbon-border-widths $ribbon-border-widths 0;
+		-webkit-transition: border-color $transition-duration ease-in-out;
+		-moz-transition: border-color $transition-duration ease-in-out;
+		transition: border-color $transition-duration ease-in-out;
+	}
+
+	&:before {
+		border-color: transparent $accent-color;
+		left: -$ribbon-border-widths;
+	}
+
+	&:after {
+		border-color: $accent-color transparent;
+		right: -$ribbon-border-widths;
+	}
+}
+
+@mixin ribbon-diamond($color, $background-color, $font-size) {
+	$diamond-border-width: 1rem;
+
+	display: inline-block;
+	color: $color;
+	position: relative;
+	background-color: $background-color;
+	font-size: $font-size;
+	line-height: 2em;
+	padding: 0;
+
+	&:after, &:before {
+		content: "";
+		border-style: solid;
+		top: 0;
+		position: absolute;
+		border-color: transparent $background-color;
+	}
+
+	&:before {
+		left: -$diamond-border-width;
+  		border-width: $diamond-border-width $diamond-border-width $diamond-border-width 0;
+	}
+
+	&:after {
+		right: -$diamond-border-width;
+		border-width: $diamond-border-width 0 $diamond-border-width $diamond-border-width;
+	}
+}

@@ -12,98 +12,35 @@
 
 .page-number {
 	position: relative;
-	vertical-align: middle;
+	text-align: center;
 	padding: 10px;
-}
+	font-weight: bold;
+	width: 80%;
+	margin: auto;
 
-$ribbon-border-widths: 1em;
+	span {
+		background-color: $white;
+		z-index: 1;
+		padding: 0 5%;
+		position: relative;
+	}
 
-.ribbon-right-arrow,
-.ribbon-left-arrow {
-	display: inline-block;
-	color: $secondary-light-text;
-	background-color: $accent-color;
-	font-size: 1.5rem;
-	line-height: 2em;
-	position: relative;
-	padding: 0 3%;
-
-	-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-
-	&:before, &:after {
+	&:before {
+		background-color: $gray-lighter;
 		content: "";
-		border-style: solid;
-		border-width: 0;
-		height: 0;
+		display: block;
+		height: 1px;
 		position: absolute;
-		width: 0;
-	}
-
-	&:hover, &:focus {
-		color: $primary-light-text;
+		top: 50%;
+		width: 100%;
+		left: 0;
 	}
 }
 
-.ribbon-right-arrow {
-	&:after, &:before {
-		border-width: $ribbon-border-widths 0 $ribbon-border-widths $ribbon-border-widths;
-		-webkit-transition: border-color 0.2s ease-in-out;
-		-moz-transition: border-color 0.2s ease-in-out;
-		transition: border-color 0.2s ease-in-out;
-	}
-
-	&:before {
-		border-color: $accent-color transparent;
-		left: -$ribbon-border-widths;
-	}
-
-	&:after {
-		border-color: transparent $accent-color;
-		right: -$ribbon-border-widths;
-	}
-
-	&:hover, &:focus {
-		background-color: $dark-accent-color;
-
-		&:before {
-			border-color: $dark-accent-color transparent;
-		}
-
-		&:after {
-			border-color: transparent $dark-accent-color;
-		}
-	}
+.newer-posts {
+	@include ribbon-left-arrow($secondary-light-text, $accent-color, 1.5rem);
 }
 
-.ribbon-left-arrow {
-	&:after, &:before {
-		border-width: $ribbon-border-widths $ribbon-border-widths $ribbon-border-widths 0;
-		-webkit-transition: border-color 0.2s ease-in-out;
-		-moz-transition: border-color 0.2s ease-in-out;
-		transition: border-color 0.2s ease-in-out;
-	}
-
-	&:before {
-		border-color: transparent $accent-color;
-		left: -$ribbon-border-widths;
-	}
-
-	&:after {
-		border-color: $accent-color transparent;
-		right: -$ribbon-border-widths;
-	}
-
-	&:hover, &:focus {
-		background-color: $dark-accent-color;
-
-		&:before {
-			border-color: transparent $dark-accent-color;
-		}
-
-		&:after {
-			border-color: $dark-accent-color transparent;
-		}
-	}
+.older-posts {
+	@include ribbon-right-arrow($secondary-light-text, $accent-color, 1.5rem);
 }

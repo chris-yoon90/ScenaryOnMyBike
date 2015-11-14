@@ -1,3 +1,73 @@
 {{!< default}}
 
-<h1>This is Post</h1>
+{{#post}}
+<main class="container" role="main">
+	<div class="post-wrapper">
+		<article class="{{post_class}} card accent card-1">
+			<header class="post-header speech-bubble">
+				<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
+				<h1 class="title">{{title}}</h1>
+			</header>
+
+			{{#if image}}
+			<section class="post-media">
+				<img src="{{image}}" alt="{{title}}" />
+			</section>
+			{{/if}}
+
+			<section class="post-content">
+				{{content}}
+				{{#if tags}}
+				<p>
+					<span><i class="fa fa-tags"></i> Tags:</span>
+					{{> "tag-partial"}}
+				</p>
+				{{/if}}
+			</section>
+
+			<footer class="post-footer">
+	                {{#author}}
+
+	                {{#if image}}
+	                <figure class="author-image">
+	                    <a class="img" href="/about" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+	                </figure>
+	                {{/if}}
+
+	                <address class="author-meta">
+	                    <h4>{{name}}</h4>
+
+	                    {{#if bio}}
+	                        <p class="bio">{{bio}}</p>
+	                    {{/if}}
+
+	                    <div class="author-meta">
+	                        {{#if location}}
+	                            <span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> </br>
+	                        {{/if}}
+	                        {{#if website}}
+	                            <span class="author-link"><a href="{{website}}" target="_blank"><i class="fa fa-external-link"></i> {{website}}</a></span>
+	                        {{/if}}
+	                    </div>
+	                </address>
+
+	                {{/author}}
+	            </footer>
+		</article>
+	</div>
+</main>
+
+<aside class="readnext">
+	{{#next_post}}
+    <a class="next-post" href="{{url}}">
+        Next
+    </a>
+    {{/next_post}}
+    <div class="diamond-separator"><span class="diamond-wrapper"><span class="diamond"></span></span></div>
+    {{#prev_post}}
+    <a class="prev-post" href="{{url}}">
+        Prev
+    </a>
+    {{/prev_post}}
+</aside>
+{{/post}}
