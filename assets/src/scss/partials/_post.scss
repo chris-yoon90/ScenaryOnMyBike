@@ -1,9 +1,25 @@
+.paged {
+	.post-index-banner {
+		display: none;
+	}
+}
+
 .post-index-banner {
-	display: none;
+	padding: 0 5% 20px 5%;
 
 	@include desktop-sm-up {
-		display: block;
+		background-color: $primary-color;
 	}
+}
+
+.page-title {
+	
+}
+
+.page-description {
+	@extend .sub-headline;
+	margin: 0;
+	color: $disabled-dark-text;
 }
 
 .post-index {
@@ -20,15 +36,17 @@
 	}
 }
 
+.paged {
+	.masonry-grid-item:first-child {
+		margin-top: 0;
+	}
+}
+
 .masonry-grid-item {
 	float: left;
 	width: 100%;
 	margin-top: 25px;
 	padding: 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
 
 	@include tablet-up {
 		width: 49.9%;
@@ -40,12 +58,6 @@
 		width: 33.3%;
 		margin: 0;
 		padding: 0 1.5% 4.5% 1.5%;
-	}
-}
-
-.home-template {
-	.masonry-grid-item:first-of-type {
-		margin-top: 50px;
 	}
 }
 
@@ -231,7 +243,7 @@ post.hbs
 .diamond-separator {
 	position: relative;
 	text-align: center;
-	margin: 0 3%;
+	margin: 0 15px;
 	font-weight: bold;
 	width: 40%;
 	display: inline-block;
@@ -240,7 +252,7 @@ post.hbs
 		background-color: $white;
 		position: relative;
 		z-index: 1;
-		padding: 0 7%;
+		padding: 0 10px;
 		vertical-align: middle;
 	}
 
@@ -253,6 +265,18 @@ post.hbs
 		top: 50%;
 		width: 100%;
 		left: 0;
+	}
+
+	&.no-next {
+		width: 20%;
+		text-align: left;
+		padding-left: 0;
+	}
+
+	&.no-prev {
+		width: 20%;
+		text-align: right;
+		padding-right: 0;
 	}
 }
 

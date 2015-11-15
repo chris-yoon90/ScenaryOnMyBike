@@ -2,7 +2,7 @@
     {{#if prev}}
         <a class="newer-posts" href="{{page_url prev}}#blog">Newer Posts</a>
     {{/if}}
-    <div class="page-number"><span>{{page}} / {{pages}}</span></div>
+    <div class="page-number {{^if prev}}no-prev{{/if}} {{^if next}}no-next{{/if}}"><span>{{page}} / {{pages}}</span></div>
     {{#if next}}
         <a class="older-posts" href="{{page_url next}}#blog">Older Posts</a>
     {{/if}}

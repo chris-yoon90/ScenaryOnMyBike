@@ -63,7 +63,7 @@
         Next
     </a>
     {{/next_post}}
-    <div class="diamond-separator"><span class="diamond-wrapper"><span class="diamond"></span></span></div>
+    <div class="diamond-separator {{^next_post}}no-next{{/next_post}} {{^prev_post}}no-prev{{/prev_post}}"><span class="diamond-wrapper"><span class="diamond"></span></span></div>
     {{#prev_post}}
     <a class="prev-post" href="{{url}}">
         Prev
