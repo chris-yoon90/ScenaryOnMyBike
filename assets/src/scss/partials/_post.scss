@@ -7,26 +7,24 @@
 .post-index-banner {
 	padding: 0 5% 20px 5%;
 
-	@include desktop-sm-up {
-		background-color: $primary-color;
-	}
-
 	.page-title {
 		@include desktop-sm-up {
 			margin-top: 0;
-			color: $primary-light-text;
 		}
+	}
+
+	&:after {
+		content: "";
+		width: 80%;
+		border-bottom: 7px double $accent-color;
+		display: block;
 	}
 }
 
 .page-description {
 	@extend .sub-headline;
-	margin: 0;
+	margin-top: 0;
 	color: $disabled-dark-text;
-
-	@include desktop-sm-up {
-		color: $primary-light-text;
-	}
 }
 
 .post-index {
@@ -40,26 +38,24 @@
 
 	@include desktop-md-up {
 		max-width: 92.6%;
-		margin-top: 50px;
 	}
 }
 
-.paged {
-
-	.post-index {
-		margin-top: 0;
-	}
-
-	.masonry-grid-item:first-child {
-		margin-top: 0;
-	}
-}
+// .paged {
+// 	.masonry-grid-item:first-child {
+// 		margin-top: 0;
+// 	}
+// }
 
 .masonry-grid-item {
 	float: left;
 	width: 100%;
 	margin-top: 25px;
 	padding: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
 
 	@include tablet-up {
 		width: 49.9%;
@@ -172,7 +168,9 @@ post.hbs
  */
 
 .post-wrapper {
-	margin-top: 50px;
+	max-width: 92%;
+	width: 992px;
+	margin: 50px auto 0 auto;
 }
 
 .post-content {
@@ -290,6 +288,15 @@ post.hbs
 		width: 20%;
 		text-align: right;
 		padding-right: 0;
+	}
+
+	&.no-next.no-prev {
+		text-align: center;
+		width: auto;
+		
+		&:before {
+			display: none;
+		}
 	}
 }
 

@@ -39,6 +39,15 @@
 			text-align: right;
 			padding-right: 0;
 		}
+
+		&.no-next.no-prev {
+			text-align: center;
+			width: auto;
+
+			&:before {
+				display: none;
+			}
+		}
 	}
 
 	span {

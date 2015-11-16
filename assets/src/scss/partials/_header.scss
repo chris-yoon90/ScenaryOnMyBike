@@ -10,8 +10,7 @@
 	@extend .box-shadow-1;
 
 	@include desktop-sm-up {
-		position: absolute;
-		box-shadow: none;
+		display: none;
 	}
 
 	.sns-meta {

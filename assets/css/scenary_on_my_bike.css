@@ -2022,8 +2022,7 @@ body {
   z-index: 50; }
   @media (min-width: 768px) {
     .site-header {
-      position: absolute;
-      box-shadow: none; } }
+      display: none; } }
   .site-header .sns-meta {
     margin-top: 1px; }
   @media (min-width: 768px) {
@@ -2048,19 +2047,17 @@ body {
 .post-index-banner {
   padding: 0 5% 20px 5%; }
   @media (min-width: 768px) {
-    .post-index-banner {
-      background-color: #B2EBF2; } }
-  @media (min-width: 768px) {
     .post-index-banner .page-title {
-      margin-top: 0;
-      color: white; } }
+      margin-top: 0; } }
+  .post-index-banner:after {
+    content: "";
+    width: 80%;
+    border-bottom: 7px double #00E5FF;
+    display: block; }
 
 .page-description {
-  margin: 0;
+  margin-top: 0;
   color: rgba(0, 0, 0, 0.38); }
-  @media (min-width: 768px) {
-    .page-description {
-      color: white; } }
 
 .post-index {
   margin: 0 auto;
@@ -2071,19 +2068,15 @@ body {
       max-width: 97%; } }
   @media (min-width: 992px) {
     .post-index {
-      max-width: 92.6%;
-      margin-top: 50px; } }
-
-.paged .post-index {
-  margin-top: 0; }
-.paged .masonry-grid-item:first-child {
-  margin-top: 0; }
+      max-width: 92.6%; } }
 
 .masonry-grid-item {
   float: left;
   width: 100%;
   margin-top: 25px;
   padding: 0; }
+  .masonry-grid-item:first-child {
+    margin-top: 0; }
   @media (min-width: 480px) {
     .masonry-grid-item {
       width: 49.9%;
@@ -2165,7 +2158,9 @@ post.hbs
 -------------------------------------------------------------------------------
  */
 .post-wrapper {
-  margin-top: 50px; }
+  max-width: 92%;
+  width: 992px;
+  margin: 50px auto 0 auto; }
 
 .post-footer {
   margin-top: 70px;
@@ -2316,6 +2311,11 @@ post.hbs
     width: 20%;
     text-align: right;
     padding-right: 0; }
+  .diamond-separator.no-next.no-prev {
+    text-align: center;
+    width: auto; }
+    .diamond-separator.no-next.no-prev:before {
+      display: none; }
 
 .diamond {
   display: inline-block;
@@ -2473,7 +2473,12 @@ post.hbs
       .page-number.no-next {
         width: 25%;
         text-align: right;
-        padding-right: 0; } }
+        padding-right: 0; }
+      .page-number.no-next.no-prev {
+        text-align: center;
+        width: auto; }
+        .page-number.no-next.no-prev:before {
+          display: none; } }
   .page-number span {
     background-color: #fff;
     z-index: 1;
