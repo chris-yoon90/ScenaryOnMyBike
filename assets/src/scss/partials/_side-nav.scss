@@ -13,6 +13,12 @@
 	opacity: 0;
 	@extend .box-shadow-2;
 
+	@include desktop-sm-up {
+		left: 0;
+		opacity: 1;
+		box-shadow: none;
+	}
+
 	&.active {
 		left: 0;
 		opacity: 1;
@@ -33,6 +39,10 @@
 	width: 100%;
 	background-color: $primary-color;
 	padding: 5px 13px 5px 13px;
+
+	@include desktop-sm-up {
+		height: 145px;
+	}
 
 	.logo {
 		color: $primary-light-text;

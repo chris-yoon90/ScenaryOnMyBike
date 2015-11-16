@@ -10,16 +10,23 @@
 	@include desktop-sm-up {
 		background-color: $primary-color;
 	}
-}
 
-.page-title {
-	
+	.page-title {
+		@include desktop-sm-up {
+			margin-top: 0;
+			color: $primary-light-text;
+		}
+	}
 }
 
 .page-description {
 	@extend .sub-headline;
 	margin: 0;
 	color: $disabled-dark-text;
+
+	@include desktop-sm-up {
+		color: $primary-light-text;
+	}
 }
 
 .post-index {
@@ -33,10 +40,16 @@
 
 	@include desktop-md-up {
 		max-width: 92.6%;
+		margin-top: 50px;
 	}
 }
 
 .paged {
+
+	.post-index {
+		margin-top: 0;
+	}
+
 	.masonry-grid-item:first-child {
 		margin-top: 0;
 	}
@@ -185,7 +198,7 @@ post.hbs
 		font-style: italic;
 	}
 
-	.author-image {
+	.author-image-wrapper {
 		position: absolute;
 	    top: -45px;
 	    left: 50%;
@@ -198,7 +211,7 @@ post.hbs
 	}
 }
 
-.author-image {
+.author-image-wrapper {
 	width: 90px;
 	height: 90px;
 	border: 1px $light-accent-color solid;
@@ -213,7 +226,7 @@ post.hbs
 		height: 120px;
 	}
 
-	.img {
+	.author-image {
 		display: block;
 		background-repeat: no-repeat;
 		background-position: center;
