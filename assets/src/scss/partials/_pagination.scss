@@ -12,6 +12,60 @@
 	&:first-of-type {
 		display: none;
 	}
+
+	&.no-prev {
+		.newer-posts {
+			display: none;
+		}
+	}
+
+	&.no-next {
+		.older-posts {
+			display: none;
+		}
+	}
+
+	&.no-next.no-prev {
+		.page-number:before,
+		.page-number:after {
+			display: none;
+		}
+	}
+
+	@include tablet-up {
+		&.no-prev {
+			.newer-posts {
+				display: inline-block;
+				visibility: hidden;
+			}
+
+			.page-number:before {
+				display: inline-block;
+				visibility: hidden;
+			}
+		}
+
+		&.no-next {
+			.older-posts {
+				display: inline-block;
+				visibility: hidden;
+			}
+
+			.page-number:after {
+				display: inline-block;
+				visibility: hidden;
+			}
+		}
+
+		&.no-next.no-prev {
+			.newer-posts, 
+			.older-posts,
+			.page-number:before,
+			.page-number:after {
+				display: none;
+			}
+		}
+	}
 }
 
 .page-number {
@@ -27,27 +81,6 @@
 		display: inline-block;
 		width: 30%;
 		margin: auto 10px;
-
-		&.no-prev {
-			width: 25%;
-			text-align: left;
-			padding-left: 0;
-		}
-
-		&.no-next {
-			width: 25%;
-			text-align: right;
-			padding-right: 0;
-		}
-
-		&.no-next.no-prev {
-			text-align: center;
-			width: auto;
-
-			&:before {
-				display: none;
-			}
-		}
 	}
 
 	span {
@@ -57,15 +90,22 @@
 		position: relative;
 	}
 
-	&:before {
+	&:before, &:after {
 		background-color: $gray-lighter;
 		content: "";
 		display: block;
 		height: 1px;
 		position: absolute;
 		top: 50%;
-		width: 100%;
+		width: 50%;
+	}
+
+	&:before {
 		left: 0;
+	}
+
+	&:after {
+		left: 50%;
 	}
 }
 

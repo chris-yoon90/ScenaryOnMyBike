@@ -17,6 +17,8 @@
 		left: 0;
 		opacity: 1;
 		box-shadow: none;
+		border-right: 10px solid $light-accent-color;
+		width: $side-nav-width + 10;
 	}
 
 	&.active {
