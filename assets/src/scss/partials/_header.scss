@@ -15,6 +15,14 @@
 
 	.sns-meta {
 		margin-top: 1px;
+
+		.sns-link {
+			color: $secondary-light-text;
+
+			&:hover, &:focus {
+				color: $primary-light-text;
+			}
+		}
 	}
 
 	.nav-toggle-btn {

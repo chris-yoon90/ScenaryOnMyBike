@@ -1,18 +1,17 @@
 .site-footer {
 	padding: 10px 5%;
-	color: $light-primary-color;
-	background-color: $primary-color;
+	color: $secondary-dark-text;
 
 	.copyright, .poweredby {
-
+		font-size: 1.3rem;
 		text-align: center;
 
 		a {
-			color: $light-primary-color;
+			color: $disabled-dark-text;
 			text-decoration: underline;
 
 			&:hover, &:focus {
-				color: $primary-light-text;
+				color: $primary-dark-text;
 			}
 		}
 	}

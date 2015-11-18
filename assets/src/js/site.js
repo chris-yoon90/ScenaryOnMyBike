@@ -10,7 +10,7 @@
 				App.initMasonry();
 			} else if(App.showBlog() && App.isHomeContext()){
 				e.preventDefault();
-				toggleSideNav();
+				location.reload();
 			}
 		});
 
