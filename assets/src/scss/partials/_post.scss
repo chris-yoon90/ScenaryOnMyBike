@@ -5,7 +5,11 @@
 }
 
 .post-index-banner {
-	padding: 0 5% 20px 5%;
+	padding: 0 5%;
+
+	@include desktop-sm-up {
+		margin-bottom: 20px;
+	}
 
 	.page-title {
 		@include desktop-sm-up {
@@ -46,10 +50,6 @@
 	width: 100%;
 	margin-top: 25px;
 	padding: 0;
-
-	&:first-child {
-		margin-top: 0;
-	}
 
 	@include tablet-up {
 		width: 49.9%;
@@ -168,10 +168,6 @@ post.hbs
 	margin-right: auto;
 }
 
-.post-wrapper {
-	margin-top: 50px;
-}
-
 .post-content {
 	@extend .post-excerpt;
 }
@@ -240,12 +236,24 @@ post.hbs
 .readnext {
 	margin-top: 20px;
 	margin-bottom: 20px;
+
+	@include desktop-md-up {
+		display: flex;
+	}
 }
 
 .next-post, .prev-post {
 	text-align: center;
 	height: 100px;
 	padding: 0;
+	min-width: 50%;
+
+	@include desktop-md-up {
+		height: 200px;
+		-webkit-flex-grow: 1;
+		-moz-flex-grow: 1;
+		flex-grow: 1;
+	}
 
 	a {
 		position: relative;
@@ -254,25 +262,47 @@ post.hbs
 		height: 100%;
 
 		&:hover, &:focus {
-			.readnext-link-mask {
+			.readnext-meta {
 				background-color: rgba($black, 0.6);
-				color: $primary-light-text;
+
+				h1 {
+					color: $primary-light-text;
+				}
 			}
 		}
 
-		.readnext-link-mask {
+		.readnext-meta {
 			position: absolute;
 			left: 0;
 			top: 0;
 			width: 100%;
 			height: 100%;
 			background-color: rgba($black, 0.3);
-			color: $secondary-light-text;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
 
-			-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-			-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-			-o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-			transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			-webkit-transition: background-color 0.2s ease-in-out;
+			-moz-transition: background-color 0.2s ease-in-out;
+			-o-transition: background-color 0.2s ease-in-out;
+			transition: background-color 0.2s ease-in-out;
+
+			h1, h2 {
+				-webkit-transition: color 0.2s ease-in-out;
+				-moz-transition: color 0.2s ease-in-out;
+				-o-transition: color 0.2s ease-in-out;
+				transition: color 0.2s ease-in-out;
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+
+			h1 {
+				color: $secondary-light-text;
+			}
+
+			h2 {
+				color: $secondary-accent-color;
+			}
 		}
 	}
 

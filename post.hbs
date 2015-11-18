@@ -55,28 +55,27 @@
 		</article>
 </main>
 
-<aside class="readnext container-fluid">
-	<div class="card card-1 row">
-		{{#next_post}}
-		<section class="next-post {{#prev_post}}col-md-6{{else}}col-md-12{{/prev_post}}">
-			<a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>
-				<div class="readnext-link-mask">
-					<h3 class="sub-headline">Next Post</h3>
-					<h4 class="headline">{{title}}</h4>
-				</div>
-		    </a>
-	    </section>
-	    {{/next_post}}
-	    {{#prev_post}}
-	    <section class="prev-post {{#next_post}}col-md-6{{else}}col-md-12{{/next_post}}">
-		    <a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>
-				<div class="readnext-link-mask">
-					<h3 class="sub-headline">Previous Post</h3>
-					<h4 class="headline">{{title}}</h4>
-				</div>
-		    </a>
-	    </section>
-	    {{/prev_post}}
-    </div>
+<aside class="readnext card card-1">
+	{{#next_post}}
+	<section class="next-post">
+		<a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>
+			<div class="readnext-meta">
+				<h2 class="sub-headline">Next Post</h2>
+				<h1 class="headline">{{title}}</h1>
+			</div>
+	    </a>
+    </section>
+    {{/next_post}}
+
+    {{#prev_post}}
+    <section class="prev-post">
+	    <a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>
+			<div class="readnext-meta">
+				<h2 class="sub-headline">Previous Post</h2>
+				<h1 class="headline">{{title}}</h1>
+			</div>
+	    </a>
+    </section>
+    {{/prev_post}}
 </aside>
 {{/post}}
