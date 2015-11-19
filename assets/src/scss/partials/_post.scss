@@ -7,7 +7,7 @@
 .post-index-banner {
 	padding: 0 5%;
 
-	@include desktop-sm-up {
+	@include tablet-up {
 		margin-bottom: 20px;
 	}
 

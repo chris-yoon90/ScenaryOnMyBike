@@ -12,11 +12,18 @@
 	z-index: 100;
 	opacity: 0;
 	@extend .box-shadow-2;
+	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	-o-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 
 	@include desktop-sm-up {
 		left: 0;
 		opacity: 1;
 		box-shadow: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	&.active {
@@ -28,10 +35,18 @@
 		}
 	}
 
-	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	-o-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
-	transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
+	&:before {
+		@include desktop-sm-up {
+			position: absolute;
+			width: 30px;
+			height: 100%;
+			top: 0;
+			left: 40px;
+			content: '';
+			background-color: $primary-color;
+			z-index: -1;
+		}
+	}
 }
 
 .side-nav-header {
@@ -42,10 +57,11 @@
 
 	@include desktop-sm-up {
 		height: 145px;
+		background-color: $white;
 	}
 
 	.logo {
-		color: $primary-light-text;
+		color: $primary-dark-text;
 		display: block;
 		@extend .sub-headline;
 		text-transform: uppercase;
@@ -65,7 +81,7 @@
 	}
 
 	.administrator-meta {
-		color: $secondary-light-text;
+		color: $secondary-dark-text;
 		font-family: $playfaire-display;
 		font-style: italic;
 		margin: 0;
@@ -90,6 +106,7 @@
 
 .site-nav-footer {
 	padding: 0 13px;
+	background-color: $white;
 
 	&:before {
 		content: '';
