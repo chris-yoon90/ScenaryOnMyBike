@@ -1,34 +1,41 @@
 .site-header {
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 50px;
-	opacity: 1;
-	background-color: $primary-color;
-	z-index: 50;
-	@extend .box-shadow-1;
-
-	@include desktop-sm-up {
-		display: none;
+	top: 10px;
+	left: 10px;
+	z-index: 101;
+	
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+	
+	&.active {
+		left: 170px;
 	}
-
-	.sns-meta {
-		margin-top: 1px;
-
-		.sns-link {
-			color: $secondary-light-text;
-
-			&:hover, &:focus {
-				color: $primary-light-text;
+	
+	.nav-toggle-btn {
+		background-color: $accent-color;
+		-webkit-transition: background-color 300ms ease-in-out;
+		-moz-transition: background-color 300ms ease-in-out;
+		transition: background-color 300ms ease-in-out;
+		
+		.icon-bar {
+			background-color: $secondary-light-text;
+			-webkit-transition: background-color 300ms ease-in-out;
+			-moz-transition: background-color 300ms ease-in-out;
+			transition: background-color 300ms ease-in-out;
+		}
+		
+		&.close {
+			background-color: $dark-accent-color;
+			
+			.icon-bar {
+				background-color: $primary-light-text;
 			}
 		}
 	}
-
-	.nav-toggle-btn {
-		@include desktop-sm-up {
-			display: none;
-		}
+	
+	@include desktop-sm-up {
+		display: none;
 	}
 }
 

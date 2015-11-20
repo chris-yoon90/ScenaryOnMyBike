@@ -29,10 +29,6 @@
 	&.active {
 		left: 0;
 		opacity: 1;
-
-		.side-nav-header .nav-toggle-btn{
-			visibility: visible;
-		}
 	}
 
 	&:before {
@@ -88,18 +84,6 @@
 
 		.job-title {
 			font-style: normal;
-		}
-	}
-
-	.nav-toggle-btn {
-		position: absolute;
-		right: -45px;
-		top: 0;
-		visibility: hidden;
-		background-color: $primary-color;
-
-		@include desktop-sm-up {
-			display: none;
 		}
 	}
 }

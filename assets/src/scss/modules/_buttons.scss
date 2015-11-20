@@ -5,30 +5,29 @@
 }
 
 .nav-toggle-btn {
-	padding: 12px;
+	padding: 16px;
+	width: 60px;
+	height: 60px;
 	border: none;
 	background-color: transparent;
-	margin: 6px 0;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-
-	&:hover, &:focus {
-		@extend .box-shadow-1;
-	}
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	@extend .box-shadow-1;
 
 	&:focus {
 		outline: none;
 	}
 
 	.icon-bar {
-		$icon-bar-width: 22px;
-		$icon-bar-height: 3px;
+		$icon-bar-width: 28px;
+		$icon-bar-height: 4px;
 
 		width: $icon-bar-width;
 		height: $icon-bar-height;
-		background-color: $light-primary-color;
+		background-color: $primary-dark-text;
 		margin-top: $icon-bar-height;
+		position: relative;
 
 		&:first-child {
 			margin-top: 0;
@@ -36,15 +35,10 @@
 	}
 
 	&.close {
-		width: 45px;
-    	height: 45px;
-    	padding: 0;
-    	position: relative;
-    	margin: 0;
 
     	.icon-bar {
-    		$icon-bar-width: 30px;
-			$icon-bar-height: 3px;
+    		$icon-bar-width: 28px;
+			$icon-bar-height: 4px;
 
     		position: absolute;
     		width: $icon-bar-width;
@@ -56,6 +50,10 @@
 
 			&:first-child {
 				transform: rotate(45deg);
+			}
+			
+			&:nth-child(2) {
+				display: none;
 			}
 
 			&:last-child {

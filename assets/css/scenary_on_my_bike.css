@@ -4,40 +4,38 @@
   padding: 0 0.5rem; }
 
 .nav-toggle-btn {
-  padding: 12px;
+  padding: 16px;
+  width: 60px;
+  height: 60px;
   border: none;
   background-color: transparent;
-  margin: 6px 0;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px; }
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%; }
   .nav-toggle-btn:focus {
     outline: none; }
   .nav-toggle-btn .icon-bar {
-    width: 22px;
-    height: 3px;
-    background-color: #BBDEFB;
-    margin-top: 3px; }
+    width: 28px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.87);
+    margin-top: 4px;
+    position: relative; }
     .nav-toggle-btn .icon-bar:first-child {
       margin-top: 0; }
-  .nav-toggle-btn.close {
-    width: 45px;
-    height: 45px;
-    padding: 0;
-    position: relative;
-    margin: 0; }
-    .nav-toggle-btn.close .icon-bar {
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      margin-top: -1.5px;
-      margin-left: -15px;
-      left: 50%;
-      top: 50%; }
-      .nav-toggle-btn.close .icon-bar:first-child {
-        transform: rotate(45deg); }
-      .nav-toggle-btn.close .icon-bar:last-child {
-        transform: rotate(-45deg); }
+  .nav-toggle-btn.close .icon-bar {
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    margin-top: -2px;
+    margin-left: -14px;
+    left: 50%;
+    top: 50%; }
+    .nav-toggle-btn.close .icon-bar:first-child {
+      transform: rotate(45deg); }
+    .nav-toggle-btn.close .icon-bar:nth-child(2) {
+      display: none; }
+    .nav-toggle-btn.close .icon-bar:last-child {
+      transform: rotate(-45deg); }
 
 .tag {
   background-color: #FF6E40;
@@ -1821,7 +1819,7 @@ body {
     .site-wrapper {
       padding: 50px 0 0 210px; } }
 
-.box-shadow-1, .nav-toggle-btn:hover, .nav-toggle-btn:focus, .tag, .card-1, .side-nav .navbar li a:hover, .side-nav .navbar li a:focus, .site-cover .navbar-container .navbar a, .site-header {
+.box-shadow-1, .nav-toggle-btn, .tag, .card-1, .side-nav .navbar li a:hover, .side-nav .navbar li a:focus, .site-cover .navbar-container .navbar a {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
@@ -2010,24 +2008,30 @@ body {
 
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  opacity: 1;
-  background-color: #2196F3;
-  z-index: 50; }
+  top: 10px;
+  left: 10px;
+  z-index: 101;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
+  .site-header.active {
+    left: 170px; }
+  .site-header .nav-toggle-btn {
+    background-color: #40C4FF;
+    -webkit-transition: background-color 300ms ease-in-out;
+    -moz-transition: background-color 300ms ease-in-out;
+    transition: background-color 300ms ease-in-out; }
+    .site-header .nav-toggle-btn .icon-bar {
+      background-color: rgba(255, 255, 255, 0.7);
+      -webkit-transition: background-color 300ms ease-in-out;
+      -moz-transition: background-color 300ms ease-in-out;
+      transition: background-color 300ms ease-in-out; }
+    .site-header .nav-toggle-btn.close {
+      background-color: #0091EA; }
+      .site-header .nav-toggle-btn.close .icon-bar {
+        background-color: white; }
   @media (min-width: 768px) {
     .site-header {
-      display: none; } }
-  .site-header .sns-meta {
-    margin-top: 1px; }
-    .site-header .sns-meta .sns-link {
-      color: rgba(255, 255, 255, 0.7); }
-      .site-header .sns-meta .sns-link:hover, .site-header .sns-meta .sns-link:focus {
-        color: white; }
-  @media (min-width: 768px) {
-    .site-header .nav-toggle-btn {
       display: none; } }
 
 .site-footer {
@@ -2327,8 +2331,6 @@ post.hbs
   .side-nav.active {
     left: 0;
     opacity: 1; }
-    .side-nav.active .side-nav-header .nav-toggle-btn {
-      visibility: visible; }
   @media (min-width: 768px) {
     .side-nav:before {
       position: absolute;
@@ -2369,15 +2371,6 @@ post.hbs
     margin: 0; }
     .side-nav-header .administrator-meta .job-title {
       font-style: normal; }
-  .side-nav-header .nav-toggle-btn {
-    position: absolute;
-    right: -45px;
-    top: 0;
-    visibility: hidden;
-    background-color: #2196F3; }
-    @media (min-width: 768px) {
-      .side-nav-header .nav-toggle-btn {
-        display: none; } }
 
 .site-nav-footer {
   padding: 0 13px;
