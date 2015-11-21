@@ -1,5 +1,5 @@
 .side-nav {
-	$side-nav-width: 200px;
+	$side-nav-width: 250px;
 	$menu-label-animation-duration: 300ms;
 
 	font-family: $droid-sans;
@@ -11,7 +11,11 @@
 	background-color: $white;
 	z-index: 100;
 	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	@extend .box-shadow-2;
+	
 	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 	-o-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
@@ -21,90 +25,74 @@
 		left: 0;
 		opacity: 1;
 		box-shadow: none;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 	}
 
 	&.active {
 		left: 0;
 		opacity: 1;
 	}
-
-	&:before {
-		@include desktop-sm-up {
-			position: absolute;
-			width: 30px;
-			height: 100%;
-			top: 0;
-			left: 40px;
-			content: '';
-			background-color: $primary-color;
-			z-index: -1;
-		}
-	}
 }
 
 .side-nav-header {
-	height: 130px;
 	width: 100%;
-	background-color: $primary-color;
-	padding: 5px 13px 5px 13px;
-
-	@include desktop-sm-up {
-		height: 145px;
-		background-color: $white;
-	}
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
 	.logo {
 		color: $primary-dark-text;
 		display: block;
-		@extend .sub-headline;
-		text-transform: uppercase;
-		letter-spacing: 0.05rem;
-		font-size: 1.7rem;
+		position: relative;
+		margin: 31px auto 14px auto;
+		text-align: left;
 
 		&:hover, &:focus {
 			text-decoration: none;
 		}
 		
+		.name {
+			position: relative;
+			z-index: 1;
+			text-transform: uppercase;
+			margin-left: 3.2rem;
+			letter-spacing: 0.14rem;
+			line-height: 1em;
+			font-size: 2.5rem;
+		}
+		
+		.job-title {
+			margin-left: 6.3rem;
+			position: relative;
+			z-index: 1;
+			font-size: 1.4rem;
+			line-height: 1em;
+		}
+		
 		img {
-			margin: 0 0 7px -5px;
+			position: absolute;
+			opacity: 0.9;
+			transform: translate(0, -50%);
+			left: 0;
+			top: 10%;
+			margin: 7px 0 0 -8px;
 			display: block;
-			width: 40px;
+			width: 80px;
 			height: auto;
 		}
 	}
-
-	.administrator-meta {
-		color: $secondary-dark-text;
-		font-family: $playfaire-display;
-		font-style: italic;
-		margin: 0;
-
-		.job-title {
-			font-style: normal;
-		}
+	
+	.quote-of-the-day {
+		color: $disabled-dark-text;
+		font-size: 1.3rem;
+		margin: 20px 0 20px 61px;
+		padding-left: 11px;
 	}
 }
 
 .site-nav-footer {
 	padding: 0 13px;
 	background-color: $white;
-
-	&:before {
-		content: '';
-		display: block;
-		height: 1px;
-		width: 80%;
-		background-color: $disabled-dark-text;
-		margin: 0 auto 12px auto;
-	}
-
-	.footer-quote {
-		color: $disabled-dark-text;
-		font-size: 1.3rem;
-	}
 
 	.footer-sns-meta {
 		display: none;

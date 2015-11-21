@@ -2,19 +2,15 @@
 	<header class="side-nav-header">
 		<a href="/" class="logo">
 			<img src="{{@blog.logo}}" />
-			{{@blog.title}}
+			<div class="name">{{@blog.title}}</div>
+			<div class="job-title">Software Developer</div>
 		</a>
-
-		<address class="administrator-meta">
-			<span class="job-title">Software Developer</span> <br/>
-			chris.yoon90@gmail.com
-		</address>
+		<blockquote class="quote-of-the-day">{{@blog.description}}</blockquote>
 	</header>
 
 	{{navigation}}
 
 	<footer class="site-nav-footer">
-		<blockquote class="footer-quote">{{@blog.description}}</blockquote>
 		<section class="footer-sns-meta">{{> 'sns-links'}}</section>
 	</footer>
 </aside>
