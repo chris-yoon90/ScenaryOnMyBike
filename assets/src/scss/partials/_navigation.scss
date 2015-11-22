@@ -23,6 +23,14 @@
 			border-top-right-radius: 5px;
 			border-bottom-right-radius: 5px;
 			
+			-webkit-transition: background-color 300ms ease-in-out;
+			-moz-transition: background-color 300ms ease-in-out;
+			transition: background-color 300ms ease-in-out;
+			
+			&:hover, &:focus {
+				background-color: $dark-primary-color;
+			}
+			
 			&:before {
 				content: '';
 				position: absolute;
@@ -44,6 +52,14 @@
 				margin: auto;
 				color: $secondary-light-text;
 				font-size: 2.0rem;
+				
+				-webkit-transition: color 300ms ease-in-out;
+				-moz-transition: color 300ms ease-in-out;
+				transition: color 300ms ease-in-out;
+				
+				&:hover, &:focus {
+					color: $primary-light-text;
+				}
 			}
 		}
 

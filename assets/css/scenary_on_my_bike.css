@@ -1959,7 +1959,12 @@ body {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; }
+    border-bottom-right-radius: 5px;
+    -webkit-transition: background-color 300ms ease-in-out;
+    -moz-transition: background-color 300ms ease-in-out;
+    transition: background-color 300ms ease-in-out; }
+    .side-nav .navbar li:hover, .side-nav .navbar li:focus {
+      background-color: #0D47A1; }
     .side-nav .navbar li:before {
       content: '';
       position: absolute;
@@ -1976,7 +1981,12 @@ body {
       display: block;
       margin: auto;
       color: rgba(255, 255, 255, 0.7);
-      font-size: 2.0rem; }
+      font-size: 2.0rem;
+      -webkit-transition: color 300ms ease-in-out;
+      -moz-transition: color 300ms ease-in-out;
+      transition: color 300ms ease-in-out; }
+      .side-nav .navbar li a:hover, .side-nav .navbar li a:focus {
+        color: white; }
   .side-nav .navbar .nav-blog a:before {
     font-family: 'FontAwesome';
     font-size: 2.5rem;
@@ -2065,9 +2075,6 @@ body {
       .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
         color: rgba(0, 0, 0, 0.87); }
 
-.paged .post-index-banner {
-  display: none; }
-
 @media (min-width: 480px) {
   .post-index-banner {
     margin-bottom: 20px; } }
@@ -2075,7 +2082,7 @@ body {
   float: right;
   text-align: right;
   background-color: #2196F3;
-  padding: 0 4%;
+  padding: 0 4% 0 10%;
   position: relative;
   height: 120px; }
   .post-index-banner .post-index-banner-inner:before {
@@ -2341,9 +2348,7 @@ post.hbs
   background-color: #fff;
   z-index: 100;
   opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 30px;
   -webkit-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
   -moz-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
   -o-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
@@ -2353,6 +2358,7 @@ post.hbs
       left: 0;
       opacity: 1;
       box-shadow: none;
+      padding-top: 70px;
       border-right: 2px solid #eeeeee; } }
   .side-nav.active {
     left: 0;
@@ -2401,6 +2407,9 @@ post.hbs
     font-size: 1.3rem;
     margin: 20px 0 20px 61px;
     padding-left: 11px; }
+    @media (min-width: 992px) {
+      .side-nav-header .quote-of-the-day {
+        font-size: 1.5rem; } }
 
 .site-nav-footer {
   background-color: #fff;

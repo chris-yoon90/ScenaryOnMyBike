@@ -11,9 +11,7 @@
 	background-color: $white;
 	z-index: 100;
 	opacity: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	padding-top: 30px;
 	@extend .box-shadow-2;
 	
 	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
@@ -25,6 +23,7 @@
 		left: 0;
 		opacity: 1;
 		box-shadow: none;
+		padding-top: 70px;
 		border-right: 2px solid $gray-lighter;
 	}
 
@@ -88,6 +87,10 @@
 		font-size: 1.3rem;
 		margin: 20px 0 20px 61px;
 		padding-left: 11px;
+		
+		@include desktop-md-up {
+			font-size: 1.5rem;
+		}
 	}
 }
 
