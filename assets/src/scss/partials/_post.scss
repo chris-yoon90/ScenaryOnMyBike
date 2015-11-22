@@ -5,30 +5,39 @@
 }
 
 .post-index-banner {
-	padding: 0 5%;
-
+	
 	@include tablet-up {
 		margin-bottom: 20px;
 	}
-
-	.page-title {
-		@include desktop-sm-up {
-			margin-top: 0;
+	
+	.post-index-banner-inner {
+		float: right;
+		text-align: right;
+		background-color: $primary-color;
+		padding: 0 4%;
+		position: relative;
+		height: 120px;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			left: -55px;
+			top: 0;
+			border-style: solid;
+			border-width: 0 0 120px 55px;
+			border-color: transparent transparent $primary-color transparent;
 		}
 	}
-
-	&:after {
-		content: "";
-		width: 80%;
-		border-bottom: 7px double $accent-color;
-		display: block;
+	
+	.page-title, .page-description {
+		color: $primary-light-text;
 	}
-}
-
-.page-description {
-	@extend .sub-headline;
-	margin-top: 0;
-	color: $disabled-dark-text;
+	
+	.page-description {
+		@extend .sub-headline;
+		margin-top: 0;
+		color: $disabled-light-text;
+	}
 }
 
 .post-index {

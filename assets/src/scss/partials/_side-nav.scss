@@ -25,6 +25,7 @@
 		left: 0;
 		opacity: 1;
 		box-shadow: none;
+		border-right: 2px solid $gray-lighter;
 	}
 
 	&.active {
@@ -91,25 +92,16 @@
 }
 
 .site-nav-footer {
-	padding: 0 13px;
 	background-color: $white;
+	text-align: center;
+	margin-top: 20px;
+	
+	.sns-link {
+		color: $disabled-dark-text;
 
-	.footer-sns-meta {
-		display: none;
-		text-align: center;
-
-		@include desktop-sm-up {
-			display: block;
+		&:hover, &:focus {
+			color: $primary-dark-text;
 		}
-
-		.sns-link {
-			color: $disabled-dark-text;
-
-			&:hover, &:focus {
-				color: $primary-dark-text;
-			}
-		}
-		
 	}
 }
 
