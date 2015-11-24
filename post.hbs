@@ -2,60 +2,60 @@
 
 {{#post}}
 <main class="post-wrapper" role="main">
-		<article class="{{post_class}} card accent card-1">
-			<header class="post-header speech-bubble">
-				<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
-				<h1 class="title">{{title}}</h1>
-			</header>
+	<article class="{{post_class}} card accent card-2">
+		<header class="post-header speech-bubble">
+			<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
+			<h1 class="title">{{title}}</h1>
+		</header>
+
+		{{#if image}}
+		<section class="post-media">
+			<img src="{{image}}" alt="{{title}}" />
+		</section>
+		{{/if}}
+
+		<section class="post-content">
+			{{content}}
+			{{#if tags}}
+			<p>
+				<span><i class="fa fa-tags"></i> Tags:</span>
+				{{> "tag-partial"}}
+			</p>
+			{{/if}}
+		</section>
+
+		<footer class="post-footer">
+			{{#author}}
 
 			{{#if image}}
-			<section class="post-media">
-				<img src="{{image}}" alt="{{title}}" />
-			</section>
+			<figure class="author-image-wrapper">
+				<a class="author-image" href="/about" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+			</figure>
 			{{/if}}
 
-			<section class="post-content">
-				{{content}}
-				{{#if tags}}
-				<p>
-					<span><i class="fa fa-tags"></i> Tags:</span>
-					{{> "tag-partial"}}
-				</p>
+			<address class="author-meta">
+				<h4>{{name}}</h4>
+
+				{{#if bio}}
+					<p class="bio">{{bio}}</p>
 				{{/if}}
-			</section>
 
-			<footer class="post-footer">
-	                {{#author}}
+				<div class="author-meta">
+					{{#if location}}
+						<span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> </br>
+					{{/if}}
+					{{#if website}}
+						<span class="author-link"><a href="{{website}}" target="_blank"><i class="fa fa-external-link"></i> {{website}}</a></span>
+					{{/if}}
+				</div>
+			</address>
 
-	                {{#if image}}
-	                <figure class="author-image-wrapper">
-	                    <a class="author-image" href="/about" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-	                </figure>
-	                {{/if}}
-
-	                <address class="author-meta">
-	                    <h4>{{name}}</h4>
-
-	                    {{#if bio}}
-	                        <p class="bio">{{bio}}</p>
-	                    {{/if}}
-
-	                    <div class="author-meta">
-	                        {{#if location}}
-	                            <span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> </br>
-	                        {{/if}}
-	                        {{#if website}}
-	                            <span class="author-link"><a href="{{website}}" target="_blank"><i class="fa fa-external-link"></i> {{website}}</a></span>
-	                        {{/if}}
-	                    </div>
-	                </address>
-
-	                {{/author}}
-	            </footer>
-		</article>
+			{{/author}}
+		</footer>
+	</article>
 </main>
 
-<aside class="readnext card card-1">
+<aside class="readnext card card-2">
 	{{#next_post}}
 	<section class="next-post">
 		<a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>

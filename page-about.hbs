@@ -1,3 +1,50 @@
 {{!< default}}
 
-<h1>Who is Chris?</h1>
+<main class="main-content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<section class="administrator-picture card card-1">
+					My Pic
+				</section>
+			</div>
+			<div class="col-sm-8">
+				<section class="administrator-name card card-1">
+					<h1>Chris YOON</h1>
+					<h2>Software Developer</h2>
+				</section>
+			</div>
+		</div>
+		<div class="row row-gutter">
+			<div class="col-sm-12">
+				<section class="about-me card card-1">
+					<h1 class="sub-headline">About me</h1>
+					<p>This is some bio</p>
+					
+					
+				</section>
+			</div>
+		</div>
+		<div class="row row-gutter">
+			<div class="col-sm-8">
+				<section class="skills card card-1">
+					Skills
+				</section>
+			</div>
+			<div class="col-sm-4">
+				<section class="influencers card card-1">
+					Influencers
+				</section>
+			</div>
+		</div>
+		<div class="row row-gutter">
+			<div class="experiences col-sm-12">
+				<section class="card card-1">
+					{{#post}}
+						{{content}}
+					{{/post}}
+				</section>
+			</div>
+		</div>
+	</div>
+</main>

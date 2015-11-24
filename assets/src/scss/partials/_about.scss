@@ -1,0 +1,29 @@
+.page-template-about {
+	.card {
+		padding: 20px 30px;
+	}
+	
+	.administrator-name {
+		
+		h1 {
+			letter-spacing: 0.087rem;
+			font-family: 'Droid Sans';
+			margin-top: 0;
+			color: $primary-dark-text;
+		}
+		
+		h2 {
+			@extend h3;
+			font-family: 'Droid Sans';
+			letter-spacing: -0.087rem;
+			margin-bottom: 0;
+			color: $secondary-dark-text;
+		}
+	}
+	
+	.about-me {
+		p {
+			color: $secondary-dark-text;
+		}
+	}
+}

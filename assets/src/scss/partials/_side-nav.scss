@@ -12,7 +12,7 @@
 	z-index: 100;
 	opacity: 0;
 	padding-top: 30px;
-	@extend .box-shadow-2;
+	@extend .box-shadow-3;
 	
 	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
@@ -22,9 +22,7 @@
 	@include desktop-sm-up {
 		left: 0;
 		opacity: 1;
-		box-shadow: none;
 		padding-top: 70px;
-		border-right: 2px solid $gray-lighter;
 	}
 
 	&.active {
@@ -101,6 +99,10 @@
 	
 	.sns-link {
 		color: $disabled-dark-text;
+		
+		-webkit-transition: color 300ms ease-in-out;
+		-moz-transition: color 300ms ease-in-out;
+		transition: color 300ms ease-in-out;
 
 		&:hover, &:focus {
 			color: $primary-dark-text;

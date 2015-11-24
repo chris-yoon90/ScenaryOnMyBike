@@ -58,3 +58,24 @@ $code-color:                  $dark-secondary-accent-color;
 
 //** Blockquote border color
 $blockquote-border-color:     $accent-color;
+
+//== Progress bars
+//
+//##
+
+//** Background color of the whole progress component
+$progress-bg:                 #f5f5f5;
+//** Progress bar text color
+$progress-bar-color:          $primary-light-text;
+//** Variable for setting rounded corners on progress bar.
+$progress-border-radius:      3px;
+
+//** Default progress bar color
+$progress-bar-bg:             $accent-color;
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         16px;
