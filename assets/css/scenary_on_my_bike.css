@@ -53,7 +53,7 @@
     background-color: #DD2C00;
     text-decoration: none; }
 
-.box-shadow-1, .nav-toggle-btn, .tag, .card-1, .site-cover .navbar-container .navbar a {
+.box-shadow-1, .nav-toggle-btn, .tag, .card-1, .site-cover .navbar-container .navbar a, .page-template-about .about-me ul.timeline li .timeline-details {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
@@ -1695,10 +1695,10 @@ table th[class*="col-"] {
 @import "bootstrap/tooltip";
 @import "bootstrap/popovers";
 @import "bootstrap/carousel";*/
-.clearfix:before, .page-banner:before, .clearfix:after, .page-banner:after {
+.clearfix:before, .page-banner:before, .page-template-about .about-me ul.timeline li:before, .clearfix:after, .page-banner:after, .page-template-about .about-me ul.timeline li:after {
   content: " ";
   display: table; }
-.clearfix:after, .page-banner:after {
+.clearfix:after, .page-banner:after, .page-template-about .about-me ul.timeline li:after {
   clear: both; }
 
 .center-block {
@@ -2625,5 +2625,86 @@ post.hbs
   color: rgba(0, 0, 0, 0.54); }
 .page-template-about .about-me p {
   color: rgba(0, 0, 0, 0.54); }
+.page-template-about .about-me ul.timeline {
+  position: relative;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0; }
+  .page-template-about .about-me ul.timeline:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background-color: #777777; }
+  .page-template-about .about-me ul.timeline li {
+    position: relative;
+    margin-bottom: 25px; }
+    .page-template-about .about-me ul.timeline li:last-child {
+      margin-bottom: 0; }
+    .page-template-about .about-me ul.timeline li .timeline-details {
+      float: left;
+      width: 40%;
+      padding: 10px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.38);
+      position: relative; }
+      .page-template-about .about-me ul.timeline li .timeline-details:before {
+        position: absolute;
+        content: '';
+        right: -10px;
+        top: 10px;
+        border-style: solid;
+        border-color: transparent transparent transparent rgba(0, 0, 0, 0.38);
+        border-width: 10px 0 10px 10px; }
+      .page-template-about .about-me ul.timeline li .timeline-details:after {
+        position: absolute;
+        content: '';
+        right: -9px;
+        top: 11px;
+        border-style: solid;
+        border-color: transparent transparent transparent #fff;
+        border-width: 9px 0 9px 9px; }
+    .page-template-about .about-me ul.timeline li .timeline-badge {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 50%;
+      font-size: 2.0rem;
+      line-height: 40px;
+      transform: translate(-50%, 0);
+      text-align: center;
+      top: 0;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+      background-color: #80D8FF; }
+    .page-template-about .about-me ul.timeline li .timeline-label {
+      position: absolute;
+      left: 50%;
+      transform: translate(30px, 0);
+      top: 10px; }
+    .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details {
+      float: right; }
+      .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details:before {
+        right: auto;
+        left: -10px;
+        border-style: solid;
+        border-color: transparent rgba(0, 0, 0, 0.38) transparent transparent;
+        border-width: 10px 10px 10px 0; }
+      .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details:after {
+        right: auto;
+        left: -9px;
+        border-style: solid;
+        border-color: transparent #fff transparent transparent;
+        border-width: 9px 9px 9px 0; }
+    .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-label {
+      left: auto;
+      right: 50%;
+      transform: translate(-30px, 0); }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */
