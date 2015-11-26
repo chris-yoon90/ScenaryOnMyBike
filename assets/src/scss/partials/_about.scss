@@ -22,6 +22,7 @@
 	}
 	
 	.about-me {
+
 		p {
 			color: $secondary-dark-text;
 		}
@@ -53,34 +54,66 @@
 				}
 				
 				.timeline-details {
-					float: left;
-					width: 40%;
 					padding: 10px;
+					background-color: $white;
 					-webkit-border-radius: 3px;
 					-moz-border-radius: 3px;
 					border-radius: 3px;
 					border: 1px solid $disabled-dark-text;
 					position: relative;
+					float: left;
+					width: 80%;
+					margin-top: 60px;
 					@extend .box-shadow-1;
+					font-size: 1.4rem;
+					color: $secondary-dark-text;
+					
+					@include tablet-up {
+						width: 42%;
+						margin-top: 0;
+					}
+					
+					@include desktop-md-up {
+						width: 45%;
+					}
 					
 					&:before {
 						position: absolute;
 						content: '';
-						right: -10px;
-						top: 10px;
 						border-style: solid;
-						border-color: transparent transparent transparent $disabled-dark-text;
-						border-width: 10px 0 10px 10px;
+						top: -10px;
+						right: 40%;
+						margin-right: -13px;
+						border-color: transparent transparent $disabled-dark-text transparent;
+						border-width: 0 10px 10px 10px;
+						
+						@include tablet-up {
+							margin-right: 0;
+							border-color: transparent transparent transparent $disabled-dark-text;
+							border-width: 10px 0 10px 10px;
+							right: -10px;
+							top: 10px;
+						}
+						
 					}
 					
 					&:after {
 						position: absolute;
 						content: '';
-						right: -9px;
-						top: 11px;
 						border-style: solid;
-						border-color: transparent transparent transparent $white;
-						border-width: 9px 0 9px 9px;
+						top: -9px;
+						right: 40%;
+						margin-right: -13px;
+						border-color: transparent transparent $white transparent;
+						border-width: 0 10px 10px 10px;
+											
+						@include tablet-up {
+							margin-right: 0;
+							border-color: transparent transparent transparent $white;
+							border-width: 9px 0 9px 9px;
+							right: -9px;
+							top: 11px;
+						}
 					}
 					
 				}
@@ -114,18 +147,34 @@
 						
 						&:before {
 							right: auto;
-							left: -10px;
 							border-style: solid;
-							border-color: transparent $disabled-dark-text transparent transparent;
-							border-width: 10px 10px 10px 0;
+							left: 40%;
+							margin-left: -13px;
+							border-color: transparent transparent $disabled-dark-text transparent;
+							border-width: 0 10px 10px 10px;
+							
+							@include tablet-up {
+								margin-left: 0;
+								left: -10px;
+								border-color: transparent $disabled-dark-text transparent transparent;
+								border-width: 10px 10px 10px 0;
+							}
 						}
 						
 						&:after {
 							right: auto;
-							left: -9px;
 							border-style: solid;
-							border-color: transparent $white transparent transparent;
-							border-width: 9px 9px 9px 0;
+							left: 40%;
+							margin-left: -13px;
+							border-color: transparent transparent $white transparent;
+							border-width: 0 10px 10px 10px;
+							
+							@include tablet-up {
+								margin-left: 0;
+								left: -9px;
+								border-color: transparent $white transparent transparent;
+								border-width: 9px 9px 9px 0;
+							}
 						}
 					}
 					
@@ -137,5 +186,37 @@
 				}
 			}
 		}
+	}
+	
+	.skills {
+		p {
+			color: $secondary-dark-text;
+		}
+		
+		.legend {
+			@extend .clearfix;
+			
+			dl {
+				float: right;
+				padding: 10px;
+				@extend .box-shadow-1;
+				font-size: 1.2rem;
+				margin: 0;
+				color: $disabled-dark-text;
+
+				dt:before {
+					content: '*';
+				}
+				
+				dd {
+					margin-left: 10%;
+				}
+			}
+		}
+		
+		.skill-bars {
+			margin-top: 20px;
+		}
+		
 	}
 }

@@ -53,7 +53,7 @@
     background-color: #DD2C00;
     text-decoration: none; }
 
-.box-shadow-1, .nav-toggle-btn, .tag, .card-1, .site-cover .navbar-container .navbar a, .page-template-about .about-me ul.timeline li .timeline-details {
+.box-shadow-1, .nav-toggle-btn, .tag, .card-1, .site-cover .navbar-container .navbar a, .page-template-about .about-me ul.timeline li .timeline-details, .page-template-about .skills .legend dl {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
@@ -1695,10 +1695,10 @@ table th[class*="col-"] {
 @import "bootstrap/tooltip";
 @import "bootstrap/popovers";
 @import "bootstrap/carousel";*/
-.clearfix:before, .page-banner:before, .page-template-about .about-me ul.timeline li:before, .clearfix:after, .page-banner:after, .page-template-about .about-me ul.timeline li:after {
+.clearfix:before, .page-banner:before, .page-template-about .about-me ul.timeline li:before, .page-template-about .skills .legend:before, .clearfix:after, .page-banner:after, .page-template-about .about-me ul.timeline li:after, .page-template-about .skills .legend:after {
   content: " ";
   display: table; }
-.clearfix:after, .page-banner:after, .page-template-about .about-me ul.timeline li:after {
+.clearfix:after, .page-banner:after, .page-template-about .about-me ul.timeline li:after, .page-template-about .skills .legend:after {
   clear: both; }
 
 .center-block {
@@ -2645,30 +2645,57 @@ post.hbs
     .page-template-about .about-me ul.timeline li:last-child {
       margin-bottom: 0; }
     .page-template-about .about-me ul.timeline li .timeline-details {
-      float: left;
-      width: 40%;
       padding: 10px;
+      background-color: #fff;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
       border-radius: 3px;
       border: 1px solid rgba(0, 0, 0, 0.38);
-      position: relative; }
+      position: relative;
+      float: left;
+      width: 80%;
+      margin-top: 60px;
+      font-size: 1.4rem;
+      color: rgba(0, 0, 0, 0.54); }
+      @media (min-width: 480px) {
+        .page-template-about .about-me ul.timeline li .timeline-details {
+          width: 42%;
+          margin-top: 0; } }
+      @media (min-width: 992px) {
+        .page-template-about .about-me ul.timeline li .timeline-details {
+          width: 45%; } }
       .page-template-about .about-me ul.timeline li .timeline-details:before {
         position: absolute;
         content: '';
-        right: -10px;
-        top: 10px;
         border-style: solid;
-        border-color: transparent transparent transparent rgba(0, 0, 0, 0.38);
-        border-width: 10px 0 10px 10px; }
+        top: -10px;
+        right: 40%;
+        margin-right: -13px;
+        border-color: transparent transparent rgba(0, 0, 0, 0.38) transparent;
+        border-width: 0 10px 10px 10px; }
+        @media (min-width: 480px) {
+          .page-template-about .about-me ul.timeline li .timeline-details:before {
+            margin-right: 0;
+            border-color: transparent transparent transparent rgba(0, 0, 0, 0.38);
+            border-width: 10px 0 10px 10px;
+            right: -10px;
+            top: 10px; } }
       .page-template-about .about-me ul.timeline li .timeline-details:after {
         position: absolute;
         content: '';
-        right: -9px;
-        top: 11px;
         border-style: solid;
-        border-color: transparent transparent transparent #fff;
-        border-width: 9px 0 9px 9px; }
+        top: -9px;
+        right: 40%;
+        margin-right: -13px;
+        border-color: transparent transparent #fff transparent;
+        border-width: 0 10px 10px 10px; }
+        @media (min-width: 480px) {
+          .page-template-about .about-me ul.timeline li .timeline-details:after {
+            margin-right: 0;
+            border-color: transparent transparent transparent #fff;
+            border-width: 9px 0 9px 9px;
+            right: -9px;
+            top: 11px; } }
     .page-template-about .about-me ul.timeline li .timeline-badge {
       position: absolute;
       width: 40px;
@@ -2692,19 +2719,47 @@ post.hbs
       float: right; }
       .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details:before {
         right: auto;
-        left: -10px;
         border-style: solid;
-        border-color: transparent rgba(0, 0, 0, 0.38) transparent transparent;
-        border-width: 10px 10px 10px 0; }
+        left: 40%;
+        margin-left: -13px;
+        border-color: transparent transparent rgba(0, 0, 0, 0.38) transparent;
+        border-width: 0 10px 10px 10px; }
+        @media (min-width: 480px) {
+          .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details:before {
+            margin-left: 0;
+            left: -10px;
+            border-color: transparent rgba(0, 0, 0, 0.38) transparent transparent;
+            border-width: 10px 10px 10px 0; } }
       .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details:after {
         right: auto;
-        left: -9px;
         border-style: solid;
-        border-color: transparent #fff transparent transparent;
-        border-width: 9px 9px 9px 0; }
+        left: 40%;
+        margin-left: -13px;
+        border-color: transparent transparent #fff transparent;
+        border-width: 0 10px 10px 10px; }
+        @media (min-width: 480px) {
+          .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-details:after {
+            margin-left: 0;
+            left: -9px;
+            border-color: transparent #fff transparent transparent;
+            border-width: 9px 9px 9px 0; } }
     .page-template-about .about-me ul.timeline li.timeline-inverted .timeline-label {
       left: auto;
       right: 50%;
       transform: translate(-30px, 0); }
+.page-template-about .skills p {
+  color: rgba(0, 0, 0, 0.54); }
+.page-template-about .skills .legend dl {
+  float: right;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.38); }
+  .page-template-about .skills .legend dl dt:before {
+    content: '*'; }
+  .page-template-about .skills .legend dl dd {
+    margin-left: 10%; }
+.page-template-about .skills .skill-bars {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */
