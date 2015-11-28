@@ -1922,7 +1922,7 @@ body {
 
 .site-wrapper {
   padding: 50px 0 0 0; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .site-wrapper {
       padding: 50px 0 0 250px; } }
 
@@ -1931,16 +1931,13 @@ body {
 
 .main-content {
   margin: 0 auto;
-  max-width: 92%;
+  max-width: 92.6%;
   width: 1440px; }
-  @media (min-width: 480px) {
+  @media (min-width: 768px) {
     .main-content {
       max-width: 97%; } }
-  @media (min-width: 992px) {
-    .main-content {
-      max-width: 92.6%; } }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .page-banner {
     margin-bottom: 20px; } }
 .page-banner .page-banner-inner {
@@ -2172,7 +2169,7 @@ body {
       background-color: #0091EA; }
       .site-header .nav-toggle-btn.close .icon-bar {
         background-color: white; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .site-header {
       display: none; } }
 
@@ -2193,12 +2190,12 @@ body {
   width: 100%;
   margin-top: 25px;
   padding: 0; }
-  @media (min-width: 480px) {
+  @media (min-width: 768px) {
     .masonry-grid-item {
       width: 49.9%;
       margin: 0;
       padding: 0 2% 5% 2%; } }
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     .masonry-grid-item {
       width: 33.3%;
       margin: 0;
@@ -2296,40 +2293,36 @@ post.hbs
     position: absolute;
     top: -45px;
     left: 50%;
-    margin-left: -45px; }
-    @media (min-width: 480px) {
-      .post-footer .author-image-wrapper {
-        top: -60px;
-        margin-left: -60px; } }
-
-.author-image-wrapper {
-  width: 90px;
-  height: 90px;
-  border: 1px #80D8FF solid;
-  border-radius: 100%;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  padding: 5px;
-  display: inline-block; }
-  @media (min-width: 480px) {
-    .author-image-wrapper {
-      width: 120px;
-      height: 120px; } }
-  .author-image-wrapper .author-image {
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    margin-left: -45px;
+    width: 90px;
+    height: 90px;
+    border: 1px #80D8FF solid;
     border-radius: 100%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
-    width: 100%;
-    height: 100%; }
+    padding: 5px;
+    display: inline-block; }
+    @media (min-width: 480px) {
+      .post-footer .author-image-wrapper {
+        width: 120px;
+        height: 120px;
+        top: -60px;
+        margin-left: -60px; } }
+    .post-footer .author-image-wrapper .author-image {
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 100%;
+      -moz-border-radius: 100%;
+      -webkit-border-radius: 100%;
+      width: 100%;
+      height: 100%; }
 
 .readnext {
   margin-top: 20px;
   margin-bottom: 20px; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .readnext {
       display: flex; } }
 
@@ -2338,7 +2331,7 @@ post.hbs
   height: 100px;
   padding: 0;
   min-width: 50%; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .next-post, .prev-post {
       height: 200px;
       -webkit-flex-grow: 1;
@@ -2431,7 +2424,7 @@ post.hbs
   -moz-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
   -o-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
   transition: left 300ms ease-in-out, opacity 300ms ease-in-out; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .side-nav {
       left: 0;
       opacity: 1;
@@ -2761,5 +2754,7 @@ post.hbs
     margin-left: 10%; }
 .page-template-about .skills .skill-bars {
   margin-top: 20px; }
+.page-template-about .influencers .influencer-chart-container {
+  margin: 20px 0; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

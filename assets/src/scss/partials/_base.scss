@@ -24,15 +24,11 @@ body {
 
 .main-content {
 	margin: 0 auto;
-	max-width: 92%;
+	max-width: 92.6%;
 	width: 1440px;
 
 	@include tablet-up {
 		max-width: 97%;
-	}
-
-	@include desktop-md-up {
-		max-width: 92.6%;
 	}
 }
 

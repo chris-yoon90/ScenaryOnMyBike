@@ -3,14 +3,15 @@
 <header class="page-banner">
 	<div class="page-banner-inner">
 		{{#is "tag"}}
-		{{#tag}}
-		<h1 class="page-title"><i class="fa fa-tag"></i> {{name}}</h1>
-		<h2 class="page-description">{{description}}</h2>
-		{{/tag}}
+		<h1 class="page-title"><i class="fa fa-tag"></i> {{tag.name}}</h1>
+		<h2 class="page-description">{{tag.description}}</h2>
 		{{/is}}
 		{{#is "index"}}
 		<h1 class="page-title">Blog</h1>
 		<h2 class="page-description">Thoughts and ideas</h2>
+		{{/is}}
+		{{#is 'author'}}
+		<h1 class="page-title"><i class="fa fa-user"></i> {{author.name}}</h1>
 		{{/is}}
 	</div>
 </header>

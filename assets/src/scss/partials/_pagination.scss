@@ -13,7 +13,7 @@
 	margin: auto;
 	display: block;
 
-	@include tablet-up {
+	@include phone-lg-up {
 		display: inline-block;
 		width: 30%;
 		margin: auto 10px;
@@ -27,7 +27,7 @@
 	}
 
 	&.no-prev {
-		@include tablet-up {
+		@include phone-lg-up {
 			&:before {
 				visibility: hidden;
 			}
@@ -35,7 +35,7 @@
 	}
 
 	&.no-next {
-		@include tablet-up {
+		@include phone-lg-up {
 			&:after {
 				visibility: hidden;
 			}

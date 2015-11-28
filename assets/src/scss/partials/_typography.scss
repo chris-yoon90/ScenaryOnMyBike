@@ -1,12 +1,12 @@
 
 
 body {
-	@include tablet-only {
+	@include phone-lg-only {
 		font-size: 15px;
 		line-height: 1.6;
 	}
 
-	@include desktop-sm-up {
+	@include tablet-up {
 		font-size: 17px;
 		line-height: 1.647;
 	}
@@ -15,11 +15,11 @@ body {
 .title { 
 	font-size: 37px;
 
-	@include tablet-only {
+	@include phone-lg-only {
 		font-size: 39px;
 	} 
 
-	@include desktop-sm-up {
+	@include tablet-up {
 		font-size: 45px;
 	}
 }
@@ -27,11 +27,11 @@ body {
 .headline { 
 	font-size: 23px;
 
-	@include tablet-only {
+	@include phone-lg-only {
 		font-size: 24px;
 	} 
 
-	@include desktop-sm-up {
+	@include tablet-up {
 		font-size: 28px;
 	}
 }
@@ -39,11 +39,11 @@ body {
 .sub-headline { 
 	font-size: 18px;
 
-	@include tablet-only {
+	@include phone-lg-only {
 		font-size: 19px;
 	} 
 
-	@include desktop-sm-up {
+	@include tablet-up {
 		font-size: 22px;
 	}
 }
