@@ -2755,6 +2755,35 @@ post.hbs
 .page-template-about .skills .skill-bars {
   margin-top: 20px; }
 .page-template-about .influencers .influencer-chart-container {
-  margin: 20px 0; }
+  position: relative; }
+  .page-template-about .influencers .influencer-chart-container .influencer-chart-holder {
+    margin: 20px 0;
+    width: 100%; }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .page-template-about .influencers .influencer-chart-container .influencer-chart-holder {
+        width: 60%; } }
+  .page-template-about .influencers .influencer-chart-container .doughnut-legend {
+    list-style: none;
+    padding: 0; }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .page-template-about .influencers .influencer-chart-container .doughnut-legend {
+        position: absolute;
+        width: 35%;
+        top: 0;
+        right: 0; } }
+    .page-template-about .influencers .influencer-chart-container .doughnut-legend li {
+      position: relative;
+      padding-left: 25px; }
+      .page-template-about .influencers .influencer-chart-container .doughnut-legend li span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        display: block;
+        width: 15px;
+        height: 15px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px; }
 
 /*# sourceMappingURL=scenary_on_my_bike.css.map */

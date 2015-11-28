@@ -220,8 +220,49 @@
 	}
 	
 	.influencers {
+		
 		.influencer-chart-container {
-			margin: 20px 0;
+			position: relative;
+			
+			.influencer-chart-holder {
+				margin: 20px 0;
+				width: 100%;
+				
+				@include phone-lg-only {
+					width: 60%;
+				}
+			}
+			
+			.doughnut-legend {
+				list-style: none;
+				padding: 0;
+				
+				@include phone-lg-only {
+					position: absolute;
+					width: 35%;
+					top: 0;
+					right: 0;
+				}
+				
+				li {
+					position: relative;
+					padding-left: 25px;
+					span {
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translate(0, -50%);
+						display: block;
+						width: 15px;
+						height: 15px;
+						-webkit-border-radius: 3px;
+						-moz-border-radius: 3px;
+						border-radius: 3px;
+					}
+				}
+			}
 		}
+		
+		
 	}
 }
