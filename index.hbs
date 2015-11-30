@@ -21,8 +21,10 @@
 		{{#foreach posts}}
 		<div class="masonry-grid-item">
 			<article class="{{post_class}} card accent card-1">
-				<header class="post-header speech-bubble">
-					<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
+				<header class="post-header">
+					<div class="post-meta">
+						<time datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
+					</div>
 					<h1 class="post-title"><a href="{{url}}">{{title}}</a></h1>
 				</header>
 				{{#if image}}
@@ -34,12 +36,14 @@
 				{{/if}}
 				<section class="post-excerpt">
 					<p>{{excerpt words="26"}}...</p>
-					<p><a class="read-more" href="{{url}}">CLICK TO READ POST <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a></p>
+					<p><a class="read-more" href="{{url}}">READ MORE <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a></p>
 				</section>
 				{{#if tags}}
-				<footer class="post-meta">
-					<span><i class="fa fa-tags"></i> Tags:</span>
-					{{> "tag-partial"}}
+				<footer class="post-footer">
+					<div class="post-tags">
+						<span><i class="fa fa-tags"></i> Tags:</span>
+						{{> "tag-partial"}}
+					</div>
 				</footer>
 				{{/if}}
 			</article>

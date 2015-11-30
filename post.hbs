@@ -2,27 +2,28 @@
 
 {{#post}}
 <main class="post-wrapper" role="main">
-	<article class="{{post_class}} card accent card-2">
-		<header class="post-header speech-bubble">
-			<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time>
-			<h1 class="title">{{title}}</h1>
-		</header>
-
+	<article class="{{post_class}} card card-2">
 		{{#if image}}
 		<section class="post-media">
 			<img src="{{image}}" alt="{{title}}" />
 		</section>
 		{{/if}}
 
+		<header class="post-header">
+			<h1 class="title">{{title}}</h1>
+			<span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time> by {{author.name}}</span>
+		</header>
+
 		<section class="post-content">
 			{{content}}
-			{{#if tags}}
-			<p>
-				<span><i class="fa fa-tags"></i> Tags:</span>
-				{{> "tag-partial"}}
-			</p>
-			{{/if}}
 		</section>
+		
+		{{#if tags}}
+		<div class="post-tags">
+			<span><i class="fa fa-tags"></i> Tags:</span>
+			{{> "tag-partial"}}
+		</div>
+		{{/if}}
 
 		<footer class="post-footer">
 			{{#author}}
@@ -33,14 +34,14 @@
 			</figure>
 			{{/if}}
 
-			<address class="author-meta">
+			<address>
 				<h4>{{name}}</h4>
 
 				{{#if bio}}
 					<p class="bio">{{bio}}</p>
 				{{/if}}
 
-				<div class="author-meta">
+				<div>
 					{{#if location}}
 						<span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> </br>
 					{{/if}}

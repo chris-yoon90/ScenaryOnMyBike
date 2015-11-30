@@ -1915,7 +1915,8 @@ html, body, .site-wrapper {
   width: 100%; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-color: #f0f3f5; }
 
 .no-overflow {
   overflow-y: hidden; }
@@ -2051,7 +2052,7 @@ body {
   height: auto; }
 
 .side-nav .navbar-container {
-  background-color: #fff;
+  background-color: transparent;
   margin-top: 15px; }
 .side-nav .navbar {
   padding: 0;
@@ -2174,7 +2175,7 @@ body {
       display: none; } }
 
 .site-footer {
-  padding: 10px 5%;
+  padding: 30px 5%;
   color: rgba(0, 0, 0, 0.54); }
   .site-footer .copyright, .site-footer .poweredby {
     font-size: 1.3rem;
@@ -2202,18 +2203,36 @@ body {
       padding: 0 1.5% 4.5% 1.5%; } }
 
 .post-header {
-  border: none;
+  position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.38);
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
   padding: 20px 5%; }
+  .post-header:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50px;
+    border-width: 15px 15px 0 15px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.38) transparent transparent transparent;
+    display: block;
+    width: 0;
+    z-index: 10; }
+  .post-header:after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 51px;
+    border-width: 14px 14px 0 14px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    display: block;
+    width: 0;
+    z-index: 11; }
 
-.post-date {
+.post-meta {
   color: rgba(0, 0, 0, 0.38);
   font-size: 1.3rem;
-  margin-bottom: 5px;
-  display: block; }
+  margin-bottom: 5px; }
 
 .post-title {
   margin: 0; }
@@ -2243,24 +2262,24 @@ body {
   width: 100%;
   height: auto; }
 
-.post-excerpt, .post-content {
+.post-excerpt, .post-template .post-content {
   padding: 30px 5%; }
-  .post-excerpt p, .post-content p {
+  .post-excerpt p, .post-template .post-content p {
     margin-bottom: 15px; }
-    .post-excerpt p:last-child, .post-content p:last-child {
+    .post-excerpt p:last-child, .post-template .post-content p:last-child {
       margin-bottom: 0; }
 
-.post-meta {
+.post-footer {
   padding: 0 5% 15px 5%;
   color: rgba(0, 0, 0, 0.54); }
-  .post-meta:before {
+  .post-footer:before {
     content: '';
     display: block;
     width: 95%;
     margin: 0 auto 15px auto;
     height: 1px;
     background-color: #eeeeee; }
-  .post-meta span {
+  .post-footer span {
     margin-right: 2%; }
 
 /* 
@@ -2270,26 +2289,46 @@ post.hbs
 
 -------------------------------------------------------------------------------
  */
-.post-wrapper, .readnext {
+.post-template .post-wrapper, .post-template .readnext {
   max-width: 92%;
   width: 992px;
   margin-left: auto;
   margin-right: auto; }
-
-.post-footer {
+.post-template .post {
+  padding: 20px; }
+  @media (min-width: 992px) {
+    .post-template .post {
+      padding: 30px; } }
+.post-template .post-media {
+  margin-bottom: 20px; }
+.post-template .post-header {
+  border: none;
+  padding: 0; }
+  .post-template .post-header .title {
+    font-weight: bold;
+    margin-top: 0; }
+  .post-template .post-header:before, .post-template .post-header:after {
+    content: none; }
+.post-template .post-content {
+  padding: 30px 0; }
+.post-template .post-tags {
+  padding: 10px 0; }
+.post-template .post-footer {
   margin-top: 70px;
   text-align: center;
   border-top: 1px #eeeeee solid;
   padding: 50px 5% 20px 5%;
   position: relative; }
   @media (min-width: 480px) {
-    .post-footer {
+    .post-template .post-footer {
       padding-top: 80px; } }
-  .post-footer .bio {
+  .post-template .post-footer:before {
+    content: none; }
+  .post-template .post-footer .bio {
     color: rgba(0, 0, 0, 0.38); }
-  .post-footer .author-location, .post-footer .author-link {
+  .post-template .post-footer .author-location, .post-template .post-footer .author-link {
     font-style: italic; }
-  .post-footer .author-image-wrapper {
+  .post-template .post-footer .author-image-wrapper {
     position: absolute;
     top: -45px;
     left: 50%;
@@ -2303,12 +2342,12 @@ post.hbs
     padding: 5px;
     display: inline-block; }
     @media (min-width: 480px) {
-      .post-footer .author-image-wrapper {
+      .post-template .post-footer .author-image-wrapper {
         width: 120px;
         height: 120px;
         top: -60px;
         margin-left: -60px; } }
-    .post-footer .author-image-wrapper .author-image {
+    .post-template .post-footer .author-image-wrapper .author-image {
       display: block;
       background-repeat: no-repeat;
       background-position: center;
@@ -2318,35 +2357,33 @@ post.hbs
       -webkit-border-radius: 100%;
       width: 100%;
       height: 100%; }
-
-.readnext {
+.post-template .readnext {
   margin-top: 20px;
   margin-bottom: 20px; }
   @media (min-width: 768px) {
-    .readnext {
+    .post-template .readnext {
       display: flex; } }
-
-.next-post, .prev-post {
+.post-template .next-post, .post-template .prev-post {
   text-align: center;
   height: 100px;
   padding: 0;
   min-width: 50%; }
   @media (min-width: 768px) {
-    .next-post, .prev-post {
+    .post-template .next-post, .post-template .prev-post {
       height: 200px;
       -webkit-flex-grow: 1;
       -moz-flex-grow: 1;
       flex-grow: 1; } }
-  .next-post a, .prev-post a {
+  .post-template .next-post a, .post-template .prev-post a {
     position: relative;
     display: block;
     width: 100%;
     height: 100%; }
-    .next-post a:hover .readnext-meta, .next-post a:focus .readnext-meta, .prev-post a:hover .readnext-meta, .prev-post a:focus .readnext-meta {
+    .post-template .next-post a:hover .readnext-meta, .post-template .next-post a:focus .readnext-meta, .post-template .prev-post a:hover .readnext-meta, .post-template .prev-post a:focus .readnext-meta {
       background-color: rgba(0, 0, 0, 0.6); }
-      .next-post a:hover .readnext-meta h1, .next-post a:focus .readnext-meta h1, .prev-post a:hover .readnext-meta h1, .prev-post a:focus .readnext-meta h1 {
+      .post-template .next-post a:hover .readnext-meta h1, .post-template .next-post a:focus .readnext-meta h1, .post-template .prev-post a:hover .readnext-meta h1, .post-template .prev-post a:focus .readnext-meta h1 {
         color: white; }
-    .next-post a .readnext-meta, .prev-post a .readnext-meta {
+    .post-template .next-post a .readnext-meta, .post-template .prev-post a .readnext-meta {
       position: absolute;
       left: 0;
       top: 0;
@@ -2360,16 +2397,16 @@ post.hbs
       -moz-transition: background-color 0.2s ease-in-out;
       -o-transition: background-color 0.2s ease-in-out;
       transition: background-color 0.2s ease-in-out; }
-      .next-post a .readnext-meta h1, .next-post a .readnext-meta h2, .prev-post a .readnext-meta h1, .prev-post a .readnext-meta h2 {
+      .post-template .next-post a .readnext-meta h1, .post-template .next-post a .readnext-meta h2, .post-template .prev-post a .readnext-meta h1, .post-template .prev-post a .readnext-meta h2 {
         -webkit-transition: color 0.2s ease-in-out;
         -moz-transition: color 0.2s ease-in-out;
         -o-transition: color 0.2s ease-in-out;
         transition: color 0.2s ease-in-out;
         margin-bottom: 0;
         margin-top: 0; }
-      .next-post a .readnext-meta h1, .prev-post a .readnext-meta h1 {
+      .post-template .next-post a .readnext-meta h1, .post-template .prev-post a .readnext-meta h1 {
         color: rgba(255, 255, 255, 0.7); }
-      .next-post a .readnext-meta h2, .prev-post a .readnext-meta h2 {
+      .post-template .next-post a .readnext-meta h2, .post-template .prev-post a .readnext-meta h2 {
         color: #FF6E40; }
 
 .site-cover {
@@ -2420,6 +2457,7 @@ post.hbs
   z-index: 100;
   opacity: 0;
   padding-top: 30px;
+  background-image: linear-gradient(to bottom, #fff 0%, #eaeef2 100%);
   -webkit-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
   -moz-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
   -o-transition: left 300ms ease-in-out, opacity 300ms ease-in-out;
@@ -2481,7 +2519,7 @@ post.hbs
         font-size: 1.5rem; } }
 
 .site-nav-footer {
-  background-color: #fff;
+  background-color: transparent;
   text-align: center;
   margin-top: 20px; }
   .site-nav-footer .sns-link {
@@ -2511,7 +2549,7 @@ post.hbs
       width: 30%;
       margin: auto 10px; } }
   .page-number span {
-    background-color: #fff;
+    background-color: #f0f3f5;
     z-index: 1;
     padding: 0 10px;
     position: relative; }

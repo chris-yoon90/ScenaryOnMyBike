@@ -14,6 +14,8 @@
 	padding-top: 30px;
 	@extend .box-shadow-3;
 	
+	background-image: linear-gradient(to bottom,$white 0%,$side-bar-color 100%);
+	
 	-webkit-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 	-moz-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
 	-o-transition: left $menu-label-animation-duration ease-in-out, opacity $menu-label-animation-duration ease-in-out;
@@ -93,7 +95,7 @@
 }
 
 .site-nav-footer {
-	background-color: $white;
+	background-color: transparent;
 	text-align: center;
 	margin-top: 20px;
 	
