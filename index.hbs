@@ -17,6 +17,7 @@
 </header>
 
 <main class="main-content" role="main">
+	{{#if posts}}
 	<div id="masonry-grid">
 		{{#foreach posts}}
 		<div class="masonry-grid-item">
@@ -51,4 +52,10 @@
 		{{/foreach}}
 	</div>
 	{{pagination}}
+	{{else}}
+	<div class="no-posts">
+		<h1><i class="fa fa-search-minus"></i> NO POSTS FOUND</h1>
+		<h4>Hi there! <br/> I have not been able to update any content yet, but please check back later and I may have something that will catch your attention.</h4>
+	</div>
+	{{/if}}
 </main>

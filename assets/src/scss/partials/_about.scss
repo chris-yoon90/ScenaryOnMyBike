@@ -3,6 +3,20 @@
 		padding: 20px 30px;
 	}
 	
+	.administrator-name, .administrator-contact {
+		height: 130px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	
+	.administrator-contact {
+		address {
+			margin: 0;
+			color: $secondary-dark-text;
+		}
+	}
+	
 	.administrator-name {
 		
 		h1 {
@@ -16,7 +30,7 @@
 			@extend h3;
 			font-family: 'Droid Sans';
 			letter-spacing: -0.087rem;
-			margin-bottom: 0;
+			margin: 0;
 			color: $secondary-dark-text;
 		}
 	}

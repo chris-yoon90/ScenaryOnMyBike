@@ -1,3 +1,44 @@
+.no-posts {
+	padding: 10px;
+	min-height: 300px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	
+	@include tablet-up {
+		padding: 50px;
+	}
+	
+	h1{
+		text-align: center;
+		color: $secondary-dark-text;
+		font-size: 3.5rem;
+		
+		@include tablet-up {
+			font-size: 4.5rem;
+		}
+	}
+	
+	h4 {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		color: $disabled-dark-text;
+		font-size: 1.8rem;
+		
+		@include tablet-up {
+			font-size: 2.0rem;
+			width: 80%;
+		}
+		
+		@include desktop-sm-up {
+			width: 60%;
+		}
+	}
+}
+
+
+
 .masonry-grid-item {
 	float: left;
 	width: 100%;

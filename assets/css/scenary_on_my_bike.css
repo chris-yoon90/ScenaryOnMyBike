@@ -1911,8 +1911,9 @@ table th[class*="col-"] {
 @media print {
   .hidden-print {
     display: none !important; } }
-html, body, .site-wrapper {
-  width: 100%; }
+html, body {
+  width: 100%;
+  height: 100%; }
 
 body {
   overflow-x: hidden;
@@ -1922,10 +1923,13 @@ body {
   overflow-y: hidden; }
 
 .site-wrapper {
-  padding: 50px 0 0 0; }
+  padding: 50px 0 100px 0;
+  width: 100%;
+  min-height: 100%;
+  position: relative; }
   @media (min-width: 992px) {
     .site-wrapper {
-      padding: 50px 0 0 250px; } }
+      padding: 50px 0 100px 250px; } }
 
 .row-gutter {
   margin-top: 16px; }
@@ -2175,8 +2179,16 @@ body {
       display: none; } }
 
 .site-footer {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  right: 0;
+  bottom: 0;
   padding: 30px 5%;
   color: rgba(0, 0, 0, 0.54); }
+  @media (min-width: 992px) {
+    .site-footer {
+      padding-left: 250px; } }
   .site-footer .copyright, .site-footer .poweredby {
     font-size: 1.3rem;
     text-align: center; }
@@ -2185,6 +2197,36 @@ body {
       text-decoration: underline; }
       .site-footer .copyright a:hover, .site-footer .copyright a:focus, .site-footer .poweredby a:hover, .site-footer .poweredby a:focus {
         color: rgba(0, 0, 0, 0.87); }
+
+.no-posts {
+  padding: 10px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    .no-posts {
+      padding: 50px; } }
+  .no-posts h1 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 3.5rem; }
+    @media (min-width: 768px) {
+      .no-posts h1 {
+        font-size: 4.5rem; } }
+  .no-posts h4 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 1.8rem; }
+    @media (min-width: 768px) {
+      .no-posts h4 {
+        font-size: 2.0rem;
+        width: 80%; } }
+    @media (min-width: 992px) {
+      .no-posts h4 {
+        width: 60%; } }
 
 .masonry-grid-item {
   float: left;
@@ -2644,6 +2686,14 @@ post.hbs
 
 .page-template-about .card {
   padding: 20px 30px; }
+.page-template-about .administrator-name, .page-template-about .administrator-contact {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+.page-template-about .administrator-contact address {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.54); }
 .page-template-about .administrator-name h1 {
   letter-spacing: 0.087rem;
   font-family: 'Droid Sans';
@@ -2652,7 +2702,7 @@ post.hbs
 .page-template-about .administrator-name h2 {
   font-family: 'Droid Sans';
   letter-spacing: -0.087rem;
-  margin-bottom: 0;
+  margin: 0;
   color: rgba(0, 0, 0, 0.54); }
 .page-template-about .about-me p {
   color: rgba(0, 0, 0, 0.54); }
