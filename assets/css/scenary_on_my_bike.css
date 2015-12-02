@@ -75,6 +75,8 @@
 
 .card {
   background: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
   border-radius: 2px;
   display: block;
   position: relative;
@@ -1931,9 +1933,6 @@ body {
     .site-wrapper {
       padding: 50px 0 100px 250px; } }
 
-.row-gutter {
-  margin-top: 16px; }
-
 .main-content {
   margin: 0 auto;
   max-width: 92.6%;
@@ -2684,26 +2683,52 @@ post.hbs
     border-color: transparent #40C4FF;
     right: -1em; }
 
+.page-template-about [class*="col-sm-"] {
+  margin-top: 16px; }
+  @media (min-width: 768px) {
+    .page-template-about [class*="col-sm-"] {
+      margin-top: 0; } }
+@media (min-width: 768px) {
+  .page-template-about .row-gutter {
+    margin-top: 16px; } }
 .page-template-about .card {
-  padding: 20px 30px; }
+  padding: 10px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .page-template-about .card {
+      padding: 20px 30px; } }
+  @media (min-width: 992px) {
+    .page-template-about .card {
+      padding: 20px 30px; } }
 .page-template-about .administrator-name, .page-template-about .administrator-contact {
   height: 130px;
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow-y: hidden; }
 .page-template-about .administrator-contact address {
   margin: 0;
   color: rgba(0, 0, 0, 0.54); }
-.page-template-about .administrator-name h1 {
-  letter-spacing: 0.087rem;
-  font-family: 'Droid Sans';
-  margin-top: 0;
-  color: rgba(0, 0, 0, 0.87); }
-.page-template-about .administrator-name h2 {
-  font-family: 'Droid Sans';
-  letter-spacing: -0.087rem;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.54); }
+  @media (min-width: 480px) and (max-width: 767px) {
+    .page-template-about .administrator-contact address {
+      font-size: 1.8rem; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .page-template-about .administrator-contact address {
+      font-size: 1.6rem; } }
+.page-template-about .administrator-name {
+  border: 2px solid #0091EA; }
+  .page-template-about .administrator-name h1 {
+    letter-spacing: 0.087rem;
+    font-family: 'Droid Sans';
+    margin-top: 0;
+    color: rgba(0, 0, 0, 0.87); }
+  .page-template-about .administrator-name h2 {
+    font-family: 'Droid Sans';
+    letter-spacing: -0.087rem;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.54); }
 .page-template-about .about-me p {
   color: rgba(0, 0, 0, 0.54); }
 .page-template-about .about-me ul.timeline {

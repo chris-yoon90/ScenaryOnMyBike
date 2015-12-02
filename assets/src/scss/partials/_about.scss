@@ -1,6 +1,31 @@
 .page-template-about {
+	[class*="col-sm-"] {
+		margin-top: $grid-gutter-width;
+		
+		@include tablet-up {
+			margin-top: 0;
+		}
+	}
+	
+	.row-gutter {
+		@include tablet-up {
+			margin-top: $grid-gutter-width;
+		}
+	}
+	
 	.card {
-		padding: 20px 30px;
+		padding: 10px 20px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		
+		@include phone-lg-only {
+			padding: 20px 30px;
+		}
+		
+		@include desktop-sm-up {
+			padding: 20px 30px;
+		}
 	}
 	
 	.administrator-name, .administrator-contact {
@@ -8,16 +33,25 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		overflow-y: hidden;
 	}
 	
 	.administrator-contact {
 		address {
 			margin: 0;
 			color: $secondary-dark-text;
+			@include phone-lg-only {
+				font-size: 1.8rem;
+			}
+			
+			@include tablet-only {
+				font-size: 1.6rem;
+			}
 		}
 	}
 	
 	.administrator-name {
+		border: 2px solid $dark-accent-color;
 		
 		h1 {
 			letter-spacing: 0.087rem;

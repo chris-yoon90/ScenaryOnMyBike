@@ -297,22 +297,34 @@
 		
 			var influencers = [
 				{
-					value: 300,
-					color:"#F7464A",
-					highlight: "#FF5A5E",
-					label: "Red"
+					value: 30,
+					color:"#F44336",
+					highlight: "#B71C1C",
+					label: "Bleeding edge Tech"
 				},
 				{
-					value: 50,
-					color: "#46BFBD",
-					highlight: "#5AD3D1",
-					label: "Green"
+					value: 15,
+					color: "#9C27B0",
+					highlight: "#4A148C",
+					label: "Product design"
 				},
 				{
-					value: 100,
-					color: "#FDB45C",
-					highlight: "#FFC870",
-					label: "Yellow"
+					value: 10,
+					color: "#FFEB3B",
+					highlight: "#F57F17",
+					label: "Money"
+				},
+				{
+					value: 20,
+					color: "#009688",
+					highlight: "#004D40",
+					label: "Blade & Soul"
+				},
+				{
+					value: 5,
+					color: "#795548",
+					highlight: "#3E2723",
+					label: "Board games (Resistance!!!)"
 				}
 			];
 			
