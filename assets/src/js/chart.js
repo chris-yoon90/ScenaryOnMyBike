@@ -7,10 +7,16 @@
 		
 			var influencers = [
 				{
-					value: 30,
+					value: 35,
 					color:"#F44336",
 					highlight: "#B71C1C",
 					label: "Bleeding edge Tech"
+				},
+				{
+					value: 25,
+					color:"#00BCD4",
+					highlight: "#006064",
+					label: "Recent Events"
 				},
 				{
 					value: 15,
@@ -20,12 +26,6 @@
 				},
 				{
 					value: 10,
-					color: "#FFEB3B",
-					highlight: "#F57F17",
-					label: "Money"
-				},
-				{
-					value: 20,
 					color: "#009688",
 					highlight: "#004D40",
 					label: "Blade & Soul"
@@ -35,7 +35,13 @@
 					color: "#795548",
 					highlight: "#3E2723",
 					label: "Board games (Resistance!!!)"
-				}
+				},
+				{
+					value: 10,
+					color: "#FFEB3B",
+					highlight: "#F57F17",
+					label: "Money"
+				},
 			];
 			
 			var context = $('#influencer-chart').get(0).getContext("2d");

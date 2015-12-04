@@ -236,6 +236,12 @@
 		}
 	}
 	
+	.skills, .influencers {
+		@include tablet-up {
+			height: 550px;
+		}
+	}
+	
 	.skills {
 		p {
 			color: $secondary-dark-text;
@@ -278,6 +284,12 @@
 				
 				@include phone-lg-only {
 					width: 60%;
+				}
+				
+				@include tablet-up {
+					max-width: 215px;
+					margin-left: auto;
+					margin-right: auto;
 				}
 			}
 			

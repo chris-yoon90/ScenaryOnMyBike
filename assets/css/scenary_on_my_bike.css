@@ -2853,6 +2853,9 @@ post.hbs
       left: auto;
       right: 50%;
       transform: translate(-30px, 0); }
+@media (min-width: 768px) {
+  .page-template-about .skills, .page-template-about .influencers {
+    height: 550px; } }
 .page-template-about .skills p {
   color: rgba(0, 0, 0, 0.54); }
 .page-template-about .skills .legend dl {
@@ -2875,6 +2878,11 @@ post.hbs
     @media (min-width: 480px) and (max-width: 767px) {
       .page-template-about .influencers .influencer-chart-container .influencer-chart-holder {
         width: 60%; } }
+    @media (min-width: 768px) {
+      .page-template-about .influencers .influencer-chart-container .influencer-chart-holder {
+        max-width: 215px;
+        margin-left: auto;
+        margin-right: auto; } }
   .page-template-about .influencers .influencer-chart-container .doughnut-legend {
     list-style: none;
     padding: 0; }
