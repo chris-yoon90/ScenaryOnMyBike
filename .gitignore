@@ -1,5 +1,5 @@
-.log
-.map
+*.log
+*.map
 .DS_Store
 node_modules
 bower_components

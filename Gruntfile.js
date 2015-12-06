@@ -4,44 +4,79 @@ module.exports = function(grunt) {
         sass: {
             options: {
                 loadPath: [
-                "lib/bower_components/bootstrap-sass/assets/stylesheets"
+                    "lib/bower_components/bootstrap-sass/assets/stylesheets"
                 ],
             },
-            dist: {
+            dev: {
                 files: {
-                    'assets/css/<%= pkg.name %>.css' : 'assets/src/scss/<%= pkg.name %>.scss'
+                    'assets/css/<%= pkg.name %>.css' : 'src/scss/<%= pkg.name %>.scss'
+                }
+            },
+            dist: {
+                options: {
+                    sourcemaps: 'none'
+                },
+                files: {
+                    'assets/css/<%= pkg.name %>.css' : 'src/scss/<%= pkg.name %>.scss'
                 }
             }
         },
         watch: {
+            hbs: {
+                files: [
+                    'templates/**/*.hbs'
+                ],
+                tasks: ['includereplace:dev']
+            },
+            
             css: {
                 files: [
-                    'assets/src/scss/**/*.scss',
-                    'assets/src/js/**/*.js'
+                    'src/scss/**/*.scss',
                 ],
-                tasks: ['sass', 'concat']
+                tasks: ['sass:dev']
+            },
+            js: {
+                files: [
+                    'src/js/**/*.js'
+                ],
+                tasks: ['concat:dev']
             }
         },
 
         concat: {
             options: {
                 separator: ';'
-            },
-            dist: {
+            },            
+            dev: {
+                options: {
+                    sourceMap: true
+                },
                 src: [
-                    'assets/src/js/**/*.js'
+                    'src/js/**/*.js'
                 ],
                 dest: 'assets/js/<%= pkg.name %>.js'
             }
+        },
+        
+        includereplace: {
+            dev: {
+                options: {
+                    includesDir: 'src/templates/dev-templates/'
+                },
+                files: [
+                    {
+                        src: 'src/templates/_default.hbs',
+                        dest: 'default.hbs'
+                    }
+                ]
+            }
         }
-
-        //TODO: specify uglify task for production builds
 
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.registerTask('default',['concat', 'watch']);
+    grunt.loadNpmTasks('grunt-include-replace');
     
-    grunt.registerTask('dist', ['concat']);
+    grunt.registerTask('default',['sass:dev', 'concat:dev', 'includereplace:dev', 'watch']);
 }
