@@ -23,6 +23,16 @@ This will build all sass and js files and set up a watch on all files in `/src` 
 
 This will minify and uglify all javascript and css files.
 
+## Setup
+
+First thing is to switch your theme to Sceneary On My Bike in Ghost admin panel
+
+1. Create a new post titled 'About.'
+2. Create a new navigation with label 'About' and  path '/about'
+3. Create a new navigation with label 'Blog; and path '/#blog'
+4. Delete 'Home' navigation if it exists
+5. Upload blog logo.
+
 # License
 
 I haven't really decided it yet because this is only used for my own website. As long as you are not making money off of this, you are free to use it and modify it as you see fit. I'll think about the licensing if I ever decide to publish it on the Ghost market theme.
