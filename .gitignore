@@ -8,5 +8,5 @@ bower_components
 **/.sass-cache/*
 
 #ignore files that are built by grunt task
-#/*.hbs
-#/assets
+/*.hbs
+/assets
