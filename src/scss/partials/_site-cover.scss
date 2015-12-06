@@ -12,6 +12,10 @@ $canvas-width: 230px;
 	display: flex;
 	align-items: center;
   	justify-content: center;
+	  
+	&.no-cover {
+		background-color: $background-color;
+	}
 }
 
 #canvas-container {
