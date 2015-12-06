@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         watch: {
             hbs: {
                 files: [
-                    'templates/**/*.hbs'
+                    'src/templates/**/*.hbs'
                 ],
                 tasks: ['includereplace:dev']
             },
