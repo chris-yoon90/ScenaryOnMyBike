@@ -9,9 +9,10 @@
 	
 	@include desktop-sm-up {
 		padding-left: 250px;
+		padding-right: 0;
 	}
 
-	.copyright, .poweredby {
+	.copyright, .allrights {
 		font-size: 1.3rem;
 		text-align: center;
 
