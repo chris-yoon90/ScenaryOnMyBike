@@ -1,0 +1,82 @@
+{{!< default}}
+
+{{#post}}
+<main class="post-wrapper" role="main">
+	<article class="{{post_class}} card card-2">
+		{{#if image}}
+		<section class="post-media">
+			<img src="{{image}}" alt="{{title}}" />
+		</section>
+		{{/if}}
+
+		<header class="post-header">
+			<h1 class="title">{{title}}</h1>
+			<span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="MMMM DD, YYYY"}}</time> by {{author.name}}</span>
+		</header>
+
+		<section class="post-content">
+			{{content}}
+		</section>
+		
+		{{#if tags}}
+		<div class="post-tags">
+			<span><i class="fa fa-tags"></i> Tags:</span>
+			{{> "tag-partial"}}
+		</div>
+		{{/if}}
+
+		<footer class="post-footer">
+			{{#author}}
+
+			{{#if image}}
+			<figure class="author-image-wrapper">
+				<a class="author-image" href="/about" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+			</figure>
+			{{/if}}
+
+			<address>
+				<h4>{{name}}</h4>
+
+				{{#if bio}}
+					<p class="bio">{{bio}}</p>
+				{{/if}}
+
+				<div>
+					{{#if location}}
+						<span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> </br>
+					{{/if}}
+					{{#if website}}
+						<span class="author-link"><a href="{{website}}" target="_blank"><i class="fa fa-desktop"></i> {{website}}</a></span>
+					{{/if}}
+				</div>
+			</address>
+
+			{{/author}}
+		</footer>
+	</article>
+</main>
+
+<aside class="readnext card card-2">
+	{{#next_post}}
+	<section class="next-post">
+		<a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>
+			<div class="readnext-meta">
+				<h2 class="sub-headline">Next Post</h2>
+				<h1 class="headline">{{title}}</h1>
+			</div>
+	    </a>
+    </section>
+    {{/next_post}}
+
+    {{#prev_post}}
+    <section class="prev-post">
+	    <a href="{{url}}" {{#if image}}style="background: url('{{image}}') no-repeat center center; background-size: cover;"{{/if}}>
+			<div class="readnext-meta">
+				<h2 class="sub-headline">Previous Post</h2>
+				<h1 class="headline">{{title}}</h1>
+			</div>
+	    </a>
+    </section>
+    {{/prev_post}}
+</aside>
+{{/post}}
