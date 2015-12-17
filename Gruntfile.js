@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         sass: {
             options: {
                 loadPath: [
-                    "lib/bower_components/bootstrap-sass/assets/stylesheets"
+                    "node_modules/bootstrap-sass/assets/stylesheets"
                 ],
             },
             dev: {

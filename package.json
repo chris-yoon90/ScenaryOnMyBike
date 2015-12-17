@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git://github.com/chris-yoon90/ScenaryOnMyBike.git"
   },
+  "dependencies": {
+    "bootstrap-sass": "3.3.6"
+  },
   "devDependencies": {
     "bower": "1.7.1",
   	"grunt": "0.4.5",
