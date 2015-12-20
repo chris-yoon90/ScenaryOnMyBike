@@ -214,6 +214,15 @@ post.hbs
 	.post-content {
 		padding: 30px 0;
 		@extend .post-excerpt;
+        
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
 	}
 	
 	.post-tags {

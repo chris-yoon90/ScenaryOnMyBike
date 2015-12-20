@@ -322,7 +322,16 @@
 				}
 			}
 		}
-		
-		
 	}
+    
+    .experiences {
+        img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }        
+    }
 }
