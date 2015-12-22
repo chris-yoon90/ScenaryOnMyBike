@@ -22,7 +22,7 @@
 					value: 15,
 					color: "#9C27B0",
 					highlight: "#4A148C",
-					label: "Product design"
+					label: "Hacker News"
 				},
 				{
 					value: 10,

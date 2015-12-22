@@ -5,7 +5,7 @@
 		if(App.isContext('home')) {
 			var IMG_PATH = "/assets/images/";
 			var NAME = "CHRIS YOON";
-			var MESSAGES = ['Welcome to my site!', 'Are you hiring?', 'Let\'s talk'];
+			var MESSAGES = ['chris.yoon90@gmail.com', 'https://chrisyoon90.com'];
 		
 			var $canvasContainer = $('#canvas-container');
 			var $navbar = $('.site-cover .navbar-container');
@@ -68,11 +68,10 @@
 			context.drawImage(image, 0, 0, canvas.width, canvas.height);
 	
 			drawText(context, 0.147 * canvas.height, 'WANTED', canvas.width / 2, canvas.height * 0.16);
-			drawText(context, 0.063 * canvas.height, 'O N L Y  A L I V E', canvas.width / 2, canvas.height * 0.69);
-			drawText(context, 0.09 * canvas.height, name, canvas.width / 2, canvas.height * 0.81);
-			drawText(context, 0.023 * canvas.height, base64Encode(messages), canvas.width * 0.1, canvas.height * 0.895, {textAlign: 'left'});
-			drawText(context, 0.055 * canvas.height, 'MARINE', canvas.width * 0.93, canvas.height * 0.94, {textAlign: 'right'});
-		}
+			drawText(context, 0.09 * canvas.height, name, canvas.width / 2, canvas.height * 0.71);
+            drawText(context, 0.063 * canvas.height, 'Software Developer', canvas.width / 2, canvas.height * 0.79);
+			drawText(context, 0.038 * canvas.height, messages, canvas.width * 0.90, canvas.height * 0.895, {textAlign: 'right'});
+        }
 	
 		function drawText(canvasContext, fontSizeInPixel, texts, x, y, options) {
 			var fontFamily = 'Playfiar Display';
@@ -110,14 +109,6 @@
 			}
 	
 			canvasContext.fillText(texts, x, y);
-		}
-	
-		function base64Encode(messages) {
-			if(Array.isArray(messages)) {
-				return messages.map(btoa);
-			}
-	
-			return btoa(messages);
 		}
 	});
 })();
