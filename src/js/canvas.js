@@ -10,8 +10,10 @@
 			var $canvasContainer = $('#canvas-container');
 			var $navbar = $('.site-cover .navbar-container');
 		
-			$.when(loadImage(IMG_PATH + 'wanted_poster_bg.png'))
-				.then(function(image) {
+			$.when(loadImage(IMG_PATH + 'wanted_poster_bg.png'),
+                   loadImage(IMG_PATH + 'author_display_image.jpeg')
+                  )
+				.then(function(wanted_poster_image, author_display_image) {
 		
 					var canvas = document.createElement('canvas');
 					canvas.className = 'canvas';
@@ -21,7 +23,7 @@
 					canvas.width = canvasDimension.width;
 					canvas.height = canvasDimension.height;
 		
-					drawWantedPoster(canvas, image, NAME, MESSAGES);
+					drawWantedPoster(canvas, wanted_poster_image, author_display_image, NAME, MESSAGES);
 		
 					$canvasContainer.append(canvas);
 					$navbar.addClass('animate');
@@ -31,7 +33,7 @@
 						canvas.width = dimensions.width;
 						canvas.height = dimensions.height;
 		
-						drawWantedPoster(canvas, image, NAME, MESSAGES);
+						drawWantedPoster(canvas, wanted_poster_image, author_display_image, NAME, MESSAGES);
 					}, 250));
 				});
 		}
@@ -62,10 +64,11 @@
 			return dimensions;
 		}
 	
-		function drawWantedPoster(canvas, image, name, messages) {
+		function drawWantedPoster(canvas, wanted_poster_image, author_display_image, name, messages) {
 			var context = canvas.getContext('2d');
 	
-			context.drawImage(image, 0, 0, canvas.width, canvas.height);
+			context.drawImage(wanted_poster_image, 0, 0, canvas.width, canvas.height);
+            context.drawImage(author_display_image, canvas.width * 0.07, canvas.height * 0.18, canvas.width * 0.86, canvas.height * 0.44);
 	
 			drawText(context, 0.147 * canvas.height, 'WANTED', canvas.width / 2, canvas.height * 0.16);
 			drawText(context, 0.09 * canvas.height, name, canvas.width / 2, canvas.height * 0.71);
