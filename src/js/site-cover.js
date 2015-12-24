@@ -47,8 +47,10 @@
         
         options.strings = [ text ];
         options.callback = function() {
-            callback();
-            deferred.resolve();
+            setTimeout(function() {
+                callback();
+                deferred.resolve();
+            }, 500);
         }
 
         $element.typed(options);

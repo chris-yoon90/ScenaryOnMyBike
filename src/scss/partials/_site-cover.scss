@@ -7,16 +7,63 @@ $canvas-width: 230px;
 	width: 100%;
 	height: 100%;
 	z-index: 1000;
-	overflow-y: auto;
+	overflow-y: scroll;
 	overflow-x: hidden;
 	display: flex;
-	align-items: center;
-  	justify-content: center;
     flex-direction: column;
     padding: 5px;
 	  
 	&.no-cover {
 		background-color: $background-color;
+	}
+    
+    .navbar-container {
+        margin: 0 auto 0 auto;
+		text-align: center;
+		opacity: 0;
+		z-index: 10;
+		
+		-webkit-transition: opacity 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out;
+		-o-transition: opacity 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
+
+		&.animate {
+			opacity: 1;
+		}
+
+		.navbar {
+			list-style: none;
+			padding: 0;
+
+			li {
+				margin: 0 1rem;
+				text-align: center;
+				display: inline-block;
+			}
+
+			a {
+                display: block;
+				font-family: $droid-sans;
+				text-transform: uppercase;
+				border: 1px solid $primary-light-text;
+				color: $primary-light-text;
+				padding: 0.7rem 2.3rem;;
+                background-color: $accent-color;
+
+				-webkit-transition: background-color 300ms linear, border-color 300ms linear;
+				-moz-transition: background-color 300ms linear, border-color 300ms linear;
+				-o-transition: background-color 300ms linear, border-color 300ms linear;
+				transition: background-color 300ms linear, border-color 300ms linear;
+
+				@extend .box-shadow-1;
+
+				&:hover, &:focus {
+					background-color: $dark-accent-color;
+					border: 1px solid $dark-accent-color;
+				}
+			}
+		}
 	}
     
     .site-cover-sns-links {
@@ -25,6 +72,7 @@ $canvas-width: 230px;
 		-moz-transition: opacity 1s ease-in-out;
 		-o-transition: opacity 1s ease-in-out;
 		transition: opacity 1s ease-in-out;
+        margin: 0 auto 10px auto;
         
         &.animate {
             opacity: 1;
@@ -42,6 +90,13 @@ $canvas-width: 230px;
             }
         }
     }
+    
+    .site-footer {
+        position: static;
+        margin: auto;
+        padding: 0;
+        height: auto;
+    }
 }
 
 .terminal {
@@ -53,6 +108,7 @@ $canvas-width: 230px;
     font-family: monospace;
     
     background-color: $black;
+    margin: auto;
     margin-bottom: 20px;
     
     -webkit-border-radius: 10px 10px 8px 8px;
