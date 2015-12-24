@@ -12,43 +12,78 @@ $canvas-width: 230px;
 	display: flex;
 	align-items: center;
   	justify-content: center;
+    flex-direction: column;
+    padding: 5px;
 	  
 	&.no-cover {
 		background-color: $background-color;
 	}
 }
 
-#canvas-container {
-	text-align: center;
+.terminal {
+    width: 100%;
+    max-width: 600px;
+    min-width: 320px;
+    
+    height: 60%;
+    max-height: 300px;
+    min-height: 200px;
+    font-family: monospace;
+    
+    background-color: $black;
+    
+    -webkit-border-radius: 10px 10px 8px 8px;
+    -moz-border-radius: 10px 10px 8px 8px;
+    border-radius: 10px 10px 8px 8px;
+    
+    -webkie-box-shadow: rgba($black, 0.8) 0px 15px 65px;
+    -moz-box-shadow: rgba($black, 0.8) 0px 15px 65px;
+    box-shadow: rgba($black, 0.8) 0px 15px 65px;
+    
+    .terminal-title-bar {
+        background-image: -webkit-linear-gradient(top, #e8e8e8, #bcbbbc);
+        background-image: -moz-linear-gradient(top, #e8e8e8, #bcbbbc);
+        background-image: linear-gradient(top, #e8e8e8, #bcbbbc);
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+        border-bottom: solid 1px $gray-light;
+        
+        -webkit-border-radius: 8px 8px 0 0;
+        -moz-border-radius: 8px 8px 0 0;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .terminal-body {
+        padding: 10px;
+        color: $white;
+        
+        .blinking-cursor {
+            background-color: $gray-light;
+            opacity: 1;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        
+        .line {
+            display: none;
+        }
+    }
 }
 
-.canvas {
-	opacity: 0;
-	-moz-animation: spin 800ms linear forwards;
-	-webkit-animation: spin 800ms linear forwards;
-	animation: spin 800ms linear forwards;
-	@extend .box-shadow-3;
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
-
-@-moz-keyframes spin{
-	0%{
-		opacity:0.2;
-		-moz-transform:scale(0.2) rotate(0deg);
-	}
-	
-	100%{
-		opacity:1;
-		-moz-transform:scale(1) rotate(1090deg);
-	}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
-
-@-webkit-keyframes spin{
-	0%{
-		opacity:0.2;
-		-webkit-transform:scale(0.2) rotate(0deg);
-	}
-	100%{
-		opacity:1;
-		-webkit-transform:scale(1) rotate(1090deg);
-	}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }

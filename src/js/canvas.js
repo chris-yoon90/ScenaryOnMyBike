@@ -1,118 +1,58 @@
 "use strict";
 
 (function() {
+    var COMMON_OPTIONS = {
+        contentType: 'html',
+        showCursor: false,
+        startDelay: 500,
+        typeSpeed: 10,
+    };
+    
 	$(document).ready(function() {
-		if(App.isContext('home')) {
-			var IMG_PATH = "/assets/images/";
-			var NAME = "CHRIS YOON";
-			var MESSAGES = ['chris.yoon90@gmail.com', 'https://chrisyoon90.com'];
-		
-			var $canvasContainer = $('#canvas-container');
-			var $navbar = $('.site-cover .navbar-container');
-		
-			$.when(loadImage(IMG_PATH + 'wanted_poster_bg.png'),
-                   loadImage(IMG_PATH + 'author_display_image.jpeg')
-                  )
-				.then(function(wanted_poster_image, author_display_image) {
-		
-					var canvas = document.createElement('canvas');
-					canvas.className = 'canvas';
-		
-					var canvasDimension = getCanvasDimension();
-		
-					canvas.width = canvasDimension.width;
-					canvas.height = canvasDimension.height;
-		
-					drawWantedPoster(canvas, wanted_poster_image, author_display_image, NAME, MESSAGES);
-		
-					$canvasContainer.append(canvas);
-					$navbar.addClass('animate');
-		
-					$(window).resize(_util.debounce(function() {
-						var dimensions = getCanvasDimension();
-						canvas.width = dimensions.width;
-						canvas.height = dimensions.height;
-		
-						drawWantedPoster(canvas, wanted_poster_image, author_display_image, NAME, MESSAGES);
-					}, 250));
-				});
-		}
-	
-		function loadImage(src) {
-			var deferred = $.Deferred();
-			var image = new Image();
-	
-			image.onload = function() {
-				deferred.resolve(image);
-			};
-	
-			image.src = src;
-			return deferred.promise();
-		}
-	
-		function getCanvasDimension() {
-			var MIN_HEIGHT = 400;
-			var ASPECT_RATIO = 1.445; // width * ASPECT_RATIO = height
-			var dimensions = {};
-	
-			var windowHeight = window.innerHeight;
-			dimensions.height = windowHeight * 0.85;
-	
-			if(dimensions.height < MIN_HEIGHT) dimensions.height = MIN_HEIGHT;
-	
-			dimensions.width = dimensions.height / ASPECT_RATIO;
-			return dimensions;
-		}
-	
-		function drawWantedPoster(canvas, wanted_poster_image, author_display_image, name, messages) {
-			var context = canvas.getContext('2d');
-	
-			context.drawImage(wanted_poster_image, 0, 0, canvas.width, canvas.height);
-            context.drawImage(author_display_image, canvas.width * 0.07, canvas.height * 0.18, canvas.width * 0.86, canvas.height * 0.44);
-	
-			drawText(context, 0.147 * canvas.height, 'WANTED', canvas.width / 2, canvas.height * 0.16);
-			drawText(context, 0.09 * canvas.height, name, canvas.width / 2, canvas.height * 0.71);
-            drawText(context, 0.063 * canvas.height, 'Software Developer', canvas.width / 2, canvas.height * 0.79);
-			drawText(context, 0.038 * canvas.height, messages, canvas.width * 0.90, canvas.height * 0.895, {textAlign: 'right'});
-        }
-	
-		function drawText(canvasContext, fontSizeInPixel, texts, x, y, options) {
-			var fontFamily = 'Playfiar Display';
-			var lineHeight = fontSizeInPixel * 1.1;
-			var DEFAULT_OPTIONS = {
-				"fillStyle": '#3A302C',
-				"textAlign": 'center'
-			};
-			var fontFamily;
-	
-			for(var key in DEFAULT_OPTIONS) {
-				if(DEFAULT_OPTIONS.hasOwnProperty(key)) {
-					canvasContext[key] = DEFAULT_OPTIONS[key];
-				}
-			}
-	
-			for(var key in options) {
-				if(options.hasOwnProperty(key)) {
-					if(key === 'fontFamily') {
-						fontFamily = options[key];
-					} else {
-						canvasContext[key] = options[key];
-					}
-				}
-			}
-	
-			canvasContext.font = fontSizeInPixel + 'px ' + fontFamily;
-	
-			if(Array.isArray(texts)) {
-				texts.forEach(function(text, index, array) {
-					var yPosition = y + (lineHeight * index);
-					canvasContext.fillText(text, x, y + (lineHeight * index));
-				});
-				return;
-			}
-	
-			canvasContext.fillText(texts, x, y);
+		if(App.isContext('home') && $('.site-cover').length > 0 && !App.showBlog()) {         
+            
+            $('#line-1').show();
+            typeLine($('#typed-1'), 'Hello visitor!', function() {
+                $('#typed-1').after('<br/>');
+            }).then(function() {
+               $('#line-2').show();
+               return typeLine($('#typed-2'), 'I am Chris.', function() {
+                   $('#typed-2').after('<br/>');
+               });
+            }).then(function() {
+               $('#line-3').show();
+               return typeLine($('#typed-3'), 'I\'m a software developer.', function() {
+                   $('#typed-3').after('<br/>');
+               });
+            }).then(function() {
+                $('#line-4').show();
+                return typeLine('#typed-4', 'ls', function() {
+                    $('#typed-4').after('<br/>');
+                    var $navbar = $('.site-cover .navbar-container');
+                    $navbar.addClass('animate');
+                });
+            }).then(function() {
+                $('#line-5').show();
+            });
+
+			
 		}
 	});
+    
+    function typeLine(element, text, callback) {
+        var $element = $(element);
+        var deferred = $.Deferred();
+        var options = Object.create(COMMON_OPTIONS);
+        
+        options.strings = [ text ];
+        options.callback = function() {
+            callback();
+            deferred.resolve();
+        }
+
+        $element.typed(options);
+        
+        return deferred.promise();
+    }
 })();
 

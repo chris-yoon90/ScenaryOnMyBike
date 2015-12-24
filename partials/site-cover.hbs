@@ -1,7 +1,17 @@
 <aside class="site-cover {{#if @blog.cover}}" style="background: url({{@blog.cover}}) center/cover no-repeat;{{else}}no-cover{{/if}}">
-    <div>
-		<section id="canvas-container"> </section>
+		<div class="terminal">
+            <div class="terminal-title-bar">
+                visitor@chrisyoon90.com
+            </div>
+            <div class="terminal-body">
+                <span id="line-1" class="line">visitor@chrisyoon90.com:~$ </span><span id="typed-1"></span>
+                <span id="line-2" class="line">visitor@chrisyoon90.com:~$ </span><span id="typed-2"></span>
+                <span id="line-3" class="line">visitor@chrisyoon90.com:~$ </span><span id="typed-3"></span>
+                <span id="line-4" class="line">visitor@chrisyoon90.com:~$ </span><span id="typed-4"></span>
+                <span id="line-5" class="line">visitor@chrisyoon90.com:~$ </span>
+                <span class="blinking-cursor">&nbsp;</span>
+            </div>
+        </div>
 
 		{{navigation}}
-	</div>
 </aside>
