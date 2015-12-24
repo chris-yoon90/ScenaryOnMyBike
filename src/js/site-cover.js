@@ -9,14 +9,14 @@
     };
     
 	$(document).ready(function() {
-		if(App.isContext('home') && $('.site-cover').length > 0 && !App.showBlog()) {         
-            
+		if(App.isContext('home') && $('.site-cover').length > 0 && !App.showBlog()) {
+
             $('#line-1').show();
-            typeLine($('#typed-1'), 'Hello visitor!', function() {
+            typeLine($('#typed-1'), 'Hello there!', function() {
                 $('#typed-1').after('<br/>');
             }).then(function() {
                $('#line-2').show();
-               return typeLine($('#typed-2'), 'I am Chris.', function() {
+               return typeLine($('#typed-2'), 'I\'m Chris.', function() {
                    $('#typed-2').after('<br/>');
                });
             }).then(function() {
@@ -26,16 +26,17 @@
                });
             }).then(function() {
                 $('#line-4').show();
-                return typeLine('#typed-4', 'ls', function() {
+                return typeLine('#typed-4', 'Find more about me by clicking on the links below!', function() {
                     $('#typed-4').after('<br/>');
-                    var $navbar = $('.site-cover .navbar-container');
-                    $navbar.addClass('animate');
                 });
             }).then(function() {
                 $('#line-5').show();
             });
-
-			
+            
+            var $navbar = $('.site-cover .navbar-container');
+            var $sns_links = $('.site-cover .site-cover-sns-links');
+            $navbar.addClass('animate');
+            $sns_links.addClass('animate'); 
 		}
 	});
     

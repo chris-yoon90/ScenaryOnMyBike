@@ -18,19 +18,42 @@ $canvas-width: 230px;
 	&.no-cover {
 		background-color: $background-color;
 	}
+    
+    .site-cover-sns-links {
+        opacity: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out;
+		-o-transition: opacity 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
+        
+        &.animate {
+            opacity: 1;
+        }
+        
+        .sns-link {
+            color: $secondary-dark-text;
+            
+            -webkit-transition: color 300ms ease-in-out;
+			-moz-transition: color 300ms ease-in-out;
+			transition: color 300ms ease-in-out;
+            
+            &:hover, &:focus {
+                color: $primary-dark-text;
+            }
+        }
+    }
 }
 
 .terminal {
     width: 100%;
-    max-width: 600px;
-    min-width: 320px;
-    
+    max-width: 600px;   
     height: 60%;
-    max-height: 300px;
-    min-height: 200px;
+    max-height: 400px;
+    min-height: 300px;
     font-family: monospace;
     
     background-color: $black;
+    margin-bottom: 20px;
     
     -webkit-border-radius: 10px 10px 8px 8px;
     -moz-border-radius: 10px 10px 8px 8px;
