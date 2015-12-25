@@ -1,75 +1,65 @@
 .pagination {
-	width: 100%;
-	text-align: center;
-	margin: 30px 0;
-}
-
-.page-number {
-	position: relative;
-	text-align: center;
-	padding: 10px;
-	width: 80%;
-	margin: auto;
-	display: block;
-
-	@include phone-lg-up {
-		display: inline-block;
-		width: 30%;
-		margin: auto 10px;
-	}
-
-	span {
-		background-color: $background-color;
-		z-index: 1;
-		padding: 0 10px;
-		position: relative;
-	}
-
-	&.no-prev {
-		@include phone-lg-up {
-			&:before {
-				visibility: hidden;
-			}
-		}
-	}
-
-	&.no-next {
-		@include phone-lg-up {
-			&:after {
-				visibility: hidden;
-			}
-		}
-	}
-
-	&.no-next.no-prev {
-		&:before, &:after {
-			display: none;
-		}
-	}
-
-	&:before, &:after {
-		background-color: $gray-lighter;
-		content: "";
-		display: block;
-		height: 1px;
-		position: absolute;
-		top: 50%;
-		width: 50%;
-	}
-
-	&:before {
-		left: 0;
-	}
-
-	&:after {
-		left: 50%;
-	}
-}
-
-.newer-posts {
-	@include ribbon-left-arrow($secondary-light-text, $accent-color, 1.5rem);
-}
-
-.older-posts {
-	@include ribbon-right-arrow($secondary-light-text, $accent-color, 1.5rem);
+    width: 100%;
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+    font-family: 'Droid Sans';
+    font-size: 1.4rem;
+    
+    @include phone-lg-up {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    @include tablet-up {
+        width: 80%;
+    }
+    
+    @include desktop-sm-up {
+        width: 70%;
+    }
+    
+    .newer-posts, .older-posts {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+        border: 1px solid $secondary-dark-text;
+        color: $secondary-dark-text;
+        @extend .box-shadow-1;
+        
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        
+        -webkit-transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
+       -moz-transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
+       -transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
+       
+       @include phone-lg-up {
+           position: absolute;
+       }
+       
+       &:hover, &:focus {
+           color: $secondary-accent-color;
+           border-color: $secondary-accent-color;
+       }
+    }
+    
+    .newer-posts {
+        left: 0;
+    }
+    
+    .older-posts {
+        right: 0;
+    }
+    
+    .page-number {
+        display: block;
+        margin: 1rem auto;
+        color: $disabled-dark-text;
+        
+        @include phone-lg-up {
+            display: inline-block;
+        }
+    }
 }
