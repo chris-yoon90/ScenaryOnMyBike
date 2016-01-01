@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "Chris Yoon's blog",
   "author": "Chris Yoon",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/chris-yoon90/ScenaryOnMyBike.git"
