@@ -59,7 +59,7 @@ module.exports = function(grunt) {
             
             dist: {
                 options: {
-                    srouceMap: false
+                    sourceMap: false
                 },
                 src: [
                     'src/js/**/*.js'
